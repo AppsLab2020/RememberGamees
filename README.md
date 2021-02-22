@@ -1,3 +1,2 @@
 # RememberGamees
-## Základné funkcie:
-
+## Čo je RememberGames ? 
