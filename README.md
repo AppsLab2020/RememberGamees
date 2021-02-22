@@ -1,3 +1,3 @@
 # RememberGamees
-##Základné funkcie:
+## Základné funkcie:
 
