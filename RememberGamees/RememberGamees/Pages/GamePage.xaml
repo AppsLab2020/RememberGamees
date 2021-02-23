@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RememberGamees.Pages.GamePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Games!" />
+            <Button Text="Tapp to start game" Command="{Binding GameBtn}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
