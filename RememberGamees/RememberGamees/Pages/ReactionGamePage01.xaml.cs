@@ -11,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace RememberGamees.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GamePage : ContentPage
+    public partial class ReactionGamePage01 : ContentPage
     {
-        public GamePage()
+        public ReactionGamePage01()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel(Navigation);
+            BindingContext = new ReactionGamePageModel01();
         }
     }
 }

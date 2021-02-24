@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RememberGamees.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,7 @@ namespace RememberGamees
             InitializeComponent();
 
             MainPage = new ShellApp();
+            //MainPage = new NavigationPage(new GamePage());
         }
     }
 }
