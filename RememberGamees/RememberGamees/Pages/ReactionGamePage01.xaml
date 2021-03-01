@@ -7,6 +7,24 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="200"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Command="{Binding firstBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="cervena1.png"  Grid.Column="1" Grid.Row="3"/>
+                <ImageButton Command="{Binding secondBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="modra2.png" Grid.Column="2" Grid.Row="3"/>
+                <ImageButton Command="{Binding thirdBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="zelena3.png" Grid.Column="3" Grid.Row="3"/>
+                <Image Source="cervena1.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2">
+                </Image>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

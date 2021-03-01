@@ -133,4 +133,31 @@
       <Name>RememberGamees</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cervena1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cervena2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cervena3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\modra1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\modra2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\modra3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zelena1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zelena2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zelena3.PNG" />
+  </ItemGroup>
 </Project>
