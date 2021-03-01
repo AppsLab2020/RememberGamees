@@ -11,6 +11,6 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 3. Demo verzia prvej minihry zameranej na reflexy používateľa (hra pozostáva z výberu úplne opačného obrázka k náhodne zobrazenému obrázku)
 
 ## Predbežné grafické návrhy:
-![Uploading Screenshot_1614584510.png…]()
-![Uploading Screenshot_1614584505.png…]()
-![Uploading Screenshot_1614584500.png…]()
+![Lagin Page](file:///C:/Users/panta/OneDrive/Desktop/Screenshot_1614584510.png)
+
+
