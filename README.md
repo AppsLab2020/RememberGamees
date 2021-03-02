@@ -9,7 +9,7 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 ## Prvá verzia aplikácie:
 1. Vytvoriť Login Page (ak sa podarí, tak aj s výberom svojho avatara).
 2. Shell - vytvorenie menu, v ktorom bude prístup do zoznamu hier, historórie, achievementov a do užívateľských nastavení.
-3. Demo verzia prvej minihry zameranej na reflexy používateľa (hra pozostáva z výberu takého istého,alebo v inom prípade úplne opačného obrázka k náhodne zobrazenému obrázku)
+3. Demo verzia prvej minihry zameranej na reflexy používateľa. Hra pozostáva z troch klikajúcich obrázkov a jedného náhodne generujúceho obrázku, ktorý sa po každom kliknutí jedného z troch buttonov náhodne vygeneruje. Úlohou hráča bude kliknutie takého istého, alebo ak nebude na výber taký istý, tak úplne opačného obrázka k náhodne zobrazenému obrázku, pričom každý obrázok má dva elementy, ktoré sa musia zhodovať(farba, znak). 
 
 ## Predbežné grafické návrhy:
 
