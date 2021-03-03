@@ -85,7 +85,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Image9.PNG" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RememberGamees\RememberGamees.csproj">
       <Project>{9822A192-CA00-4B18-AEB5-9ED062A71234}</Project>
@@ -93,31 +95,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\cervena1.PNG" />
+    <AndroidResource Include="Resources\drawable\Image1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\cervena2.PNG" />
+    <AndroidResource Include="Resources\drawable\Image2.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\cervena3.PNG" />
+    <AndroidResource Include="Resources\drawable\Image3.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\modra1.PNG" />
+    <AndroidResource Include="Resources\drawable\Image4.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\modra2.PNG" />
+    <AndroidResource Include="Resources\drawable\Image5.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\modra3.PNG" />
+    <AndroidResource Include="Resources\drawable\Image6.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\zelena1.PNG" />
+    <AndroidResource Include="Resources\drawable\Image7.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\zelena2.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\zelena3.PNG" />
+    <AndroidResource Include="Resources\drawable\Image8.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

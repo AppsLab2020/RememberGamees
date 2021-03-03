@@ -134,30 +134,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cervena1.PNG" />
+    <BundleResource Include="Resources\Image1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cervena2.PNG" />
+    <BundleResource Include="Resources\Image2.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cervena3.PNG" />
+    <BundleResource Include="Resources\Image3.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\modra1.PNG" />
+    <BundleResource Include="Resources\Image4.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\modra2.PNG" />
+    <BundleResource Include="Resources\Image5.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\modra3.PNG" />
+    <BundleResource Include="Resources\Image6.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\zelena1.PNG" />
+    <BundleResource Include="Resources\Image7.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\zelena2.PNG" />
+    <BundleResource Include="Resources\Image8.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\zelena3.PNG" />
+    <BundleResource Include="Resources\Image9.PNG" />
   </ItemGroup>
 </Project>
