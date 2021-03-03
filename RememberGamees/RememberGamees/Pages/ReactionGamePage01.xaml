@@ -25,6 +25,7 @@
                 <Image Source="cervena1.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2">
                 </Image>
             </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
