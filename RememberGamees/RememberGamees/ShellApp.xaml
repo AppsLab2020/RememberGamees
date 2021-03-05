@@ -4,12 +4,12 @@
              xmlns:local="clr-namespace:RememberGamees.Pages"
              x:Class="RememberGamees.ShellApp">
     <TabBar>
-        <Tab Title="Games">
+            <Tab Title="Games">
             <ShellContent ContentTemplate="{DataTemplate local:GamePage}"/>
         </Tab>
 
-        <Tab Title="Achievement">
-            <ShellContent ContentTemplate="{DataTemplate local:HistoryPage}"/>
-        </Tab>
-    </TabBar>
+            <Tab Title="Achievement">
+                <ShellContent ContentTemplate="{DataTemplate local:HistoryPage}"/>
+            </Tab>
+        </TabBar>
 </Shell>
