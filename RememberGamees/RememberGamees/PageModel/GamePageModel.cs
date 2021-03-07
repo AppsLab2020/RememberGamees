@@ -30,12 +30,7 @@ namespace RememberGamees.PageModel
             await Navigation.PushAsync(new ReactionGamePage01());
         }
 
-        public ICommand ContinueBtnClicked
-        {
-
-            protected set;
-            get;
-        }
+        
         public Command GameBtnCommand { get; }
         public INavigation Navigation { get; }
 

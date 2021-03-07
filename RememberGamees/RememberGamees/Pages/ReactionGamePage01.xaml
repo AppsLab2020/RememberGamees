@@ -25,6 +25,7 @@
                 <ImageButton Command="{Binding thirdBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image9.png" Grid.Column="3" Grid.Row="3"/>
                 <Image x:Name="RandomImg" Source="{Binding RandomI}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2"/>
                 <Label Text="{Binding TimerTxt }" x:Name="Timer" FontSize="40" VerticalOptions="Start" Grid.Column="2"  Grid.Row="1"/>
+                <Button Command="{Binding GameBtnCommand}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

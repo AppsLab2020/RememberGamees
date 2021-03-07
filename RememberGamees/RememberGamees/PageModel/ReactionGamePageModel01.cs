@@ -7,6 +7,8 @@ using System.Timers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using RememberGamees.Pages;
+using System.Runtime.CompilerServices;
 
 namespace RememberGamees.PageModel
 {
@@ -23,11 +25,7 @@ namespace RememberGamees.PageModel
 
         public Command firstBtn_Clicked => new Command(() =>
         {
-            var rand = new Random();
-            var next = rand.Next(10);
-            var image = images[next];
-
-            RandomI = ImageSource.FromFile(image);
+           
         });
 
         public Command secondBtn_Clicked => new Command(() =>
@@ -70,14 +68,29 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public ReactionGamePageModel01()
+        public INavigation Navigation { get; }
+        public Command GameBtnCommand { get; }
+
+        public ReactionGamePageModel01(INavigation navigation)
         {
+            this.Navigation = navigation;
+
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 _countSeconds--;
                 TimerTxt = _countSeconds.ToString();
                 return Convert.ToBoolean(_countSeconds);
             });
+
+            Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+            {
+                Navigation.PushAsync(new ScoreReactionPage());
+
+                return false;
+            });
+
+
+
         }
     }
 }
