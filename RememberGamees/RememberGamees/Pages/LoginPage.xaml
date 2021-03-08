@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RememberGamees.Pages.Page1"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView x:Name="bdGradient" Scale="3" AnchorX="1" AnchorY="0" >
+                <BoxView.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#4858e3" Offset="0.1"/>
+                        <GradientStop Color="#487ae3" Offset="0.1"/>
+                        <GradientStop Color="#39b6de" Offset="0.6"/>
+                        <GradientStop Color="#00ecff" Offset="0.6"/>
+                        <GradientStop Color="#00ffda" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+
+            <!-- User Icon -->
+            <Image Source="user.png"
+               Margin="0,-350,0,0"
+               HorizontalOptions="Center"
+               WidthRequest="90"
+               HeightRequest="90" />
+
+
+            <!-- User Name Entry -->
+            <Entry 
+                   Placeholder="User name"
+                   PlaceholderColor="White"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,-170,0,0"
+                   WidthRequest="200"
+                   HeightRequest="60"/>
+
+            <!-- E-mail Entry -->
+            <Entry 
+                Placeholder="E-mail"
+                PlaceholderColor="White"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,-70,0,0"
+                WidthRequest="200"
+                HeightRequest="60"/>
+
+            <!--Login Button-->
+            <Button
+                BackgroundColor="#2713FA"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Margin="0,100,0,0"
+                Text="Login"
+                FontSize="30"
+                TextColor="White"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                Clicked="Button_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
