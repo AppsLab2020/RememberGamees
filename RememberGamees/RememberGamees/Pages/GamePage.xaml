@@ -4,7 +4,6 @@
              x:Class="RememberGamees.Pages.GamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Games!" />
             <Button Text="Tapp to start game" Command="{Binding GameBtnCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

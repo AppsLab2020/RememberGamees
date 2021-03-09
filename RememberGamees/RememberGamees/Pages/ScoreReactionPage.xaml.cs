@@ -17,6 +17,7 @@ namespace RememberGamees.Pages
         {
             InitializeComponent();
             BindingContext = new ScoreOfReactionPageModel(Navigation);
+            Shell.SetTabBarIsVisible(this, false);
         }
     }
 }

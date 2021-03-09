@@ -9,6 +9,11 @@ namespace RememberGamees.PageModel
 {
     class ScoreOfReactionPageModel : INotifyPropertyChanged
     {
+        public ScoreOfReactionPageModel()
+        {
+
+        }
+
         private INavigation navigation;
 
         public ScoreOfReactionPageModel(INavigation navigation)
@@ -20,7 +25,7 @@ namespace RememberGamees.PageModel
 
         public INavigation Navigation { get; }
 
-        public Command NeviemAkoToNazvattt => new Command(async () =>
+        public Command RootPage_Command => new Command(async () =>
         {
             await Application.Current.MainPage.Navigation.PopToRootAsync();
         });

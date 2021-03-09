@@ -13,19 +13,24 @@
                     <RowDefinition Height="200" />
                     <RowDefinition Height="200"/>
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
+                <Image Source="{Binding FirstBrain}"  Grid.Column="1"  Grid.Row="2" />
+                <Image Source="{Binding SecondBrain}" Grid.Column="2"  Grid.Row="2"/>
+                <Image Source="{Binding ThirdBrain}" Grid.Column="3"  Grid.Row="2"/>
 
+                <Image Source="{Binding RandomI}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2"/>
                 <ImageButton Command="{Binding firstBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image1.png"  Grid.Column="1" Grid.Row="3"/>
                 <ImageButton Command="{Binding secondBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image5.png" Grid.Column="2" Grid.Row="3"/>
                 <ImageButton Command="{Binding thirdBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image9.png" Grid.Column="3" Grid.Row="3"/>
-                <Image x:Name="RandomImg" Source="{Binding RandomI}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2"/>
+                
                 <Label Text="{Binding TimerTxt }" x:Name="Timer" FontSize="40" VerticalOptions="Start" Grid.Column="2"  Grid.Row="1"/>
-                <Button Command="{Binding GameBtnCommand}"/>
+                <Label Text="{Binding Experiences}" Grid.Column="1"  Grid.Row="2" FontSize="40"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
