@@ -24,10 +24,5 @@ namespace RememberGamees.PageModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         public INavigation Navigation { get; }
-
-        public Command RootPage_Command => new Command(async () =>
-        {
-            await Application.Current.MainPage.Navigation.PopToRootAsync();
-        });
     }
 }

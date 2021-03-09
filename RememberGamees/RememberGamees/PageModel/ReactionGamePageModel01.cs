@@ -74,6 +74,10 @@ namespace RememberGamees.PageModel
             var image = images[next];
 
             RandomI = ImageSource.FromFile(image);
+
+            Fifty = i + 50;
+            i = Fifty;
+            Experiences = Fifty.ToString();
         });
 
         public ImageSource ThirdBrain
@@ -158,7 +162,7 @@ namespace RememberGamees.PageModel
                 return Convert.ToBoolean(_countSeconds);
             });
 
-            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
                 Navigation.PushAsync(new ScoreReactionPage());
 

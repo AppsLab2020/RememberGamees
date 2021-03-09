@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <Grid>
-            <BoxView x:Name="bdGradient" Scale="3" AnchorX="1" AnchorY="0" >
+            <BoxView x:Name="bdGradient" Scale="3" AnchorX="1" AnchorY="0"  >
                 <BoxView.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#4858e3" Offset="0.1"/>
@@ -65,7 +65,7 @@
                 TextTransform="Uppercase"
                 FontAttributes="Bold"
                 HeightRequest="60"
-                Clicked="Button_Clicked"/>
+                Command="{Binding Button_Clicked}"/>
 
         </Grid>
     </ContentPage.Content>

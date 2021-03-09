@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RememberGamees.PageModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace RememberGamees.Pages
         public Page1()
         {
             InitializeComponent();
+            BindingContext = new LoginPageModel(Navigation);
             Task.Run(AnimBg);
         }
         private async void AnimBg()
@@ -29,11 +31,6 @@ namespace RememberGamees.Pages
                 bdGradient.Animate(name: "backward", callback: backward, start: 1, end: 0, length: 9000, easing: Easing.SinIn);
                 await Task.Delay(9000);
             }
-        }
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new GamePage());
         }
     }
 }
