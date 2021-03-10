@@ -24,8 +24,8 @@
                 <Image Source="{Binding FirstBrain}"  Grid.Column="0"  Grid.Row="0"  />
                 <Image Source="{Binding SecondBrain}" Grid.Column="1"  Grid.Row="0"/>
                 <Image Source="{Binding ThirdBrain}" Grid.Column="2"  Grid.Row="0"/>
-                <Image Source="FourthBrainImage" Grid.Column="3" Grid.Row="0"/>
-                <Image Source="FifthBrainImage" Grid.Column="4" Grid.Row="0"/>
+                <Image Source="{Binding FourthBrain}" Grid.Column="3" Grid.Row="0"/>
+                <Image Source="{Binding FifthBrain}" Grid.Column="4" Grid.Row="0"/>
 
                 <Image Source="{Binding RandomI}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="2" HeightRequest="70" WidthRequest="70"/>
                 <ImageButton Command="{Binding firstBtn_Clicked}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image1.png"  Grid.Column="1" Grid.Row="4"/>

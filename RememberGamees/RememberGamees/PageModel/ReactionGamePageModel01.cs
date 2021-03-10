@@ -24,7 +24,7 @@ namespace RememberGamees.PageModel
         public ImageSource SecondDefaultBrainImage = "SecondBrainImage";
         public ImageSource ThirdDefaultBrainImage = "ThirdBrainImage";
         public ImageSource FourthDefaultBrainImage = "FourthBrainImage";
-        public ImageSource FifthDefaultBrainButton = "FifthBrainImage";
+        public ImageSource FifthDefaultBrainImage = "FifthBrainImage";
 
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7", "Image8", "Image8", "Image9", "Image10" };
 
@@ -81,6 +81,29 @@ namespace RememberGamees.PageModel
             i = Fifty;
             Experiences = Fifty.ToString();
         });
+
+        public ImageSource FifthBrain
+        {
+            get => FifthDefaultBrainImage;
+            set
+            {
+                FifthDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FifthBrain)));
+            }
+        }
+           
+
+        public ImageSource FourthBrain
+        {
+            get => FourthDefaultBrainImage;
+            set
+            {
+                FourthDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FourthBrain)));
+            }
+        }
 
         public ImageSource ThirdBrain
         {
