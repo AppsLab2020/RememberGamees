@@ -63,9 +63,19 @@ namespace RememberGamees.PageModel
                 SecondBrain = "Null";
             }
 
-            else
+            else if (tapTimes.Count == 3)
             {
                 ThirdBrain = "Null";
+            }
+
+            else if (tapTimes.Count == 4)
+            {
+                FourthBrain = "Null";
+            }
+
+            else
+            {
+                FifthBrain = "Null";
             }
         });
 

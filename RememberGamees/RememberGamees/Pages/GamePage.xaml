@@ -2,10 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.GamePage"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Tapp to start game" Command="{Binding GameBtnCommand}"></Button>
+
+            <Image Source="GamePageImage"/>
+            <Image Source="Train_Your" WidthRequest="300"/>
+            <Image Source="Brain_Text" WidthRequest="300"/>
+
+
+
+            <Button HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="0, 0, 0, 0"
+                    WidthRequest="150"
+                    Text="Start"
+                    FontSize="40"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    BorderWidth="5"
+                    BorderColor="#4361ee"
+                    Command="{Binding GameBtnCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
