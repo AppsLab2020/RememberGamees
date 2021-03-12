@@ -16,15 +16,13 @@ namespace RememberGamees.Pages
         public ScoreReactionPage()
         {
             InitializeComponent();
-            BindingContext = new ScoreOfReactionPageModel(Navigation);
+            BindingContext = new ScoreOfReactionPageModel();
             Shell.SetTabBarIsVisible(this, false);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
-
-            this.Navigation.PopAsync();
+            Application.Current.MainPage = new GamePage();
         }
     }
 }

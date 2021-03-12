@@ -24,6 +24,12 @@
                     BorderWidth="5"
                     BorderColor="#4361ee"
                     Command="{Binding GameBtnCommand}"></Button>
+
+            <Button
+                Text="SignOut"
+                Clicked="SignOutButton_Clicked"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

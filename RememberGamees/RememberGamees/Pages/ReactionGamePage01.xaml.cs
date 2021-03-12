@@ -17,7 +17,7 @@ namespace RememberGamees.Pages
         public ReactionGamePage01()
         {
             InitializeComponent();
-            BindingContext = new ReactionGamePageModel01(Navigation);
+            BindingContext = new ReactionGamePageModel01();
             Shell.SetTabBarIsVisible(this, false); 
         }
 

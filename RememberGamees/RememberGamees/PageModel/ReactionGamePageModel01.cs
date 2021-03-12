@@ -76,6 +76,7 @@ namespace RememberGamees.PageModel
             else
             {
                 FifthBrain = "Null";
+                Application.Current.MainPage = new ScoreReactionPage();
             }
         });
 
@@ -184,11 +185,11 @@ namespace RememberGamees.PageModel
         public INavigation Navigation { get; }
         public Command GameBtnCommand { get; }
 
-        public ReactionGamePageModel01(INavigation navigation)
+        public ReactionGamePageModel01()
         {
             tapTimes = new List<DateTime>();
 
-            this.Navigation = navigation;
+            
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -199,8 +200,7 @@ namespace RememberGamees.PageModel
 
             Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
-                Navigation.PushAsync(new ScoreReactionPage());
-
+                Application.Current.MainPage = new ScoreReactionPage();
                 Fifty = 0;
                 i = Fifty;
 

@@ -14,15 +14,6 @@ namespace RememberGamees.PageModel
 
         }
 
-        private INavigation navigation;
-
-        public ScoreOfReactionPageModel(INavigation navigation)
-        {
-            this.navigation = navigation;
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public INavigation Navigation { get; }
     }
 }

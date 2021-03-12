@@ -12,9 +12,20 @@ namespace RememberGamees.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoggedPage : ContentPage
     {
+        IAuth auth;
         public LoggedPage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<IAuth>();
+        }
+        void SignOutButton_Clicked(object sender, EventArgs e)
+        {
+            var signOut = auth.SignOut();
+
+            if (signOut)
+            {
+                Application.Current.MainPage = new MainPage();
+            }
         }
     }
 }

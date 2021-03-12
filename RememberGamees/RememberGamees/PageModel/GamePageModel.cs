@@ -18,17 +18,17 @@ namespace RememberGamees.PageModel
         {
             this.Navigation = navigation;
 
-            this.GameBtnCommand = new Command(async () =>
+            this.GameBtnCommand = new Command( () =>
             {
-                await GotoPage2Async();
+                Application.Current.MainPage = new ReactionGamePage01();
             });
 
         }
 
-        public async System.Threading.Tasks.Task GotoPage2Async()
-        {
-            await Navigation.PushAsync(new ReactionGamePage01());
-        }
+        //public async System.Threading.Tasks.Task GotoPage2Async()
+        //{
+        //    await Navigation.PushAsync(new ReactionGamePage01());
+        //}
 
         
         public Command GameBtnCommand { get; }

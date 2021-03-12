@@ -11,12 +11,22 @@ namespace RememberGamees
     {
         private readonly ShellApp ReactionGamePage01;
 
+        IAuth auth;
         public App()
         {
             InitializeComponent();
-            Device.SetFlags(new[] { "Brush_Experimental" });
-            MainPage = new ShellApp();
-            MainPage = new NavigationPage(new Page1());
+            auth = DependencyService.Get<IAuth>();
+            if (auth.IsSignIn())
+            {
+                MainPage = new GamePage();
+            }
+            else
+            {
+                MainPage = new MainPage();
+            }
+            //Device.SetFlags(new[] { "Brush_Experimental" });
+            //MainPage = new ShellApp();
+            //MainPage = new NavigationPage(new Page1());
         }
     }
 }
