@@ -1,4 +1,3 @@
-
 # RememberGamees
 ## Čo je RememberGames ? 
 __RememberGames je mobilná aplikácia, ktorá sa skladá z viacerých minihier. Minihry budú zamerané na rýchlosť reakcií používateľa, jeho pamäť a logické myslenie.__
@@ -18,5 +17,6 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
  
 <img src="https://user-images.githubusercontent.com/72004230/111080959-4724fd00-8501-11eb-92cf-7c06d3ac5464.png" width="200" height="400">-Prvá minihra zamraná na reflexy
 
+<img src="https://user-images.githubusercontent.com/72004230/111081303-e72f5600-8502-11eb-93cc-5838725b2df4.png" width="200" height="400"> - hlavná stránka
 
 
