@@ -15,5 +15,7 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 
 <img src="https://user-images.githubusercontent.com/72004230/109521769-f1d2ff80-7aad-11eb-8e39-6a6e1b57d12e.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/72004230/109522518-a705b780-7aae-11eb-8e75-06cb12308449.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/72004230/109523566-c94c0500-7aaf-11eb-8cc9-2d6ffdac7dd2.png" width="200" height="400">
  -Login Page s animovaným pozadím.
+ 
+ <img src="file:///C:/Users/panta/OneDrive/Desktop/Screenshot_1615748004.png" width="200" height="400">
 
 
