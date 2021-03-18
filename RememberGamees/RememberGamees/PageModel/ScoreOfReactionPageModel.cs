@@ -13,7 +13,10 @@ namespace RememberGamees.PageModel
         {
 
         }
-
+        public Command Button_Clicked => new Command(() =>
+        {
+            Application.Current.MainPage = new GamePage();
+        });
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

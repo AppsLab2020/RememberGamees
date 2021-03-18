@@ -75,8 +75,12 @@ namespace RememberGamees.PageModel
 
             else
             {
+                Fifty = 0;
+                i = Fifty;
+
                 FifthBrain = "Null";
                 Application.Current.MainPage = new ScoreReactionPage();
+                
             }
         });
 

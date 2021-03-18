@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Click for go to the menu" Clicked="Button_Clicked"  />
+            <Button Text="Click for go to the menu" Command="{Binding Button_Clicked}"  />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
