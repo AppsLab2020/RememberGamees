@@ -16,15 +16,16 @@ namespace RememberGamees.PageModel
     {
         private readonly List<DateTime> tapTimes;
         private int _countSeconds = 60;
-        public ImageSource DefaultImage = "Image1";
-        public string DefaultTime = "";
+        private ImageSource DefaultImage = "Image1";
+        private string DefaultTime = "";
         private static int i;
-        public static int Fifty;
-        public ImageSource DefaultBrainImage = "FirstBrainImage";
-        public ImageSource SecondDefaultBrainImage = "SecondBrainImage";
-        public ImageSource ThirdDefaultBrainImage = "ThirdBrainImage";
-        public ImageSource FourthDefaultBrainImage = "FourthBrainImage";
-        public ImageSource FifthDefaultBrainImage = "FifthBrainImage";
+        private static int Fifty;
+        private ImageSource DefaultBrainImage = "FirstBrainImage";
+        private ImageSource SecondDefaultBrainImage = "SecondBrainImage";
+        private ImageSource ThirdDefaultBrainImage = "ThirdBrainImage";
+        private ImageSource FourthDefaultBrainImage = "FourthBrainImage";
+        private ImageSource FifthDefaultBrainImage = "FifthBrainImage";
+        private bool NextPage = false;
 
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7", "Image8", "Image8", "Image9", "Image10" };
 
@@ -79,6 +80,7 @@ namespace RememberGamees.PageModel
                 i = Fifty;
 
                 FifthBrain = "Null";
+                NextPage = true;
                 Application.Current.MainPage = new ScoreReactionPage();
                 
             }
@@ -204,15 +206,14 @@ namespace RememberGamees.PageModel
 
             Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
-                Application.Current.MainPage = new ScoreReactionPage();
-                Fifty = 0;
-                i = Fifty;
-
+                if (!NextPage)
+                {
+                    Application.Current.MainPage = new ScoreReactionPage();
+                    Fifty = 0;
+                    i = Fifty;
+                }
                 return false;
             });
-
-
-
         }
     }
 }
