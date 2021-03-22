@@ -46,13 +46,7 @@ namespace RememberGamees.PageModel
         public Command firstBtn_Clicked => new Command(() =>
         {           
             tapTimes.Add(DateTime.Now);
-            if (tapTimes.Count == 1)
-            {
-                fifty = i + 50;
-                i = fifty;
-                Experiences = fifty.ToString();
-            }
-            else if (randomImage == "Image1" || randomImage == "Image6" || randomImage == "Image8")
+            if (randomImage == "Image1" || randomImage == "Image6" || randomImage == "Image8")
             {
                 fifty = i + 50;
                 i = fifty;
@@ -111,55 +105,123 @@ namespace RememberGamees.PageModel
         });
 
         public Command secondBtn_Clicked => new Command(() =>
-        {
-
-            RandomI = ImageSource.FromFile(randomImage);
-            
-
+        {           
             tapTimes.Add(DateTime.Now);
-            if (tapTimes.Count == 1)
+            if (randomImage == "Image3" || randomImage == "Image5" || randomImage == "Image7")
             {
-                FirstBrain = "Null";
+                fifty = i + 50;
+                i = fifty;
+                Experiences = fifty.ToString();
             }
-
-            else if (tapTimes.Count == 2)
+            else if (randomImage == "Image1" || randomImage == "Image2" || randomImage == "Image4" || randomImage == "Image6" || randomImage == "Image8" || randomImage == "Image9")
             {
-                SecondBrain = "Null";
+                BrainsDeletes = b + 1;
+                b = BrainsDeletes;
             }
-
-            else if (tapTimes.Count == 3)
-            {
-                ThirdBrain = "Null";
-            }
-
-            else if (tapTimes.Count == 4)
-            {
-                FourthBrain = "Null";
-            }
-
             else
             {
                 fifty = 0;
                 i = fifty;
 
+                BrainsDeletes = 0;
+                b = BrainsDeletes;
+                NextPage = true;
+                Application.Current.MainPage = new ScoreReactionPage();
+            }
+
+            if (BrainsDeletes == 0)
+            {
+
+            }
+            else if (BrainsDeletes == 1)
+            {
+                FirstBrain = "Null";
+            }
+            else if (BrainsDeletes == 2)
+            {
+                SecondBrain = "Null";
+            }
+            else if (BrainsDeletes == 3)
+            {
+                ThirdBrain = "Null";
+            }
+            else if (BrainsDeletes == 4)
+            {
+                FourthBrain = "Null";
+            }
+            else
+            {
+                fifty = 0;
+                i = fifty;
+
+                BrainsDeletes = 0;
+                b = BrainsDeletes;
+
                 //FifthBrain = "Null";
                 NextPage = true;
                 Application.Current.MainPage = new ScoreReactionPage();
-                
             }
+            CreateRandomImage();
         });
 
         public Command thirdBtn_Clicked => new Command(() =>
         {
-            var rand = new Random();
-            var next = rand.Next(10);
-            var image = images[next];
+            tapTimes.Add(DateTime.Now);
+            if (randomImage == "Image2" || randomImage == "Image4" || randomImage == "Image9")
+            {
+                fifty = i + 50;
+                i = fifty;
+                Experiences = fifty.ToString();
+            }
+            else if (randomImage == "Image1" || randomImage == "Image3" || randomImage == "Image5" || randomImage == "Image6" || randomImage == "Image7" || randomImage == "Image8")
+            {
+                BrainsDeletes = b + 1;
+                b = BrainsDeletes;
+            }
+            else
+            {
+                fifty = 0;
+                i = fifty;
 
-            RandomI = ImageSource.FromFile(image);
+                BrainsDeletes = 0;
+                b = BrainsDeletes;
+                NextPage = true;
+                Application.Current.MainPage = new ScoreReactionPage();
+            }
 
-            fifty = i + 50;
-            i = fifty;
-            Experiences = fifty.ToString();
+            if (BrainsDeletes == 0)
+            {
+
+            }
+            else if (BrainsDeletes == 1)
+            {
+                FirstBrain = "Null";
+            }
+            else if (BrainsDeletes == 2)
+            {
+                SecondBrain = "Null";
+            }
+            else if (BrainsDeletes == 3)
+            {
+                ThirdBrain = "Null";
+            }
+            else if (BrainsDeletes == 4)
+            {
+                FourthBrain = "Null";
+            }
+            else
+            {
+                fifty = 0;
+                i = fifty;
+
+                BrainsDeletes = 0;
+                b = BrainsDeletes;
+
+                //FifthBrain = "Null";
+                NextPage = true;
+                Application.Current.MainPage = new ScoreReactionPage();
+            }
+            CreateRandomImage();
         });
 
         public ImageSource FifthBrain
