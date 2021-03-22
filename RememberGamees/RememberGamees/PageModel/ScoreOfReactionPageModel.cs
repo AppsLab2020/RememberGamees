@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace RememberGamees.PageModel
 {
-    class ScoreOfReactionPageModel : INotifyPropertyChanged
+    class ScoreOfReactionPageModel
     {
         public ScoreOfReactionPageModel()
         {
@@ -17,6 +17,5 @@ namespace RememberGamees.PageModel
         {
             Application.Current.MainPage = new GamePage();
         });
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
