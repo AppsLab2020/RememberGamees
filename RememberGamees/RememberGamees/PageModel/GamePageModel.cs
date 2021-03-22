@@ -14,9 +14,8 @@ namespace RememberGamees.PageModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public GamePageModel(INavigation navigation)
+        public GamePageModel()
         {
-            this.Navigation = navigation;
 
             this.GameBtnCommand = new Command( () =>
             {

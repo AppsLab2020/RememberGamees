@@ -17,7 +17,7 @@ namespace RememberGamees.Pages
         public GamePage()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel(Navigation);
+            BindingContext = new GamePageModel();
             auth = DependencyService.Get<IAuth>();
         }
 
