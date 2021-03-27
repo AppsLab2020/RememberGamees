@@ -15,7 +15,7 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 <img src="https://user-images.githubusercontent.com/72004230/109521769-f1d2ff80-7aad-11eb-8e39-6a6e1b57d12e.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/72004230/109522518-a705b780-7aae-11eb-8e75-06cb12308449.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/72004230/109523566-c94c0500-7aaf-11eb-8cc9-2d6ffdac7dd2.png" width="200" height="400">
 -Login Page s animovaným pozadím.
  
-<img src="https://user-images.githubusercontent.com/72004230/112728051-a3d2df80-8f25-11eb-90a9-bd70335871b1.png" width="200" height="400">-Prvá minihra zamraná na reflexy
+<img src="https://user-images.githubusercontent.com/72004230/112728051-a3d2df80-8f25-11eb-90a9-bd70335871b1.png" width="220" height="400">-Prvá minihra zamraná na reflexy
 
 <img src="https://user-images.githubusercontent.com/72004230/111081303-e72f5600-8502-11eb-93cc-5838725b2df4.png" width="200" height="400"> - hlavná stránka
 
