@@ -17,7 +17,8 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
  
 <img src="https://user-images.githubusercontent.com/72004230/112747852-489dfd00-8fb8-11eb-95e4-661a9a43746f.png" width="220" height="400">-Prvá minihra zamraná na reflexy
 
-<img src="https://user-images.githubusercontent.com/72004230/111081303-e72f5600-8502-11eb-93cc-5838725b2df4.png" width="200" height="400"> - hlavná stránka
+<img src="https://user-images.githubusercontent.com/72004230/112747907-aa5e6700-8fb8-11eb-8fe6-cb64672290fd.png" width="200" height="400"> - hlavná stránka
+
 
 
 
