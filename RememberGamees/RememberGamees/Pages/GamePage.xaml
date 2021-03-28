@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.GamePage"
              NavigationPage.HasBackButton="False"
-             BackgroundColor="White">
+             BackgroundColor="#D4FFF9">
     <ContentPage.Content>
         <StackLayout>
             <Grid Margin="0,15,0,10">
@@ -25,11 +25,14 @@
                     Text="Reaction Game"
                     FontSize="30"
                     FontAttributes="Bold"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#8DD5F8"
                     Command="{Binding GameBtnCommand}"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
+                    ContentLayout="Left"
+                    Image="bolt.png"
+                    
                     />
                 
                 <Button 
@@ -38,7 +41,7 @@
                     Text="Logical Game"
                     FontSize="30"
                     FontAttributes="Bold"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
@@ -50,7 +53,7 @@
                     Text="Another Game"
                     FontSize="30"
                     FontAttributes="Bold"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
@@ -62,7 +65,7 @@
                     Text="Another Game"
                     FontSize="30"
                     FontAttributes="Bold"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
@@ -79,10 +82,10 @@
                     BackgroundColor="#F9C802"
                     Grid.Row="9"
                     CornerRadius="30"
+                    BorderColor="Black"
+                    BorderWidth="2"
                     />
  
-            
-            
             </Grid>
         </StackLayout>
     </ContentPage.Content>

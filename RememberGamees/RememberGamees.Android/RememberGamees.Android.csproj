@@ -88,6 +88,7 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bolt.png" />
     <AndroidResource Include="Resources\drawable\FifthBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\FirstBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\FourthBrainImage.jpg" />
