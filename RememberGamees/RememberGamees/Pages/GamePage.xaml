@@ -6,30 +6,84 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-
-            <Image Source="GamePageImage"/>
-            <Image Source="Train_Your" WidthRequest="300"/>
-            <Image Source="Brain_Text" WidthRequest="300"/>
-
-
-
-            <Button HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"
-                    Margin="0, 0, 0, 0"
-                    WidthRequest="150"
-                    Text="Start"
-                    FontSize="40"
+            <Grid Margin="0,15,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+            
+                <Button 
+                    Grid.Row="0"
+                    WidthRequest="500"
+                    Text="Reaction Game"
+                    FontSize="30"
                     FontAttributes="Bold"
-                    BackgroundColor="White"
-                    BorderWidth="5"
-                    BorderColor="#4361ee"
-                    Command="{Binding GameBtnCommand}"></Button>
+                    BackgroundColor="Transparent"
+                    Command="{Binding GameBtnCommand}"
+                    CornerRadius="20"
+                    BorderColor="DarkOrange"
+                    BorderWidth="2"
+                    />
+                
+                <Button 
+                    Grid.Row="1"
+                    WidthRequest="500"
+                    Text="Logical Game"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    CornerRadius="20"
+                    BorderColor="DarkOrange"
+                    BorderWidth="2"
+                    />
+                
+                <Button 
+                    Grid.Row="2"
+                    WidthRequest="500"
+                    Text="Another Game"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    CornerRadius="20"
+                    BorderColor="DarkOrange"
+                    BorderWidth="2"
+                />
+                
+                <Button 
+                    Grid.Row="3"
+                    WidthRequest="500"
+                    Text="Another Game"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    CornerRadius="20"
+                    BorderColor="DarkOrange"
+                    BorderWidth="2"
+                    />
 
-            <Button
-                Text="SignOut"
-                Clicked="SignOutButton_Clicked"
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="Center"/>
+                <Button
+                    Text="SignOut"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Clicked="SignOutButton_Clicked"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center"
+                    BackgroundColor="#F9C802"
+                    Grid.Row="9"
+                    CornerRadius="30"
+                    />
+ 
+            
+            
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

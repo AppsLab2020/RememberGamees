@@ -19,7 +19,7 @@ namespace RememberGamees.PageModel
         private string randomImage;
         private bool nextPage = false;
 
-        private int _countSeconds = 60;
+        private int _countSeconds = 75;
         private int CountdownBrains;
         private int brainsDeletes = 0;
         private int AdditionExperience;
@@ -310,7 +310,7 @@ namespace RememberGamees.PageModel
                 return Convert.ToBoolean(_countSeconds);
             });
 
-            Device.StartTimer(TimeSpan.FromSeconds(60), () =>
+            Device.StartTimer(TimeSpan.FromMinutes(75), () =>
             {
                 if (!nextPage)
                 {
