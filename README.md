@@ -1,12 +1,3 @@
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
-
 # RememberGamees
 ## Čo je RememberGames ? 
 __RememberGames je mobilná aplikácia, ktorá sa skladá z viacerých minihier. Minihry budú zamerané na rýchlosť reakcií používateľa, jeho pamäť a logické myslenie.__
@@ -19,10 +10,8 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 2. Shell - vytvorenie menu, v ktorom bude prístup do zoznamu hier, historórie, achievementov a do užívateľských nastavení.
 3. Demo verzia prvej minihry zameranej na reflexy používateľa. Hra pozostáva z troch klikajúcich obrázkov a jedného náhodne generujúceho obrázku, ktorý sa po každom kliknutí jedného z troch buttonov náhodne vygeneruje. Úlohou hráča bude kliknutie takého istého, alebo ak nebude na výber taký istý, tak úplne opačného obrázka k náhodne zobrazenému obrázku, pričom každý obrázok má dva elementy, ktoré sa musia zhodovať(farba, znak). 
 
-```diff
-- text in red
+
 ## Druhá verzia aplikácie (druhé demo):
-```
 1. Návrh druhej minihry zameranej buď na pamäť alebo logiku.
 2. Zobrazovanie výsledkov v ScorePage (uložených v databáze).
 3. Reeditovenie login page, pretože datábaza má svoj vlastný návrh. 
