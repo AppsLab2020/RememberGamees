@@ -76,6 +76,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SplashActivity.cs" />
     <Compile Include="AuthDroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -101,7 +102,9 @@
     <AndroidResource Include="Resources\drawable\Image7.PNG" />
     <AndroidResource Include="Resources\drawable\Image8.png" />
     <AndroidResource Include="Resources\drawable\Image9.PNG" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\drawable\SecondBrainImage.jpg" />
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
     <AndroidResource Include="Resources\drawable\ThirdBrainImage.jpg" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
