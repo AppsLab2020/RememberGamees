@@ -66,7 +66,6 @@
                 FontAttributes="Bold"
                 HeightRequest="60"
                 Command="{Binding Button_Clicked}"/>
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

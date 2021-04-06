@@ -1,5 +1,4 @@
 ﻿using RememberGamees;
-
 using RememberGamees.Pages;
 using System;
 using Xamarin.Forms;
@@ -15,8 +14,7 @@ namespace RememberGamees
             InitializeComponent();
             Device.SetFlags(new[] { "Brush_Experimental" });
             MainPage = new ShellApp();
-            MainPage = new NavigationPage(new Page1());
-
+            MainPage = new Page1();
         }
     }
 }

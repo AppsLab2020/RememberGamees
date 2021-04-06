@@ -16,7 +16,7 @@ namespace RememberGamees.Pages
         public Page1()
         {
             InitializeComponent();
-            BindingContext = new LoginPageModel(Navigation);
+            BindingContext = new LoginPageModel();
             Task.Run(AnimBg);
         }
         private async void AnimBg()
@@ -31,6 +31,11 @@ namespace RememberGamees.Pages
                 bdGradient.Animate(name: "backward", callback: backward, start: 1, end: 0, length: 9000, easing: Easing.SinIn);
                 await Task.Delay(9000);
             }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
         }
     }
 }
