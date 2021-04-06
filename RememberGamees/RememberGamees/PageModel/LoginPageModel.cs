@@ -14,7 +14,6 @@ namespace RememberGamees.PageModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int DefaultChanging = 0;
-        public double DefaultBod;
 
         public LoginPageModel(INavigation navigation)
         {

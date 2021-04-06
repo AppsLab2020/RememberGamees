@@ -58,7 +58,7 @@
                     BorderColor="DarkOrange"
                     BorderWidth="2"
                 />
-                
+
                 <Button 
                     Grid.Row="3"
                     WidthRequest="500"
@@ -71,21 +71,6 @@
                     BorderWidth="2"
                     />
 
-                <Button
-                    Text="SignOut"
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    TextColor="Black"
-                    Clicked="SignOutButton_Clicked"
-                    HorizontalOptions="FillAndExpand" 
-                    VerticalOptions="Center"
-                    BackgroundColor="#F9C802"
-                    Grid.Row="9"
-                    CornerRadius="30"
-                    BorderColor="Black"
-                    BorderWidth="2"
-                    />
- 
             </Grid>
         </StackLayout>
     </ContentPage.Content>
