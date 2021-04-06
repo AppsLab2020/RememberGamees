@@ -310,7 +310,7 @@ namespace RememberGamees.PageModel
                 return Convert.ToBoolean(_countSeconds);
             });
 
-            Device.StartTimer(TimeSpan.FromMinutes(75), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
             {
                 if (!nextPage)
                 {
