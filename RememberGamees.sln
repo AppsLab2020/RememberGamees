@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RememberGamees.Android", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RememberGamees.iOS", "RememberGamees\RememberGamees.iOS\RememberGamees.iOS.csproj", "{349749FC-C140-458E-934D-3B7FE6964A01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RememberGamees", "RememberGamees\RememberGamees\RememberGamees.csproj", "{CD7AC1BA-C16C-4D84-847D-AE30F3BD2ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RememberGamees", "RememberGamees\RememberGamees\RememberGamees.csproj", "{CD7AC1BA-C16C-4D84-847D-AE30F3BD2ABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
