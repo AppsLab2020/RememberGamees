@@ -1,11 +1,9 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RememberGamees.Model
 {
-    class Experiences
+    public class Experiences
     {
         public Experiences()
         {

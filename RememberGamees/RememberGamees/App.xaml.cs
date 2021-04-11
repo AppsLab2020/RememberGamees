@@ -13,8 +13,8 @@ namespace RememberGamees
         {
             InitializeComponent();
             Device.SetFlags(new[] { "Brush_Experimental" });
-            MainPage = new ShellApp();
-            //MainPage = new Page1();
+            //MainPage = new ShellApp();
+            MainPage = new Page1();
         }
     }
 }
