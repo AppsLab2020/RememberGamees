@@ -8,8 +8,7 @@
     <StackLayout Margin="20,35,20,20">
         <Entry x:Name="nameEntry"
                Placeholder="Enter name" />
-        <Entry x:Name="ageEntry"
-               Text=""
+        <Entry x:Name="experiencesEntry"
                Placeholder="Enter age" />
         <Button Text="Add to Database"
                 Clicked="OnButtonClicked" />
@@ -19,7 +18,7 @@
                     <StackLayout>
                         <Label Text="{Binding Name}"
                                FontSize="Medium" />
-                        <Label Text="{Binding Age}"
+                        <Label Text="{Binding Experiences}"
                                TextColor="Silver"
                                FontSize="Small" />
                     </StackLayout>
