@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using RememberGamees.Pages;
 using System.Runtime.CompilerServices;
-using System.Net;
-using System.Collections.Specialized;
 
 namespace RememberGamees.PageModel
 {

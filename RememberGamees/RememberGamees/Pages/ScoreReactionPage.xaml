@@ -7,10 +7,7 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Click for go to the menu" Command="{Binding Button_Clicked}"  />
-            <Entry Text="{Binding txtName}" ></Entry>
-            <Entry Text="{Binding txtNumber}"></Entry>
-            <Button Text="save to database" Command="{Binding Save}"></Button>
+            <Button Text="Click for go to the menu" Command="{Binding Button_Clicked}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
