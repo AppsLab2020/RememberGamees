@@ -5,9 +5,26 @@
              NavigationPage.HasBackButton="False"
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
-    <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Click for go to the menu" Command="{Binding Button_Clicked}" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter name" />
+        <Entry x:Name="ageEntry"
+               Text=""
+               Placeholder="Enter age" />
+        <Button Text="Add to Database"
+                Clicked="OnButtonClicked" />
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                        <Label Text="{Binding Age}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,6 +23,11 @@ namespace RememberGamees.Data
         public Task<int> SavePersonAsync(Person person)
         {
             return _database.InsertAsync(person);
+        }
+
+        internal Task SavePersonAsync(Person person)
+        {
+            throw new NotImplementedException();
         }
     }
 }
