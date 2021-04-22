@@ -8,6 +8,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Click for go to the menu" Command="{Binding Button_Clicked}"  />
+            <Entry Text="{Binding txtName}" ></Entry>
+            <Entry Text="{Binding txtNumber}"></Entry>
+            <Button Text="save to database" Command="{Binding Save}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
