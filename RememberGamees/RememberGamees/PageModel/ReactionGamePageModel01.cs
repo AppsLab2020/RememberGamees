@@ -315,6 +315,7 @@ namespace RememberGamees.PageModel
                 if (!nextPage)
                 {
                     Application.Current.MainPage = new ScoreReactionPage();
+
                     fifty = 0;
                     AdditionExperience = fifty;
 

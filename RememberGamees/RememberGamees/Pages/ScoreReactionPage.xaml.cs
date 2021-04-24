@@ -26,15 +26,15 @@ namespace RememberGamees.Pages
 
         async void OnButtonClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ResultsEntry.Text))
+            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(resultsEntry.Text))
             {
                 await App.Database.SavePersonAsync(new Person
                 {
                     Name = nameEntry.Text,
-                    Results = int.Parse(ResultsEntry.Text)
+                    Results = int.Parse(resultsEntry.Text)
                 });
 
-                nameEntry.Text = ResultsEntry.Text = string.Empty;
+                nameEntry.Text = resultsEntry.Text = string.Empty;
                 collectionView.ItemsSource = await App.Database.GetPeopleAsync();
             }
         }

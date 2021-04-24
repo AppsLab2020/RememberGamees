@@ -8,8 +8,7 @@
     <StackLayout Margin="20,35,20,20">
         <Entry x:Name="nameEntry"
                Placeholder="Enter name" />
-        <Entry x:Name="ResultsEntry"
-               Placeholder="Enter age" />
+        <Entry x:Name="resultsEntry"/>
         <Button Text="Add to Database"
                 Clicked="OnButtonClicked" />
         <CollectionView x:Name="collectionView">

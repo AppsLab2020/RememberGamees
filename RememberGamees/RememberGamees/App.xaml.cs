@@ -28,7 +28,7 @@ namespace RememberGamees
 
             Device.SetFlags(new[] { "Brush_Experimental" });
             //MainPage = new ShellApp();
-            MainPage = new Page1();
+            MainPage = new NavigationPage(new GamePage());
         }
 
         protected override void OnStart()

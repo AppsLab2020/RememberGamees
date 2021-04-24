@@ -16,7 +16,7 @@ namespace RememberGamees.Pages
         public GamePage()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel();
+            BindingContext = new GamePageModel(Navigation);
         }
     }
 }

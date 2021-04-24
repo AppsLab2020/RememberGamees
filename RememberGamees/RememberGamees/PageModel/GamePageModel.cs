@@ -4,38 +4,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace RememberGamees.PageModel
 {
-    class GamePageModel : INotifyPropertyChanged
+    class GamePageModel
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public GamePageModel()
+        public GamePageModel(INavigation navigation)
         {
-
-            this.GameBtnCommand = new Command( () =>
-            {
-                Application.Current.MainPage = new ReactionGamePage01();
-            });
-
+            this.Navigation = navigation;
+            this.GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReactionGamePage01()));
         }
 
-        //public async System.Threading.Tasks.Task GotoPage2Async()
-        //{
-        //    await Navigation.PushAsync(new ReactionGamePage01());
-        //}
-
-        
-        public Command GameBtnCommand { get; }
-        public INavigation Navigation { get; }
-
-        protected virtual void OnPropertyChanges([CallerMemberName] string PropertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
-        }
+        public INavigation Navigation { get; set; }
+        public Command GameBtnCommand { get; set; }
     }
 }
