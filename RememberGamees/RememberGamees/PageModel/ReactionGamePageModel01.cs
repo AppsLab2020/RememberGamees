@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using Xamarin.Forms;
-using System.Timers;
-using System.Threading;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using RememberGamees.Pages;
-using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace RememberGamees.PageModel
 {
@@ -17,6 +12,7 @@ namespace RememberGamees.PageModel
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7", "Image8", "Image8", "Image9" };
         private string defaultTime = "";
         private string randomImage;
+        private string setExperience;
         private bool nextPage = false;
 
         private int _countSeconds = 75;
@@ -39,7 +35,7 @@ namespace RememberGamees.PageModel
         private ImageSource seventhImage = "Image7";
         private ImageSource eighthImage = "Image8";
         private ImageSource ninethImage = "Image9";
-
+        public INavigation Navigation { get; set; }
         public ImageSource FifthBrain
         {
             get => fifthDefaultBrainImage;
@@ -108,15 +104,15 @@ namespace RememberGamees.PageModel
 
         public string Experiences
         {
-            get => defaultTime;
+            get => setExperience;
             set
             {
-                defaultTime = value;
+                setExperience = value;
                 PropertyChanged?
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences)));
             }
         }
-
+        
         public string TimerTxt
         {
             get => defaultTime;
@@ -130,7 +126,7 @@ namespace RememberGamees.PageModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Command firstBtn_Clicked => new Command(() =>
+        public Command firstBtn_Clicked => new Command(async () =>
         {           
             if (randomImage == "Image1" || randomImage == "Image6" || randomImage == "Image8")
             {
@@ -151,7 +147,7 @@ namespace RememberGamees.PageModel
                 brainsDeletes = 0;
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
 
             if(brainsDeletes == 0)
@@ -181,13 +177,13 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
 
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
 
             CreateRandomImage();
         });
 
-        public Command secondBtn_Clicked => new Command(() =>
+        public Command secondBtn_Clicked => new Command(async () =>
         {           
             if (randomImage == "Image3" || randomImage == "Image5" || randomImage == "Image7")
             {
@@ -208,7 +204,7 @@ namespace RememberGamees.PageModel
                 brainsDeletes = 0;
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
 
             if (brainsDeletes == 0)
@@ -238,12 +234,12 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
 
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
             CreateRandomImage();
         });
 
-        public Command thirdBtn_Clicked => new Command(() =>
+        public Command thirdBtn_Clicked => new Command(async () =>
         {
             if (randomImage == "Image2" || randomImage == "Image4" || randomImage == "Image9")
             {
@@ -264,7 +260,7 @@ namespace RememberGamees.PageModel
                 brainsDeletes = 0;
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
 
             if (brainsDeletes == 0)
@@ -296,13 +292,14 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
 
                 nextPage = true;
-                Application.Current.MainPage = new ScoreReactionPage();
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences));
             }
             CreateRandomImage();
         });
 
-        public ReactionGamePageModel01()
+        public ReactionGamePageModel01(INavigation navigation)
         {
+            this.Navigation = navigation;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 _countSeconds--;
@@ -314,7 +311,11 @@ namespace RememberGamees.PageModel
             {
                 if (!nextPage)
                 {
-                    Application.Current.MainPage = new ScoreReactionPage();
+                    Task.Factory.StartNew(async () =>
+                    {
+                        await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+                    });
+                    
 
                     fifty = 0;
                     AdditionExperience = fifty;

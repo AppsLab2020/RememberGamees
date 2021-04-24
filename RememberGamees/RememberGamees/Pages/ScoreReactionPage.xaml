@@ -6,6 +6,7 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
     <StackLayout Margin="20,35,20,20">
+        <Label x:Name="userExperience"/>
         <Entry x:Name="nameEntry"
                Placeholder="Enter name" />
         <Entry x:Name="resultsEntry"/>
@@ -15,8 +16,6 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
-                        <Label Text="{Binding Name}"
-                               FontSize="Medium" />
                         <Label Text="{Binding Results}"
                                TextColor="Silver"
                                FontSize="Small" />

@@ -40,8 +40,8 @@
                 <ImageButton Command="{Binding secondBtn_Clicked}" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image5.png" Grid.Column="2" Grid.Row="4" WidthRequest="75" HeightRequest="75"/>
                 <ImageButton Command="{Binding thirdBtn_Clicked}" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image9.png" Grid.Column="3" Grid.Row="4" WidthRequest="75" HeightRequest="75"/>
                 
-                <Label Text="{Binding TimerTxt }" x:Name="Timer" FontSize="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor ="Black" Grid.Column="2"  Grid.Row="1"/>
                 <Label Text="{Binding Experiences}" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="5" FontSize="30" TextColor="Black" FontAttributes="Bold" WidthRequest="250"/>
+                <Label Text="{Binding TimerTxt }" FontSize="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor ="Black" Grid.Column="2"  Grid.Row="1"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

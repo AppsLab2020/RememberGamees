@@ -1,14 +1,4 @@
-﻿using Android;
-using Android.OS;
-using Android.Widget;
-
-using RememberGamees.Pages;
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Net;
-using System.Text;
+﻿using RememberGamees.Pages;
 using Xamarin.Forms;
 
 namespace RememberGamees.PageModel
