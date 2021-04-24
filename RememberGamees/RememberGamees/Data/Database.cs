@@ -12,15 +12,15 @@ namespace RememberGamees.Data
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Person>().Wait();
+            _database.CreateTableAsync<ExperienceOfPerson>().Wait();
         }
 
-        public Task<List<Person>> GetPeopleAsync()
+        public Task<List<ExperienceOfPerson>> GetPeopleAsync()
         {
-            return _database.Table<Person>().ToListAsync();
+            return _database.Table<ExperienceOfPerson>().ToListAsync();
         }
 
-        public Task<int> SavePersonAsync(Person person)
+        public Task<int> SavePersonAsync(ExperienceOfPerson person)
         {
             return _database.InsertAsync(person);
         }

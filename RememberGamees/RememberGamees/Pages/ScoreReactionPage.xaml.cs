@@ -3,7 +3,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using RememberGamees.Data;
-using Person = RememberGamees.Data.Person;
+using Person = RememberGamees.Data.ExperienceOfPerson;
 
 namespace RememberGamees.Pages
 {
@@ -26,15 +26,15 @@ namespace RememberGamees.Pages
 
         async void OnButtonClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(experiencesEntry.Text))
+            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ResultsEntry.Text))
             {
                 await App.Database.SavePersonAsync(new Person
                 {
                     Name = nameEntry.Text,
-                    Experiences = int.Parse(experiencesEntry.Text)
+                    Results = int.Parse(ResultsEntry.Text)
                 });
 
-                nameEntry.Text = experiencesEntry.Text = string.Empty;
+                nameEntry.Text = ResultsEntry.Text = string.Empty;
                 collectionView.ItemsSource = await App.Database.GetPeopleAsync();
             }
         }

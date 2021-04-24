@@ -5,11 +5,11 @@ using System.Text;
 
 namespace RememberGamees.Data
 {
-    public class Person
+    public class ExperienceOfPerson
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Experiences { get; set; }
+        public int Results { get; set; }
     }
 }
