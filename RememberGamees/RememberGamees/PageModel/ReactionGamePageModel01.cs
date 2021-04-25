@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using RememberGamees.Pages;
 using System.Threading.Tasks;
+using Person = RememberGamees.Data.ExperienceOfPerson;
 
 namespace RememberGamees.PageModel
 {
@@ -307,13 +308,23 @@ namespace RememberGamees.PageModel
                 return Convert.ToBoolean(_countSeconds);
             });
 
-            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
             {
                 if (!nextPage)
                 {
+
                     Task.Factory.StartNew(async () =>
                     {
                         await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+
+                        if (!string.IsNullOrWhiteSpace(Experiences))
+                        {
+                            await App.Database.SavePersonAsync(new Person
+                            {
+                                Results = int.Parse(Experiences)
+                            });
+                        }
                     });
                     
 

@@ -10,11 +10,6 @@
         <Button Text="Achievements"
                 Command="{Binding SeeAchievements}"/>
         <Label x:Name="userExperience"/>
-        <Entry x:Name="nameEntry"
-               Placeholder="Enter name" />
-        <Entry x:Name="resultsEntry"/>
-        <Button Text="Add to Database"
-                Clicked="OnButtonClicked" />
         <CollectionView x:Name="collectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

@@ -22,20 +22,6 @@ namespace RememberGamees.Pages
             Shell.SetTabBarIsVisible(this, false);
         }
 
-        async void OnButtonClicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(userExperience.Text))
-            {
-                await App.Database.SavePersonAsync(new Person
-                {
-                    Results = int.Parse(userExperience.Text)
-                });
-
-                nameEntry.Text = resultsEntry.Text = string.Empty;
-                collectionView.ItemsSource = await App.Database.GetPeopleAsync();
-            }
-        }
-
         protected override async void OnAppearing()
         {
             base.OnAppearing();
