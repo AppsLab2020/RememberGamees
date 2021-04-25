@@ -15,7 +15,7 @@ namespace RememberGamees.Pages
         {
             InitializeComponent();
             BindingContext = new ScoreOfReactionPageModel(Navigation);
-            userExperience.Text = expParameter;
+            userExperience.Text = "Your score: " + expParameter;
 
 
 

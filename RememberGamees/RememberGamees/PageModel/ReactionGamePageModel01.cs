@@ -149,6 +149,14 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
 
             if(brainsDeletes == 0)
@@ -179,6 +187,14 @@ namespace RememberGamees.PageModel
 
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
 
             CreateRandomImage();
@@ -206,6 +222,14 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
 
             if (brainsDeletes == 0)
@@ -236,6 +260,14 @@ namespace RememberGamees.PageModel
 
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
             CreateRandomImage();
         });
@@ -262,6 +294,14 @@ namespace RememberGamees.PageModel
                 CountdownBrains = brainsDeletes;
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
 
             if (brainsDeletes == 0)
@@ -294,6 +334,14 @@ namespace RememberGamees.PageModel
 
                 nextPage = true;
                 await Navigation.PushAsync(new ScoreReactionPage(Experiences));
+
+                if (!string.IsNullOrWhiteSpace(Experiences))
+                {
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences)
+                    });
+                }
             }
             CreateRandomImage();
         });
@@ -308,7 +356,7 @@ namespace RememberGamees.PageModel
                 return Convert.ToBoolean(_countSeconds);
             });
 
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
             {
                 if (!nextPage)
                 {
