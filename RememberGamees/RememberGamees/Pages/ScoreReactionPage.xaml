@@ -6,6 +6,9 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
     <StackLayout Margin="20,35,20,20">
+        <Button Command="{Binding Button_Clicked}"/>
+        <Button Text="Achievements"
+                Command="{Binding SeeAchievements}"/>
         <Label x:Name="userExperience"/>
         <Entry x:Name="nameEntry"
                Placeholder="Enter name" />

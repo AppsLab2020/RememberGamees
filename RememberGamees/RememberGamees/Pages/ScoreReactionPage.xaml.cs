@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Person = RememberGamees.Data.ExperienceOfPerson;
 using System.ComponentModel;
+using RememberGamees.PageModel;
 
 namespace RememberGamees.Pages
 {
@@ -13,7 +14,7 @@ namespace RememberGamees.Pages
         public ScoreReactionPage(string expParameter)
         {
             InitializeComponent();
-            //BindingContext = new ScoreOfReactionPageModel();
+            BindingContext = new ScoreOfReactionPageModel(Navigation);
             userExperience.Text = expParameter;
 
 
