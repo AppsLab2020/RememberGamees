@@ -15,17 +15,18 @@ namespace RememberGamees.PageModel
 
         public int DefaultChanging = 0;
 
-        public LoginPageModel()
+        public LoginPageModel(INavigation navigation)
         {
-
+            this.Navigation = navigation;
             Button_Clicked = new Command(async () =>
             {
-                Application.Current.MainPage = new GamePage();
+                await Navigation.PushAsync(new GamePage());
             });
 
             
         }
-        public Command Button_Clicked { get; }
+        public Command Button_Clicked { get; set; }
+        public INavigation Navigation { get; set; }
 
         protected virtual void OnPropertyChanges([CallerMemberName] string PropertyName = null)
         {

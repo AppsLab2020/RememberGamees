@@ -16,7 +16,7 @@ namespace RememberGamees.Pages
         public Page1()
         {
             InitializeComponent();
-            BindingContext = new LoginPageModel();
+            BindingContext = new LoginPageModel(Navigation);
             Task.Run(AnimBg);
         }
         private async void AnimBg()
