@@ -4,7 +4,9 @@
              x:Class="RememberGamees.Pages.MemoryGamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Is this shape matching with previous?"/>
+            <Label Text="{Binding Experiences2}" />
+            <Label Text="{Binding NewestRandNumb}"/>
+            <Label Text="{Binding randNumb}"/>
             <Button Text="Yes"
                     Command="{Binding Yes_Clicked}"/>
             <Button Text="No"
