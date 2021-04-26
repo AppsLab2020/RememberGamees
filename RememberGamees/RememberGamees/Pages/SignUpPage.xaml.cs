@@ -30,7 +30,7 @@ namespace RememberGamees.Pages
 
                 if (signOut)
                 {
-                    Application.Current.MainPage = new MainPage();
+                   await Navigation.PushAsync(new MainPage()); 
                 }
                 else
                 {

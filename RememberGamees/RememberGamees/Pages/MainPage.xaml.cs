@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,7 +20,7 @@ namespace RememberGamees.Pages
             if (token != string.Empty)
             {
                 await DisplayAlert("Uid", token, "Ok");
-                Application.Current.MainPage = new GamePage();
+                await Navigation.PushAsync(new GamePage());
             }
             else
             {
@@ -34,14 +29,15 @@ namespace RememberGamees.Pages
 
         }
 
-        void SignUpClicked(object sender, EventArgs e)
+        async void SignUpClicked(object sender, EventArgs e)
         {
             var signOut = auth.SignOut();
 
             if (signOut)
             {
-                Application.Current.MainPage = new SignUpPage();
+                await Navigation.PushAsync(new ReactionGamePage01());
             }
         }
+        
     }
 }

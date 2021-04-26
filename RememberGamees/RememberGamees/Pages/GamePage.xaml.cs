@@ -17,18 +17,18 @@ namespace RememberGamees.Pages
         public GamePage()
         {
             InitializeComponent();
-            //BindingContext = new GamePageModel(Navigation);
+            BindingContext = new GamePageModel(Navigation);
             auth = DependencyService.Get<IAuth>();
         }
 
-        void SignOutButton_Clicked(object sender, EventArgs e)
-        {
-            var signOut = auth.SignOut();
+        //void SignOutButton_Clicked(object sender, EventArgs e)
+        //{
+        //    var signOut = auth.SignOut();
 
-            if (signOut)
-            {
-                Navigation.PushAsync(new ReactionGamePage01());
-            }
-        }
+        //    if (signOut)
+        //    {
+        //        Navigation.PushAsync(new MainPage());
+        //    }
+        //}
     }
 }

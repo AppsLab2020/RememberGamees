@@ -16,7 +16,7 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(AuthDroid))]
 namespace RememberGamees.Droid
 {
-    class AuthDroid : IAuth
+    public class AuthDroid : IAuth
     {
         public bool IsSignIn()
         {
