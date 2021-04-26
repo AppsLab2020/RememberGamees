@@ -13,10 +13,22 @@ namespace RememberGamees.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GamePage : ContentPage
     {
+        IAuth auth;
         public GamePage()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel(Navigation);
+            //BindingContext = new GamePageModel(Navigation);
+            auth = DependencyService.Get<IAuth>();
+        }
+
+        void SignOutButton_Clicked(object sender, EventArgs e)
+        {
+            var signOut = auth.SignOut();
+
+            if (signOut)
+            {
+                Navigation.PushAsync(new ReactionGamePage01());
+            }
         }
     }
 }

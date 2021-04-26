@@ -6,6 +6,11 @@
              BackgroundColor="#D4FFF9">
     <ContentPage.Content>
         <StackLayout>
+            <Button
+                Text="SignOut"
+                Clicked="SignOutButton_Clicked"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center"/>
             <Grid Margin="0,15,0,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"/>
