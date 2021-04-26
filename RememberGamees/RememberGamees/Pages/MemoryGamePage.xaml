@@ -9,6 +9,7 @@
                     Command="{Binding Yes_Clicked}"/>
             <Button Text="No"
                     Command="{Binding No_Clicked}"/>
+            <Image Source="{Binding RandomI}"   WidthRequest="100" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
