@@ -1,5 +1,4 @@
-﻿using RememberGamees.PageModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace RememberGamees.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GamePage : ContentPage
+    public partial class MemoryGamePage : ContentPage
     {
-        IAuth auth;
-        public GamePage()
+        public MemoryGamePage()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel(Navigation);
-            auth = DependencyService.Get<IAuth>();
         }
     }
 }

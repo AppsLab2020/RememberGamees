@@ -18,10 +18,12 @@ namespace RememberGamees.PageModel
             Navigation = navigation;
             GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReactionGamePage01()));
             SignOutButton_Clicked = new Command(async () => await Navigation.PushAsync(new MainPage()));
+            MemoryGame_Clicked = new Command(async () => await Navigation.PushAsync(new MemoryGamePage()));
         }
 
         public INavigation Navigation { get; set; }
         public Command GameBtnCommand { get; set; }
         public Command SignOutButton_Clicked { get; set; }
+        public Command MemoryGame_Clicked { get; set; }
     }
 }

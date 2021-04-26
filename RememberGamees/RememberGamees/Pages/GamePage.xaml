@@ -41,9 +41,10 @@
                     />
                 
                 <Button 
+                    Command="{Binding MemoryGame_Clicked}"
                     Grid.Row="1"
                     WidthRequest="500"
-                    Text="Logical Game"
+                    Text="Memory Game"
                     FontSize="30"
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"

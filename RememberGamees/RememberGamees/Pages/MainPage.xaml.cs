@@ -35,7 +35,7 @@ namespace RememberGamees.Pages
 
             if (signOut)
             {
-                await Navigation.PushAsync(new ReactionGamePage01());
+                await Navigation.PushAsync(new SignUpPage());
             }
         }
         
