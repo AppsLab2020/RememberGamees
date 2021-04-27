@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Android.App;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
+using Person = RememberGamees.Data.ExperienceOfPerson;
 
 namespace RememberGamees.PageModel
 {
@@ -83,13 +85,18 @@ namespace RememberGamees.PageModel
             CreateRandomImage();
         });
 
-        public Command No_Clicked => new Command( () =>
+        public Command No_Clicked => new Command(async () =>
         {
             if (NewestRandNumb != randNumb)
             {
                 fifty = AdditionExperience + 50;
                 AdditionExperience = fifty;
                 Experiences2 = AdditionExperience.ToString();
+
+                await App.Database.SavePersonAsync(new Person
+                {
+                    Results = int.Parse(Experiences2)
+                });
             }
 
             newRandomImage = randomImage;
