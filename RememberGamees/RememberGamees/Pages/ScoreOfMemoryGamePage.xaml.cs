@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RememberGamees.PageModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace RememberGamees.Pages
         public ScoreOfMemoryGamePage()
         {
             InitializeComponent();
+            BindingContext = new ScoreOfMemoryPageModel(Navigation);
         }
     }
 }

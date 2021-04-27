@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using RememberGamees.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,21 +72,34 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences2)));
             }
         }
+        public Command Yes_Clicked { get; set; }
+        public Command No_Clicked { get; set; }
 
-        public Command Yes_Clicked => new Command( () =>
+        public MemoryGamePageModel(INavigation navigation)
         {
-            if (NewestRandNumb == randNumb)
+            Yes_Clicked = new Command(async () =>
             {
-                fifty = AdditionExperience + 50;
-                AdditionExperience = fifty;
-                Experiences2 = AdditionExperience.ToString();
-            }
+                if (NewestRandNumb == randNumb)
+                {
+                    fifty = AdditionExperience + 50;
+                    AdditionExperience = fifty;
+                    Experiences2 = AdditionExperience.ToString();
 
-            newRandomImage = randomImage;
-            CreateRandomImage();
-        });
+                    await App.Database.SavePersonAsync(new Person
+                    {
+                        Results = int.Parse(Experiences2)
+                    });
+                }
+                else
+                {
+                    await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                }
 
-        public Command No_Clicked => new Command(async () =>
+                newRandomImage = randomImage;
+                CreateRandomImage();
+            });
+
+            No_Clicked = new Command(async () =>
         {
             if (NewestRandNumb != randNumb)
             {
@@ -98,15 +112,15 @@ namespace RememberGamees.PageModel
                     Results = int.Parse(Experiences2)
                 });
             }
+            else
+            {
+                await navigation.PushAsync(new ScoreOfMemoryGamePage());
+            }
 
             newRandomImage = randomImage;
             CreateRandomImage();
         });
-
-        public MemoryGamePageModel()
-        {
-
-        }
+    }
         private void CreateRandomImage()
         {
             var rand = new Random();
