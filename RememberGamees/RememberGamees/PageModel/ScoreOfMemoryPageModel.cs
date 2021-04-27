@@ -10,9 +10,9 @@ namespace RememberGamees.PageModel
     {
         public ScoreOfMemoryPageModel(INavigation navigation)
         {
-                    ScoreButton = new Command(async () => await navigation.PopToRootAsync());
+                    RootButton = new Command(async () => await navigation.PopToRootAsync());
         }
         public INavigation navigation { get; set; }
-        public Command ScoreButton { get; set; }
+        public Command RootButton { get; set; }
     }
 }

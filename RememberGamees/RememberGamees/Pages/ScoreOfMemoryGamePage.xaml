@@ -7,7 +7,18 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Command="{Binding ScoreButton}"/>
+            <Button Command="{Binding RootButton}"/>
+            <CollectionView x:Name="collectionView" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Results}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

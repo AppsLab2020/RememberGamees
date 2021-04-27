@@ -14,7 +14,6 @@ namespace RememberGamees.PageModel
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7"};
         private string randomImage;
         private string newRandomImage { get; set; }
-        private int nullExperience;
 
         private ImageSource firstImage = "Image1";
         private ImageSource secondImage = "Image2";
@@ -84,14 +83,14 @@ namespace RememberGamees.PageModel
                     fifty = AdditionExperience + 50;
                     AdditionExperience = fifty;
                     Experiences2 = AdditionExperience.ToString();
-
+                }
+                else
+                {
                     await App.Database.SavePersonAsync(new Person
                     {
                         Results = int.Parse(Experiences2)
                     });
-                }
-                else
-                {
+
                     await navigation.PushAsync(new ScoreOfMemoryGamePage());
                 }
 
@@ -106,14 +105,14 @@ namespace RememberGamees.PageModel
                 fifty = AdditionExperience + 50;
                 AdditionExperience = fifty;
                 Experiences2 = AdditionExperience.ToString();
-
+            }
+            else
+            {
                 await App.Database.SavePersonAsync(new Person
                 {
                     Results = int.Parse(Experiences2)
                 });
-            }
-            else
-            {
+
                 await navigation.PushAsync(new ScoreOfMemoryGamePage());
             }
 
