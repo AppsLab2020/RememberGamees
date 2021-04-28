@@ -13,59 +13,56 @@ namespace RememberGamees.PageModel
     class MemoryGamePageModel : INotifyPropertyChanged
     {
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4"};
-        private string randomImage;
-        private string newRandomImage { get; set; }
+        private string _stringNewRandomImage;
+        private string _stringOldRandomImage;
 
-        private ImageSource firstImage = "Image1";
-        private ImageSource secondImage = "Image2";
-        private ImageSource thirdImage = "Image3";
-        private ImageSource fourthImage = "Image4";
+        private ImageSource _firstImage = "Image1";
 
-        private int AdditionExperience;
-        private int fifty;
+        private int _additionExperience;
+        private int _fifty;
 
-        private string setExperience;
+        private string _setExperience = "0";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ImageSource RandomI
+        public ImageSource RandomImage
         {
-            get => firstImage;
+            get => _firstImage;
             set
             {
-                firstImage = value;
+                _firstImage = value;
                 PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(RandomI)));
+                .Invoke(this, new PropertyChangedEventArgs(nameof(RandomImage)));
             }
         }
-        public string randNumb
+        public string NewRandImageInLabel
         {
-            get => randomImage;
+            get => _stringNewRandomImage;
             set
             {
-                firstImage = value;
+                _firstImage = value;
                 PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(randNumb)));
+                .Invoke(this, new PropertyChangedEventArgs(nameof(NewRandImageInLabel)));
             }
         }
 
-        public string NewestRandNumb
+        public string OldRandImageInLabel
         {
-            get => newRandomImage;
+            get => _stringOldRandomImage;
             set
             {
-                firstImage = value;
+                _firstImage = value;
                 PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(NewestRandNumb)));
+                .Invoke(this, new PropertyChangedEventArgs(nameof(OldRandImageInLabel)));
             }
         }
 
         public string Experiences2
         {
-            get => setExperience;
+            get => _setExperience;
             set
             {
-                setExperience = value;
+                _setExperience = value;
                 PropertyChanged?
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences2)));
             }
@@ -75,14 +72,15 @@ namespace RememberGamees.PageModel
 
         public MemoryGamePageModel(INavigation navigation)
         {
+            _stringNewRandomImage = "";
             DisplayRandomImage();
             Yes_Clicked = new Command(async () =>
             {
-                if (NewestRandNumb == randNumb || randomImage == firstImage.ToString())
+                if (OldRandImageInLabel == NewRandImageInLabel || NewRandImageInLabel == _firstImage.ToString())
                 {
-                    fifty = AdditionExperience + 50;
-                    AdditionExperience = fifty;
-                    Experiences2 = AdditionExperience.ToString();
+                    _fifty = _additionExperience + 50;
+                    _additionExperience = _fifty;
+                    Experiences2 = _additionExperience.ToString();
                 }
                 else
                 {
@@ -95,17 +93,17 @@ namespace RememberGamees.PageModel
 
                 }
 
-                newRandomImage = randomImage;
+                _stringOldRandomImage = _stringNewRandomImage;
                 CreateRandomImage();
             });
 
             No_Clicked = new Command(async () =>
             {
-            if (NewestRandNumb != randNumb)
+            if (OldRandImageInLabel != NewRandImageInLabel)
             {
-                fifty = AdditionExperience + 50;
-                AdditionExperience = fifty;
-                Experiences2 = AdditionExperience.ToString();
+                    _fifty = _additionExperience + 50;
+                    _additionExperience = _fifty;
+                Experiences2 = _additionExperience.ToString();
             }
             else
             {
@@ -117,7 +115,7 @@ namespace RememberGamees.PageModel
                 await navigation.PushAsync(new ScoreOfMemoryGamePage());
             }
 
-            newRandomImage = randomImage;
+            _stringOldRandomImage = _stringNewRandomImage;
             CreateRandomImage();
             });
 
@@ -128,8 +126,8 @@ namespace RememberGamees.PageModel
             {
                 var rand = new Random();
                 var next = rand.Next(4);
-                randomImage = images[next];
-                RandomI = ImageSource.FromFile(randomImage);
+                _stringNewRandomImage = images[next];
+                RandomImage = ImageSource.FromFile(_stringNewRandomImage);
                 return false;
             });
         }
@@ -137,8 +135,8 @@ namespace RememberGamees.PageModel
         {
             var rand = new Random();
             var next = rand.Next(4);
-            randomImage = images[next];
-            RandomI = ImageSource.FromFile(randomImage);
+            _stringNewRandomImage = images[next];
+            RandomImage = ImageSource.FromFile(_stringNewRandomImage);
         }
     }
 }

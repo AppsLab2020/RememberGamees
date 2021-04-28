@@ -5,13 +5,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Experiences2}" />
-            <Label Text="{Binding NewestRandNumb}"/>
-            <Label Text="{Binding randNumb}"/>
+            <Label Text="{Binding OldRandImageInLabel}"/>
+            <Label Text="{Binding NewRandImageInLabel}"/>
             <Button Text="Yes"
                     Command="{Binding Yes_Clicked}"/>
             <Button Text="No"
                     Command="{Binding No_Clicked}"/>
-            <Image Source="{Binding RandomI}"   WidthRequest="100" />
+            <Image Source="{Binding RandomImage}"   WidthRequest="100" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
