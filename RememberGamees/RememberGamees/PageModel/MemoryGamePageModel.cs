@@ -15,13 +15,12 @@ namespace RememberGamees.PageModel
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4"};
         private string _stringNewRandomImage;
         private string _stringOldRandomImage;
+        private string _setExperience = "0";
 
         private ImageSource _firstImage = "Image1";
 
         private int _additionExperience;
         private int _fifty;
-
-        private string _setExperience = "0";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -35,27 +34,9 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(RandomImage)));
             }
         }
-        public string NewRandImageInLabel
-        {
-            get => _stringNewRandomImage;
-            set
-            {
-                _firstImage = value;
-                PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(NewRandImageInLabel)));
-            }
-        }
+        public string NewRandImageInLabel{get => _stringNewRandomImage;}
 
-        public string OldRandImageInLabel
-        {
-            get => _stringOldRandomImage;
-            set
-            {
-                _firstImage = value;
-                PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(OldRandImageInLabel)));
-            }
-        }
+        public string OldRandImageInLabel{get => _stringOldRandomImage;}
 
         public string Experiences2
         {
@@ -72,11 +53,10 @@ namespace RememberGamees.PageModel
 
         public MemoryGamePageModel(INavigation navigation)
         {
-            _stringNewRandomImage = "";
             DisplayRandomImage();
             Yes_Clicked = new Command(async () =>
             {
-                if (OldRandImageInLabel == NewRandImageInLabel || NewRandImageInLabel == _firstImage.ToString())
+                if (OldRandImageInLabel == NewRandImageInLabel || _stringNewRandomImage == _firstImage.ToString())
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
