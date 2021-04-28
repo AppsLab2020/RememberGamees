@@ -387,6 +387,7 @@ namespace RememberGamees.PageModel
 
             CreateRandomImage();
         }
+        
         private void CreateRandomImage()
         {
             var rand = new Random();

@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using RememberGamees.Data;
 using RememberGamees.Pages;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace RememberGamees.PageModel
 {
     class MemoryGamePageModel : INotifyPropertyChanged
     {
-        List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7"};
+        List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4"};
         private string randomImage;
         private string newRandomImage { get; set; }
 
@@ -19,8 +20,6 @@ namespace RememberGamees.PageModel
         private ImageSource secondImage = "Image2";
         private ImageSource thirdImage = "Image3";
         private ImageSource fourthImage = "Image4";
-        private ImageSource fivethImage = "Image5";
-        private ImageSource sixthImage = "Image6";
 
         private int AdditionExperience;
         private int fifty;
@@ -76,9 +75,10 @@ namespace RememberGamees.PageModel
 
         public MemoryGamePageModel(INavigation navigation)
         {
+            DisplayRandomImage();
             Yes_Clicked = new Command(async () =>
             {
-                if (NewestRandNumb == randNumb)
+                if (NewestRandNumb == randNumb || randomImage == firstImage.ToString())
                 {
                     fifty = AdditionExperience + 50;
                     AdditionExperience = fifty;
@@ -92,6 +92,7 @@ namespace RememberGamees.PageModel
                     });
 
                     await navigation.PushAsync(new ScoreOfMemoryGamePage());
+
                 }
 
                 newRandomImage = randomImage;
@@ -99,7 +100,7 @@ namespace RememberGamees.PageModel
             });
 
             No_Clicked = new Command(async () =>
-        {
+            {
             if (NewestRandNumb != randNumb)
             {
                 fifty = AdditionExperience + 50;
@@ -118,19 +119,26 @@ namespace RememberGamees.PageModel
 
             newRandomImage = randomImage;
             CreateRandomImage();
-        });
-    }
+            });
+
+        }
+        private void DisplayRandomImage()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                var rand = new Random();
+                var next = rand.Next(4);
+                randomImage = images[next];
+                RandomI = ImageSource.FromFile(randomImage);
+                return false;
+            });
+        }
         private void CreateRandomImage()
         {
             var rand = new Random();
-            var next = rand.Next(7);
+            var next = rand.Next(4);
             randomImage = images[next];
             RandomI = ImageSource.FromFile(randomImage);
-            async void WriteRandString()
-            {
-            randNumb = next.ToString();
-            }
-           
         }
     }
 }
