@@ -24,28 +24,28 @@ namespace RememberGamees.PageModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ImageSource RandomImage
+        public ImageSource RandomImage_Source
         {
             get => _firstImage;
             set
             {
                 _firstImage = value;
                 PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(RandomImage)));
+                .Invoke(this, new PropertyChangedEventArgs(nameof(RandomImage_Source)));
             }
         }
         public string NewRandImageInLabel{get => _stringNewRandomImage;}
 
         public string OldRandImageInLabel{get => _stringOldRandomImage;}
 
-        public string Experiences2
+        public string Experiences2_Text
         {
             get => _setExperience;
             set
             {
                 _setExperience = value;
                 PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences2)));
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences2_Text)));
             }
         }
         public Command Yes_Clicked { get; set; }
@@ -60,13 +60,13 @@ namespace RememberGamees.PageModel
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
-                    Experiences2 = _additionExperience.ToString();
+                    Experiences2_Text = _additionExperience.ToString();
                 }
                 else
                 {
                     await App.Database.SavePersonAsync(new Person
                     {
-                        Results = int.Parse(Experiences2)
+                        Results = int.Parse(Experiences2_Text)
                     });
 
                     await navigation.PushAsync(new ScoreOfMemoryGamePage());
@@ -83,13 +83,13 @@ namespace RememberGamees.PageModel
             {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
-                Experiences2 = _additionExperience.ToString();
+                    Experiences2_Text = _additionExperience.ToString();
             }
             else
             {
                 await App.Database.SavePersonAsync(new Person
                 {
-                    Results = int.Parse(Experiences2)
+                    Results = int.Parse(Experiences2_Text)
                 });
 
                 await navigation.PushAsync(new ScoreOfMemoryGamePage());
@@ -113,7 +113,7 @@ namespace RememberGamees.PageModel
             var rand = new Random();
             var next = rand.Next(4);
             _stringNewRandomImage = images[next];
-            RandomImage = ImageSource.FromFile(_stringNewRandomImage);
+            RandomImage_Source = ImageSource.FromFile(_stringNewRandomImage);
         }
     }
 }
