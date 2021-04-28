@@ -104,10 +104,7 @@ namespace RememberGamees.PageModel
         {
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                var rand = new Random();
-                var next = rand.Next(4);
-                _stringNewRandomImage = images[next];
-                RandomImage = ImageSource.FromFile(_stringNewRandomImage);
+                CreateRandomImage();
                 return false;
             });
         }
