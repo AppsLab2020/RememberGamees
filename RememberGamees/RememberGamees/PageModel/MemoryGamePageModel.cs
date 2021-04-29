@@ -18,11 +18,64 @@ namespace RememberGamees.PageModel
         private string _setExperience = "0";
 
         private ImageSource _firstImage = "Image1";
+        private ImageSource _defaultBrainImage = "FirstBrainImage";
+        private ImageSource _secondDefaultBrainImage = "SecondBrainImage";
+        private ImageSource _thirdDefaultBrainImage = "ThirdBrainImage";
+        private ImageSource _fourthDefaultBrainImage = "FourthBrainImage";
+        private ImageSource _fifthDefaultBrainImage = "FifthBrainImage";
 
         private int _additionExperience;
         private int _fifty;
+        private int _countOfBrainDeletes;
+        private int _brainsDeletes = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ImageSource FirstBrainImage_Source
+        {
+            get => _defaultBrainImage;
+            set
+            {
+                _defaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FirstBrainImage_Source)));
+            }
+        }
+
+        public ImageSource SecondBrainImage_Source
+        {
+            get => _secondDefaultBrainImage;
+            set
+            {
+                _secondDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(SecondBrainImage_Source)));
+            }
+        }
+        public ImageSource ThirdBrainImage_Source
+        {
+            get => _thirdDefaultBrainImage;
+            set
+            {
+                _thirdDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(ThirdBrainImage_Source)));
+            }
+        }
+        public ImageSource FourthBrainImage_Source
+        {
+            get => _fourthDefaultBrainImage;
+            set
+            {
+                _fourthDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FourthBrainImage_Source)));
+            }
+        }
+        public ImageSource FifthBrainImage_Source
+        {
+            get => _fifthDefaultBrainImage;
+        }
 
         public ImageSource RandomImage_Source
         {
@@ -66,13 +119,38 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    _brainsDeletes = _countOfBrainDeletes + 1;
+                    _countOfBrainDeletes = _brainsDeletes;
+                    if (_brainsDeletes == 0)
+                    { }
+                    else if (_brainsDeletes == 1)
                     {
-                        Results = int.Parse(Experiences2_Text)
-                    });
+                        FirstBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 2)
+                    {
+                        SecondBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 3)
+                    {
+                        ThirdBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 4)
+                    {
+                        FourthBrainImage_Source = "Null";
+                    }
+                    else
+                    {
+                        _brainsDeletes = 0;
+                        _countOfBrainDeletes = _brainsDeletes;
 
-                    await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                        await App.Database.SavePersonAsync(new Person
+                        {
+                            Results = int.Parse(Experiences2_Text)
+                        });
 
+                        await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                    }
                 }
 
                 _stringOldRandomImage = _stringNewRandomImage;
@@ -89,18 +167,45 @@ namespace RememberGamees.PageModel
             }
             else
             {
-                await App.Database.SavePersonAsync(new Person
-                {
-                    Results = int.Parse(Experiences2_Text)
-                });
+                    _brainsDeletes = _countOfBrainDeletes + 1;
+                    _countOfBrainDeletes = _brainsDeletes;
+                    if (_brainsDeletes == 0)
+                    { }
+                    else if (_brainsDeletes == 1)
+                    {
+                        FirstBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 2)
+                    {
+                        SecondBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 3)
+                    {
+                        ThirdBrainImage_Source = "Null";
+                    }
+                    else if (_brainsDeletes == 4)
+                    {
+                        FourthBrainImage_Source = "Null";
+                    }
+                    else
+                    {
+                        _brainsDeletes = 0;
+                        _countOfBrainDeletes = _brainsDeletes;
 
-                await navigation.PushAsync(new ScoreOfMemoryGamePage());
-            }
+                        await App.Database.SavePersonAsync(new Person
+                        {
+                            Results = int.Parse(Experiences2_Text)
+                        });
+
+                        await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                    }
+                }
 
             _stringOldRandomImage = _stringNewRandomImage;
             CreateRandomImage();
             });
 
+            
         }
         private void DisplayRandomImage()
         {

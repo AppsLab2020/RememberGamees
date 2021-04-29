@@ -21,9 +21,7 @@ namespace RememberGamees.PageModel
             Button_Clicked = new Command(async () =>
             {
                 await Navigation.PushAsync(new GamePage());
-            });
-
-            
+            });  
         }
         public Command Button_Clicked { get; set; }
         public INavigation Navigation { get; set; }
