@@ -34,8 +34,8 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(RandomImage_Source)));
             }
         }
-        public string NewRandImageInLabel{get => _stringNewRandomImage;}
 
+        public string NewRandImageInLabel{get => _stringNewRandomImage;}
         public string OldRandImageInLabel{get => _stringOldRandomImage;}
 
         public string Experiences2_Text
@@ -53,10 +53,12 @@ namespace RememberGamees.PageModel
 
         public MemoryGamePageModel(INavigation navigation)
         {
+
             DisplayRandomImage();
+
             Yes_Clicked = new Command(async () =>
             {
-                if (OldRandImageInLabel == NewRandImageInLabel || _stringNewRandomImage == _firstImage.ToString())
+                if (OldRandImageInLabel == NewRandImageInLabel || _stringNewRandomImage == "Image1")
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
@@ -79,7 +81,7 @@ namespace RememberGamees.PageModel
 
             No_Clicked = new Command(async () =>
             {
-            if (OldRandImageInLabel != NewRandImageInLabel)
+            if (OldRandImageInLabel != NewRandImageInLabel )
             {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
