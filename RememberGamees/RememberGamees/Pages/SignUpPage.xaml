@@ -16,16 +16,16 @@
             <Entry 
                 Placeholder="E-mail"
                 Keyboard="Email"
-                x:Name="EmailInput"/>
+                Text="{Binding EmailInput}"/>
 
             <Entry 
                 Placeholder="Password"
                 Keyboard="Default"
-                x:Name="PasswordInput"/>
+                Text="{Binding PasswordInput}"/>
 
             <Button
                 Text="Sign Up"
-                Clicked="SignUpClicked"
+                Command="{Binding SignUpClicked}"
                 Margin="60, 40"
                 BackgroundColor="#4682B4"
                 TextColor="White"/>

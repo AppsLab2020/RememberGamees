@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace RememberGamees.PageModel
 {
-    public class MainPageModel : INotifyPropertyChanged
+    public class SignUpPageModel : INotifyPropertyChanged
     {
         private string _emailString;
         private string _passwordString;
@@ -32,36 +32,34 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public MainPageModel(INavigation navigation, IAuth auth)
+        public SignUpPageModel(INavigation navigation, IAuth auth)
         {
+
             auth = DependencyService.Get<IAuth>();
             SignUpClicked = new Command(async () =>
             {
-                var signOut = auth.SignOut();
+                var user = auth.SignUpWithEmailAndPassword(EmailInput, PasswordInput);
 
-                if (signOut)
+                if (user != null)
                 {
-                    await navigation.PushAsync(new SignUpPage());
-                }
-            });
+                    await Application.Current.MainPage.DisplayAlert("Success", "New User Created", "Ok");
 
-            LoginClicked = new Command(async () =>
-            {
-                string token = await auth.LoginWithEmailAndPassword(EmailInput, PasswordInput);
+                    var signOut = auth.SignOut();
 
-                if (token != string.Empty)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Authentication Successed", "Welcome in BrainGame", "Ok");
-                    await navigation.PushAsync(new GamePage());
-                }
-                else
-                {
-                    await Application.Current.MainPage.DisplayAlert("Authentication Failed", "Email or Password are incorrect", "Ok");
+                    if (signOut)
+                    {
+                        await navigation.PushAsync(new MainPage());
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("ERROR", "Something went wrong, please try again", "Ok");
+                    }
                 }
             });
         }
         public Command SignUpClicked { get; set; }
         public Command LoginClicked { get; set; }
         public INavigation navigation { get; set; }
+        
     }
 }

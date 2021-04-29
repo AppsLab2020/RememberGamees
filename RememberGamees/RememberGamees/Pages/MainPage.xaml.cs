@@ -1,5 +1,4 @@
 ﻿using RememberGamees.PageModel;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
