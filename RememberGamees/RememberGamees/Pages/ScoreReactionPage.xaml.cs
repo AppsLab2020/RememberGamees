@@ -16,9 +16,6 @@ namespace RememberGamees.Pages
             InitializeComponent();
             BindingContext = new ScoreOfReactionPageModel(Navigation);
             userExperience.Text = "Your score: " + expParameter;
-
-
-
             Shell.SetTabBarIsVisible(this, false);
         }
 

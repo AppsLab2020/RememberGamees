@@ -16,9 +16,9 @@ namespace RememberGamees.PageModel
         public GamePageModel(INavigation navigation)
         {
             Navigation = navigation;
-            GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReactionGamePage01()));
+            GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReadyToReactionPage()));
             SignOutButton_Clicked = new Command(async () => await Navigation.PushAsync(new MainPage()));
-            MemoryGame_Clicked = new Command(async () => await Navigation.PushAsync(new MemoryGamePage()));
+            MemoryGame_Clicked = new Command(async () => await Navigation.PushAsync(new ReadyToMemoryPage()));
         }
 
         public INavigation Navigation { get; set; }

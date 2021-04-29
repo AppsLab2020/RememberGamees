@@ -5,14 +5,12 @@ using Xamarin.Forms.Xaml;
 namespace RememberGamees.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GamePage : ContentPage
+    public partial class ReadyToMemoryPage : ContentPage
     {
-        IAuth auth;
-        public GamePage()
+        public ReadyToMemoryPage()
         {
             InitializeComponent();
-            BindingContext = new GamePageModel(Navigation);
-            auth = DependencyService.Get<IAuth>();
+            BindingContext = new ReadyToMemoryPageModel(Navigation);
         }
     }
 }

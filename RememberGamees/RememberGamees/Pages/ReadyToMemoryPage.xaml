@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RememberGamees.Pages.ReadyToMemoryPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Your job is to decide, if image is repeating or not"/>
+            <Label Text="Are you ready?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="Caption"/>
+            <Button Text="PLAY"
+                    Command="{Binding GoToPlay_Command}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

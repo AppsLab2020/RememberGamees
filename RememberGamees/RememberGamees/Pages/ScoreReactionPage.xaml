@@ -6,7 +6,8 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
     <StackLayout Margin="20,35,20,20">
-        <Button Command="{Binding Button_Clicked}"/>
+        <Button Command="{Binding Button_Clicked}"
+                Text="Go to homepage"/>
         <Label x:Name="userExperience"/>
         <CollectionView x:Name="collectionView">
             <CollectionView.ItemTemplate>

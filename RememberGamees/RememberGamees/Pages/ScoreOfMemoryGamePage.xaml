@@ -7,7 +7,8 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Command="{Binding RootButton}"/>
+            <Button Command="{Binding RootButton}"
+                    Text="Go to homepage"/>
             <CollectionView x:Name="collectionView" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
