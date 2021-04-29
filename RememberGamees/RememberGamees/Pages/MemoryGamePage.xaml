@@ -5,8 +5,6 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Experiences2_Text}" />
-            <Label Text="{Binding OldRandImageInLabel}"/>
-            <Label Text="{Binding NewRandImageInLabel}"/>
             <Button Text="Yes"
                     Command="{Binding Yes_Clicked}"/>
             <Button Text="No"

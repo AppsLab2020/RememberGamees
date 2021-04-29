@@ -88,9 +88,6 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public string NewRandImageInLabel{get => _stringNewRandomImage;}
-        public string OldRandImageInLabel{get => _stringOldRandomImage;}
-
         public string Experiences2_Text
         {
             get => _setExperience;
@@ -111,7 +108,7 @@ namespace RememberGamees.PageModel
 
             Yes_Clicked = new Command(async () =>
             {
-                if (OldRandImageInLabel == NewRandImageInLabel || _stringNewRandomImage == "Image1")
+                if (_stringOldRandomImage == _stringNewRandomImage || _stringNewRandomImage == "Image1")
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
@@ -159,7 +156,7 @@ namespace RememberGamees.PageModel
 
             No_Clicked = new Command(async () =>
             {
-            if (OldRandImageInLabel != NewRandImageInLabel )
+            if (_stringOldRandomImage != _stringNewRandomImage)
             {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
