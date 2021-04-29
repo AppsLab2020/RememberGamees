@@ -7,7 +7,7 @@
             VerticalOptions="Center"
             Margin="20">
 
-            <Label Text="FireAuth"
+            <Label Text="BrainGames Login"
                 TextColor="#4682B4"
                 HorizontalOptions="Center" 
                    FontSize="35"
@@ -16,15 +16,15 @@
             <Entry
                 Placeholder="E-mail"
                 Keyboard="Email"
-                x:Name="EmailInput"/>
+                Text="{Binding EmailInput}"/>
 
             <Entry Placeholder="Password"
                    Keyboard="Default"
-                   x:Name="PasswordInput"/>
+                   Text="{Binding PasswordInput}"/>
 
             <Button
                 Text="Enter"
-                Clicked="LoginClicked"
+                Command="{Binding LoginClicked}"
                 Margin="60, 40"
                 BackgroundColor="#4682B4"
                 TextColor="White"/>
@@ -34,7 +34,7 @@
                 TextColor="#4682B4"
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent"
-                Clicked="SignUpClicked"/>
+                Command="{Binding SignUpClicked}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
