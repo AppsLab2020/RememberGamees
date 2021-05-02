@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RememberGamees.Pages.LogicalGamePage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Frame HasShadow="True"
+                   BackgroundColor="White"
+                   Grid.Row="1"
+                   Grid.RowSpan="3"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   WidthRequest="350"
+                   HeightRequest="500"
+                   CornerRadius="20">
+                <BoxView/>
+            </Frame>
+
+
+            <BoxView
+                Grid.Row="5"
+                BackgroundColor="#44DAEE"
+                CornerRadius="10"/>
+            <Button
+                Text="Randomize"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Grid.Row="5"
+                Margin="0,0,200,0"
+                HeightRequest="70"
+                WidthRequest="150"
+                CornerRadius="20"
+                BorderColor="Black"
+                BorderWidth="1"
+                BackgroundColor="White"/>
+
+            <Button
+                Text="New Image"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Grid.Row="5"
+                Margin="200,0,0,0"
+                HeightRequest="70"
+                WidthRequest="150"
+                CornerRadius="20"
+                BorderColor="Black"
+                BorderWidth="1"
+                BackgroundColor="White"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

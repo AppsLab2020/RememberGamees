@@ -1,10 +1,7 @@
-﻿using Android.App;
-using RememberGamees.Data;
-using RememberGamees.Pages;
+﻿using RememberGamees.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using Xamarin.Forms;
 using Person = RememberGamees.Data.ExperienceOfPerson;
 

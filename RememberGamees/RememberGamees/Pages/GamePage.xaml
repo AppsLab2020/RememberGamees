@@ -3,15 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.GamePage"
              NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
              BackgroundColor="#D4FFF9">
     <ContentPage.Content>
         <StackLayout>
-            <Button
-                Text="SignOut"
-                Command="{Binding SignOutButton_Clicked}"
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="Center"/>
-            <Grid Margin="0,15,0,10">
+            <Grid Margin="0,15,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"/>
                     <RowDefinition Height="70"/>
@@ -21,7 +17,7 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition Height="50"/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
             
                 <Button 
@@ -56,14 +52,15 @@
                 <Button 
                     Grid.Row="2"
                     WidthRequest="500"
-                    Text="Another Game"
+                    Text="Logical Game"
                     FontSize="30"
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
-                />
+                    Command="{Binding LogicalGame_Clicked}"
+                    />
 
                 <Button 
                     Grid.Row="3"
@@ -77,6 +74,21 @@
                     BorderWidth="2"
                     />
 
+                <Button
+                    Text="SignOut"
+                    Command="{Binding SignOutButton_Clicked}"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"
+                    Grid.Row="9"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    BackgroundColor="White"
+                    CornerRadius="20"
+                    Margin="0,0,0,10"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    />
+                
             </Grid>
         </StackLayout>
     </ContentPage.Content>
