@@ -20,6 +20,9 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
             
+                
+                
+                <!-- Reaction Game Button -->
                 <Button 
                     Grid.Row="0"
                     WidthRequest="500"
@@ -35,7 +38,8 @@
                     Image="bolt.png"
                     
                     />
-                
+
+                <!-- Memory Game Button -->
                 <Button 
                     Command="{Binding MemoryGame_Clicked}"
                     Grid.Row="1"
@@ -48,7 +52,8 @@
                     BorderColor="DarkOrange"
                     BorderWidth="2"
                     />
-                
+
+                <!-- Logical Game Button -->
                 <Button 
                     Grid.Row="2"
                     WidthRequest="500"
@@ -62,6 +67,7 @@
                     Command="{Binding LogicalGame_Clicked}"
                     />
 
+                <!-- Another Game Button -->
                 <Button 
                     Grid.Row="3"
                     WidthRequest="500"
@@ -74,6 +80,8 @@
                     BorderWidth="2"
                     />
 
+
+                <!-- Sign out Button -->
                 <Button
                     Text="SignOut"
                     Command="{Binding SignOutButton_Clicked}"

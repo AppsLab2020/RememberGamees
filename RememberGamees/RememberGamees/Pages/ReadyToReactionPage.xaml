@@ -6,6 +6,8 @@
     <ContentPage.Content>
         <Grid>
 
+            <!-- Rules Label -->
+            
             <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
                 <Label 
                     Text="Your job is to take fully diferent image or the same image(background and item)" 
@@ -15,7 +17,7 @@
                     />
             </Frame>
 
-
+            <!-- Ready text -->
             <Label 
                 Text="Are you ready?"
                 TextColor="Black"
@@ -25,8 +27,9 @@
                 FontSize="Title"
                 Grid.Row="2"
                 />
-            
-            
+
+
+            <!-- Play Game Button -->
             <Button 
                 Text="Ready!"
                 Font="30"
