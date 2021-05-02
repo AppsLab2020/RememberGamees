@@ -3,14 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.ReadyToMemoryPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Your job is to decide, if image is repeating or not"/>
-            <Label Text="Are you ready?"
+        <Grid>
+
+            <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
+                <Label 
+                    Text="Your job is to decide, if image is repeating or not"
+                    HorizontalTextAlignment="Center"
+                    FontSize="25"
+                    TextColor="Black"
+                />
+            </Frame>
+
+
+            <Label 
+                Text="Are you ready?"
+                TextColor="Black"
+                FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                FontSize="Caption"/>
-            <Button Text="PLAY"
-                    Command="{Binding GoToPlay_Command}"/>
-        </StackLayout>
+                FontSize="Title"
+                Grid.Row="2"
+                />
+            
+
+            <Button 
+                Text="READY!"
+                Font="30"
+                FontAttributes="Bold"
+                BackgroundColor="Yellow"
+                CornerRadius="15"
+                Command="{Binding GoToPlay_Command}"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="4"
+                WidthRequest="200"
+                />
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

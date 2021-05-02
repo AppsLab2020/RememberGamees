@@ -7,12 +7,12 @@
         <Grid>
 
             <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
-            <Label 
-                Text="Your job is to take fully diferent image or the same image(background and item)" 
-                HorizontalTextAlignment="Center"
-                FontSize="25"
-                TextColor="Black"
-                />
+                <Label 
+                    Text="Your job is to take fully diferent image or the same image(background and item)" 
+                    HorizontalTextAlignment="Center"
+                    FontSize="25"
+                    TextColor="Black"
+                    />
             </Frame>
 
 
