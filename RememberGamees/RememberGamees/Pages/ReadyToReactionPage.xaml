@@ -1,16 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RememberGamees.Pages.ReadyToReactionPage">
+             x:Class="RememberGamees.Pages.ReadyToReactionPage"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Your job is to take fully diferent image or the same image(background and item)"/>
-            <Label Text="Are you ready?"
+        <Grid>
+
+            <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
+            <Label 
+                Text="Your job is to take fully diferent image or the same image(background and item)" 
+                HorizontalTextAlignment="Center"
+                FontSize="25"
+                TextColor="Black"
+                />
+            </Frame>
+
+
+            <Label 
+                Text="Are you ready?"
+                TextColor="Black"
+                FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                FontSize="Caption"/>
-            <Button Text="PLAY"
-                    Command="{Binding GoToPlay_Command}"/>
-        </StackLayout>
+                FontSize="Title"
+                Grid.Row="2"
+                />
+            
+            
+            <Button 
+                Text="Ready!"
+                Font="30"
+                FontAttributes="Bold"
+                BackgroundColor="Yellow"
+                CornerRadius="15"
+                Command="{Binding GoToPlay_Command}"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="4"
+                WidthRequest="200"
+                />
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
