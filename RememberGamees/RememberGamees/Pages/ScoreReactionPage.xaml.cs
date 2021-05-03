@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Person = RememberGamees.Data.ExperienceOfPerson;
 using System.ComponentModel;
 using RememberGamees.PageModel;
 
@@ -22,7 +21,7 @@ namespace RememberGamees.Pages
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetPeopleAsync();
+            collectionView.ItemsSource = await App.Database.GetScoreOfReactionAsync();
         }
     }
 }

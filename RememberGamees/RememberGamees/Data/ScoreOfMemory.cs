@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RememberGamees.Data
 {
-    class ScoreOfMemory
+    public class ScoreOfMemory
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

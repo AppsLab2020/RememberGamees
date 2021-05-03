@@ -1,11 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RememberGamees.Data
 {
-    class ScoreOfReaction
+    public class ScoreOfReaction
     {
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public int ReactionScore { get; set; }
     }

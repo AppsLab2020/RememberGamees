@@ -13,7 +13,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="{Binding Results}"
+                            <Label Text="{Binding MemoryScore}"
                                TextColor="Silver"
                                FontSize="Small" />
                         </StackLayout>

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using RememberGamees.Pages;
 using System.Threading.Tasks;
-using Person = RememberGamees.Data.ExperienceOfPerson;
+using RememberGamees.Data;
 
 namespace RememberGamees.PageModel
 {
@@ -139,9 +139,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -177,9 +177,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -212,9 +212,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -250,9 +250,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -284,9 +284,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -324,9 +324,9 @@ namespace RememberGamees.PageModel
 
                 if (!string.IsNullOrWhiteSpace(Experiences_Text))
                 {
-                    await App.Database.SavePersonAsync(new Person
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                     {
-                        Results = int.Parse(Experiences_Text)
+                        ReactionScore = int.Parse(Experiences_Text)
                     });
                 }
             }
@@ -355,9 +355,9 @@ namespace RememberGamees.PageModel
 
                         if (!string.IsNullOrWhiteSpace(Experiences_Text))
                         {
-                            await App.Database.SavePersonAsync(new Person
+                            await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
                             {
-                                Results = int.Parse(Experiences_Text)
+                                ReactionScore = int.Parse(Experiences_Text)
                             });
                         }
                     });

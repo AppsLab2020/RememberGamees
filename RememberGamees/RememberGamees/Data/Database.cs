@@ -16,12 +16,14 @@ namespace RememberGamees.Data
 
         public async void CreateDb(string dbPath)
         {
-            //adfaf
+            //conection
             _database = new SQLiteAsyncConnection(dbPath);
-            await _database.DeleteAllAsync<ScoreOfReaction>();
-            await _database.DeleteAllAsync<ScoreOfMemory>();
+            //TABLE FOR REACTION GAME
+            await _database.CreateTableAsync<ScoreOfReaction>();
+            //TABLE FOR MEMORY GAME
+            await _database.CreateTableAsync<ScoreOfMemory>();
         }
-        //adfafa
+        //SAVE AND RETRIVE EXPERIENCE FOR REACTION GAME
         public Task<List<ScoreOfReaction>> GetScoreOfReactionAsync()
         {
             return _database.Table<ScoreOfReaction>().ToListAsync();
@@ -32,7 +34,7 @@ namespace RememberGamees.Data
             return _database.InsertAsync(scoreOfReaction);
         }
 
-        //adfa
+        //SAVE AND RETRIVE EXPERIENCE FOR MEMORY GAME
         public Task<List<ScoreOfMemory>> GetScoreOfMemoryAsync()
         {
             return _database.Table<ScoreOfMemory>().ToListAsync();
