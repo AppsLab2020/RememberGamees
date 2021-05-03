@@ -1,9 +1,9 @@
-﻿using RememberGamees.Pages;
+﻿using RememberGamees.Data;
+using RememberGamees.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Person = RememberGamees.Data.ExperienceOfPerson;
 
 namespace RememberGamees.PageModel
 {
@@ -138,9 +138,9 @@ namespace RememberGamees.PageModel
                         _brainsDeletes = 0;
                         _countOfBrainDeletes = _brainsDeletes;
 
-                        await App.Database.SavePersonAsync(new Person
+                        await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
                         {
-                            Results = int.Parse(Experiences2_Text)
+                            MemoryScore = int.Parse(Experiences2_Text)
                         });
 
                         await navigation.PushAsync(new ScoreOfMemoryGamePage());
@@ -186,9 +186,9 @@ namespace RememberGamees.PageModel
                         _brainsDeletes = 0;
                         _countOfBrainDeletes = _brainsDeletes;
 
-                        await App.Database.SavePersonAsync(new Person
+                        await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
                         {
-                            Results = int.Parse(Experiences2_Text)
+                            MemoryScore = int.Parse(Experiences2_Text)
                         });
 
                         await navigation.PushAsync(new ScoreOfMemoryGamePage());

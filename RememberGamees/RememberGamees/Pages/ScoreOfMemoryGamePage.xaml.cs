@@ -21,7 +21,7 @@ namespace RememberGamees.Pages
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetPeopleAsync();
+            collectionView.ItemsSource = await App.Database.GetScoreOfMemoryAsync();
         }
     }
 }

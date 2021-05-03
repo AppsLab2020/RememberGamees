@@ -5,11 +5,10 @@ using System.Text;
 
 namespace RememberGamees.Data
 {
-    public class ExperienceOfPerson
+    class ScoreOfMemory
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Name { get; set; }
-        public int Results { get; set; }
+        public int MemoryScore { get; set; }
     }
 }
