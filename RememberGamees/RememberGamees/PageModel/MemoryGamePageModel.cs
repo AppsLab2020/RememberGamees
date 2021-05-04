@@ -10,6 +10,7 @@ namespace RememberGamees.PageModel
     class MemoryGamePageModel : INotifyPropertyChanged
     {
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4"};
+        private readonly List<DateTime> tapTimes;
         private string _stringNewRandomImage;
         private string _stringOldRandomImage;
         private string _setExperience = "0";
@@ -100,12 +101,14 @@ namespace RememberGamees.PageModel
 
         public MemoryGamePageModel(INavigation navigation)
         {
+            tapTimes = new List<DateTime>();
 
             DisplayRandomImage();
 
             Yes_Clicked = new Command(async () =>
             {
-                if (_stringOldRandomImage == _stringNewRandomImage || _stringNewRandomImage == "Image1")
+                tapTimes.Add(DateTime.Now);
+                if (_stringOldRandomImage == _stringNewRandomImage || _stringNewRandomImage == "Image1" && tapTimes.Count == 1)
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
