@@ -1,15 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RememberGamees.Pages.MemoryGamePage">
+             x:Class="RememberGamees.Pages.MemoryGamePage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout  Margin="0,30,0,0">
+            
+            <Frame CornerRadius="20" Padding="0" IsClippedToBounds="True">
+                <Image 
+                x:Name="image"
+                Source="{Binding RandomImage_Source}"  
+                />
+            </Frame>
+            
+
+            <Button 
+                Margin="0,30,0,0"
+                Text="Yes"
+                BackgroundColor="#44EE53"
+                WidthRequest="150"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                CornerRadius="15"
+                Command="{Binding Yes_Clicked}"
+                />
+
+            <Button
+                Margin="0,20,0,0"
+                Text="No"
+                BackgroundColor="Red"
+                WidthRequest="150"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                CornerRadius="15"
+                Command="{Binding No_Clicked}"
+                />
+
             <Label Text="{Binding Experiences2_Text}" />
-            <Button Text="Yes"
-                    Command="{Binding Yes_Clicked}"/>
-            <Button Text="No"
-                    Command="{Binding No_Clicked}"/>
-            <Image Source="{Binding RandomImage_Source}"   WidthRequest="100" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

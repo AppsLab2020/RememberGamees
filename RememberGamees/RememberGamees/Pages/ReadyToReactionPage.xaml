@@ -41,6 +41,8 @@
                 HorizontalOptions="CenterAndExpand"
                 Grid.Row="4"
                 WidthRequest="200"
+                BorderColor="Orange"
+                BorderWidth="1"
                 />
             
         </Grid>

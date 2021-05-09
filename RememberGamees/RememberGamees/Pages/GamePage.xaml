@@ -51,6 +51,8 @@
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
+                    ContentLayout="Left"
+                    Image="Memory.png"
                     />
 
                 <!-- Logical Game Button -->
@@ -65,6 +67,8 @@
                     BorderColor="DarkOrange"
                     BorderWidth="2"
                     Command="{Binding LogicalGame_Clicked}"
+                    ContentLayout="Left"
+                    Image="gears.png"
                     />
 
                 <!-- Another Game Button -->

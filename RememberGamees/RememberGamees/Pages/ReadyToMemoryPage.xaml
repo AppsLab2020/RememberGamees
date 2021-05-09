@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <Grid>
 
+            <!-- Rules Label -->
             <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
                 <Label 
                     Text="Your job is to decide, if image is repeating or not"
@@ -14,7 +15,7 @@
                 />
             </Frame>
 
-
+            <!-- Ready text -->
             <Label 
                 Text="Are you ready?"
                 TextColor="Black"
@@ -24,8 +25,8 @@
                 FontSize="Title"
                 Grid.Row="2"
                 />
-            
 
+            <!-- Play Game Button -->
             <Button 
                 Text="READY!"
                 Font="30"
@@ -37,6 +38,8 @@
                 HorizontalOptions="CenterAndExpand"
                 Grid.Row="4"
                 WidthRequest="200"
+                BorderColor="Orange"
+                BorderWidth="1"
                 />
             
         </Grid>
