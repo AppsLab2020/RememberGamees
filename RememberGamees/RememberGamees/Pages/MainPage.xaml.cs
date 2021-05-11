@@ -1,7 +1,10 @@
-﻿using RememberGamees.PageModel;
+﻿using Newtonsoft.Json;
+using RememberGamees.PageModel;
 using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static RememberGamees.Pages.LoginWithGmail;
 
 namespace RememberGamees.Pages
 {
@@ -15,9 +18,5 @@ namespace RememberGamees.Pages
             auth = DependencyService.Get<IAuth>();
             BindingContext = new MainPageModel(Navigation, auth);
         }
-
-        
-
-        
     }
 }

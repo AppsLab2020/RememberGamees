@@ -4,6 +4,10 @@
              x:Class="RememberGamees.Pages.LoginWithGmail">
     <ContentPage.Content>
         <StackLayout>
+            <Image x:Name="ImgPic" MinimumHeightRequest="200" MinimumWidthRequest="200"/>
+            <Label x:Name="Name"/>
+            <Label x:Name="Email"/>
+            <Button x:Name="GoToGamePge" Text="Login With Facebook" Clicked="GamePageNav_Clicked"></Button>
             <Button x:Name="LoginFb" Text="Login With Facebook" Clicked="LoginFb_Clicked"></Button>
             <WebView x:Name="WebView" HeightRequest="10" WidthRequest="10" VerticalOptions="FillAndExpand"/>
         </StackLayout>

@@ -1,6 +1,9 @@
-﻿using RememberGamees.Pages;
+﻿using Newtonsoft.Json;
+using RememberGamees.Pages;
 using System.ComponentModel;
+using System.Net.Http;
 using Xamarin.Forms;
+using static RememberGamees.Pages.LoginWithGmail;
 
 namespace RememberGamees.PageModel
 {
@@ -43,6 +46,7 @@ namespace RememberGamees.PageModel
                 {
                     await navigation.PushAsync(new SignUpPage());
                 }
+                
             });
 
             LoginClicked = new Command(async () =>
