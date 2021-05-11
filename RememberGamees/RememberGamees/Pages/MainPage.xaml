@@ -35,8 +35,11 @@
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent"
                 Command="{Binding SignUpClicked}"/>
-            <Button x:Name="LoginFb" Text="Login With Facebook" Clicked="LoginFb_Clicked"></Button>
-            <WebView x:Name="WebView" />
+            <Button
+               Text="Login With Facebook"
+               Command="{Binding FacebookLogin_Clicked}"
+               HorizontalOptions="Center"
+               BackgroundColor="Transparent"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

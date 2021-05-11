@@ -59,9 +59,15 @@ namespace RememberGamees.PageModel
                     await Application.Current.MainPage.DisplayAlert("Authentication Failed", "Email or Password are incorrect", "Ok");
                 }
             });
+
+            FacebookLogin_Clicked = new Command(async () =>
+            {
+                await navigation.PushAsync(new LoginWithGmail());
+            });
         }
         public Command SignUpClicked { get; set; }
         public Command LoginClicked { get; set; }
+        public Command FacebookLogin_Clicked { get; set; }
         public INavigation navigation { get; set; }
     }
 }

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RememberGamees.Pages.LoginWithGmail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="LoginFb" Text="Login With Facebook" Clicked="LoginFb_Clicked"></Button>
+            <WebView x:Name="WebView" HeightRequest="10" WidthRequest="10" VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
