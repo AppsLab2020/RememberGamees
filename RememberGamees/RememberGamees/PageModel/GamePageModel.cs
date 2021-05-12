@@ -28,6 +28,7 @@ namespace RememberGamees.PageModel
             MemoryGame_Clicked = new Command(async () => await Navigation.PushAsync(new ReadyToMemoryPage()));
             LogicalGame_Clicked = new Command(async () => await Navigation.PushAsync(new LogicalGamePage()));
             MemoryChart_Clicked = new Command(async () => await Navigation.PushAsync(new MemoryChartPage()));
+            ReactionChart_Clicked = new Command(async () => await Navigation.PushAsync(new ReactionChartPage()));
         }
         public INavigation Navigation { get; set; }
         public Command GameBtnCommand { get; set; }
@@ -35,5 +36,6 @@ namespace RememberGamees.PageModel
         public Command MemoryGame_Clicked { get; set; }
         public Command LogicalGame_Clicked { get; set; }
         public Command MemoryChart_Clicked { get; set; }
+        public Command ReactionChart_Clicked { get; set; }
     }
 }

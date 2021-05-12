@@ -106,6 +106,10 @@
                     Text="Chart of MemoryGame"
                     Command="{Binding MemoryChart_Clicked}"
                     />
+            <Button
+                    Text="Chart of ReactionGame"
+                    Command="{Binding ReactionChart_Clicked}"
+                    />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
