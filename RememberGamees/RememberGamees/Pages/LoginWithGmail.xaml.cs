@@ -18,10 +18,6 @@ namespace RememberGamees.Pages
         public LoginWithGmail()
         {
             InitializeComponent();
-        }
-        private void LoginFb_Clicked(object sender, EventArgs e)
-        {
-
             WebView.Source = "https://www.facebook.com/v7.0/dialog/oauth?client_id=850322265560226&response_type=token&redirect_uri=https://braingame-41f79.firebaseapp.com/__/auth/handler";
             WebView.Navigated += WebView_Navigated;
         }
@@ -47,6 +43,7 @@ namespace RememberGamees.Pages
             if(_name != null)
             {
                 Navigation.PushAsync(new GamePage());
+                Application.Current.Properties["IsLoggedIn"] = Boolean.TrueString;
             }
         }
         public class FacebookProfile

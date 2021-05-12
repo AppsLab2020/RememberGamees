@@ -8,6 +8,7 @@ namespace RememberGamees
 {
     public partial class App : Application
     {
+
         static Database database;
 
         public static Database Database
@@ -26,7 +27,8 @@ namespace RememberGamees
         {
             InitializeComponent();
             auth = DependencyService.Get<IAuth>();
-            if (auth.IsSignIn())
+            bool isLoggedIn = Current.Properties.ContainsKey("IsLoggedIn") ? Convert.ToBoolean(Current.Properties["IsLoggedIn"]) : true;
+            if (auth.IsSignIn() || isLoggedIn)
             {
                 MainPage = new NavigationPage(new GamePage());
             }

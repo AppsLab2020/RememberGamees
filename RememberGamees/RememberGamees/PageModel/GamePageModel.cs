@@ -20,7 +20,11 @@ namespace RememberGamees.PageModel
         {
             Navigation = navigation;
             GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReadyToReactionPage()));
-            SignOutButton_Clicked = new Command(async () => await Navigation.PushAsync(new MainPage()));
+            SignOutButton_Clicked = new Command(async () =>
+            {
+                await Navigation.PushAsync(new MainPage());
+                Application.Current.Properties["IsLoggedIn"] = Boolean.FalseString;
+            });
             MemoryGame_Clicked = new Command(async () => await Navigation.PushAsync(new ReadyToMemoryPage()));
             LogicalGame_Clicked = new Command(async () => await Navigation.PushAsync(new LogicalGamePage()));
         }
