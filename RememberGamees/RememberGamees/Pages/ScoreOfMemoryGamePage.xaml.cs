@@ -13,10 +13,11 @@ namespace RememberGamees.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScoreOfMemoryGamePage : ContentPage
     {
-        public ScoreOfMemoryGamePage()
+        public ScoreOfMemoryGamePage(string exParameter)
         {
             InitializeComponent();
             BindingContext = new ScoreOfMemoryPageModel(Navigation);
+            userExperience.Text = "Your score: " + exParameter;
         }
         protected override async void OnAppearing()
         {

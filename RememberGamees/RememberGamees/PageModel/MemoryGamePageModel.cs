@@ -146,7 +146,7 @@ namespace RememberGamees.PageModel
                             MemoryScore = int.Parse(Experiences2_Text)
                         });
 
-                        await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                        await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
                     }
                 }
 
@@ -194,7 +194,7 @@ namespace RememberGamees.PageModel
                             MemoryScore = int.Parse(Experiences2_Text)
                         });
 
-                        await navigation.PushAsync(new ScoreOfMemoryGamePage());
+                        await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
                     }
                 }
 

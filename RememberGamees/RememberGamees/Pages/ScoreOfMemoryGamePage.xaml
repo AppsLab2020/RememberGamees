@@ -4,7 +4,7 @@
              x:Class="RememberGamees.Pages.ScoreOfMemoryGamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label x:Name="userExperience"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button Command="{Binding RootButton}"
