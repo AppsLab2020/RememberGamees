@@ -102,6 +102,10 @@
                     />
                 
             </Grid>
+            <Button
+                    Text="Chart of MemoryGame"
+                    Command="{Binding MemoryChart_Clicked}"
+                    />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
