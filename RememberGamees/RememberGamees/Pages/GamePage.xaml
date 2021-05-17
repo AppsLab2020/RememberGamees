@@ -75,13 +75,14 @@
                 <Button 
                     Grid.Row="3"
                     WidthRequest="500"
-                    Text="Another Game"
+                    Text="Math Game"
                     FontSize="30"
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
+                    Command="{Binding MathGame_Clicked}"
                     />
 
 
@@ -109,6 +110,10 @@
             <Button
                     Text="Chart of ReactionGame"
                     Command="{Binding ReactionChart_Clicked}"
+                    />
+            <Button
+                    Text="Chart of ReactionGame"
+                    Command="{Binding MathChart_Clicked}"
                     />
         </StackLayout>
     </ContentPage.Content>
