@@ -4,9 +4,25 @@
              x:Class="RememberGamees.Pages.MathGamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="{Binding WriteNumber_Text}"/>
+            <!--<Label Text="A + B ="
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" />-->
+            <Label Text="{Binding Multiple_Text}"/>
+            <!--<Label Text="A - B ="
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+            
+            <!--<Label Text="A/B =?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+            <Button Text="{Binding Result_Text}"
+                    Command="{Binding FirstResult_Clicked}"/>
+            <Button Text="{Binding Result2_Text}"
+                    Command="{Binding SecondResult_Clicked}"/>
+            <Button Text="{Binding Result3_Text}"
+                    Command="{Binding ThirdResult_Clicked}"/>
+            <Label Text="{Binding Score_Text}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
