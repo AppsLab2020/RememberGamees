@@ -3,12 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.ReadyToMathPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Solve this mathematical problems"
+        <Grid>
+            <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
+                <Label Text="Solve this mathematical problems"
+                    HorizontalTextAlignment="Center"
+                    FontSize="25"
+                    TextColor="Black"/>
+            </Frame>
+            
+            
+            <Label 
+                Text="Are you ready?"
+                TextColor="Black"
+                FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="play"
-                    Command="{Binding ReadyToPlay_Clicked}"/>
-        </StackLayout>
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="Title"
+                Grid.Row="2"
+                />
+                
+            
+            <Button 
+                Text="READY!"
+                Font="30"
+                FontAttributes="Bold"
+                BackgroundColor="Yellow"
+                CornerRadius="15"
+                Command="{Binding ReadyToPlay_Clicked}"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="4"
+                WidthRequest="200"
+                BorderColor="Orange"
+                BorderWidth="1"/>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
