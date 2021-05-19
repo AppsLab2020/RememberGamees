@@ -130,32 +130,15 @@ namespace RememberGamees.PageModel
 
             Random rnd = new Random();
             //double _numberA = rnd.Next(1, 3);
-            _numberB = rnd.NextDouble() * (3 - 1) + 1;
-            _numberA = rnd.NextDouble() * (3 - 1) + 1;
-            _randDoubleToFind = rnd.NextDouble() * (0.5 - 1) + 1;
-            _randDoubleToFind2 = rnd.NextDouble() * (0 - 0.4) + 1;
-            _randDoubleToFind = Math.Round(_randDoubleToFind, 1);
-            _randDoubleToFind2 = Math.Round(_randDoubleToFind2, 1);
-            _numberB = Math.Round(_numberB, 1);
-            _numberA = Math.Round(_numberA, 1);
-
-            WriteNumber_Text = _numberB.ToString() + " * " + _numberA.ToString() + " =";
-
-            Multiple_Text = _result = _numberB * _numberA;
-
-            Result_Text = _result + _randDoubleToFind;
-            Result2_Text = _result - _randDoubleToFind;
-            Result3_Text = _result + _randDoubleToFind2;
-
-            _button1 = _multiple - _defaultResult;
-            _button2 = _multiple - _defaultResult2;
-            _button3 = _multiple - _defaultResult3;
+            GenerateRandomNum();
 
             FirstResult_Clicked = new Command( () =>
             {
                 if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2))
                 {
                     Score_Text = _defaultScore + 50;
+
+                    GenerateRandomNum();
                 };
             });
 
@@ -164,6 +147,8 @@ namespace RememberGamees.PageModel
                 if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
+
+                    GenerateRandomNum();
                 };
             });
 
@@ -172,8 +157,34 @@ namespace RememberGamees.PageModel
                 if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
+                    GenerateRandomNum();
+
+
                 };
             });
+            void GenerateRandomNum()
+            {
+                _numberB = rnd.NextDouble() * (3 - 1) + 1;
+                _numberA = rnd.NextDouble() * (3 - 1) + 1;
+                _randDoubleToFind = rnd.NextDouble() * (0.5 - 1) + 1;
+                _randDoubleToFind2 = rnd.NextDouble() * (0 - 0.4) + 1;
+                _randDoubleToFind = Math.Round(_randDoubleToFind, 1);
+                _randDoubleToFind2 = Math.Round(_randDoubleToFind2, 1);
+                _numberB = Math.Round(_numberB, 1);
+                _numberA = Math.Round(_numberA, 1);
+
+                WriteNumber_Text = _numberB.ToString() + " * " + _numberA.ToString() + " =";
+
+                Multiple_Text = _result = _numberB * _numberA;
+
+                Result_Text = _result + _randDoubleToFind;
+                Result2_Text = _result - _randDoubleToFind;
+                Result3_Text = _result + _randDoubleToFind2;
+
+                _button1 = _multiple - _defaultResult;
+                _button2 = _multiple - _defaultResult2;
+                _button3 = _multiple - _defaultResult3;
+            }
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
