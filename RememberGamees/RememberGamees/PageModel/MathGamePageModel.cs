@@ -19,7 +19,12 @@ namespace RememberGamees.PageModel
         private double _randDoubleToFind { get; set; }
         private double _randDoubleToFind2;
         private double _defaultScore;
-        private Command _defaultCommand;
+        private Command _defaultCommand01;
+        private Command _defaultCommand02;
+        private Command _defaultCommand03;
+        private double _button1;
+        private double _button2;
+        private double _button3;
 
         public double Multiple_Text
         {
@@ -89,12 +94,34 @@ namespace RememberGamees.PageModel
 
         public Command FirstResult_Clicked
         {
-            get => _defaultCommand;
+            get => _defaultCommand01;
             set
             {
-                _defaultCommand = value;
+                _defaultCommand01 = value;
                 PropertyChanged?
                 .Invoke(this, new PropertyChangedEventArgs(nameof(FirstResult_Clicked)));
+            }
+        }
+
+        public Command SecondResult_Clicked
+        {
+            get => _defaultCommand02;
+            set
+            {
+                _defaultCommand02 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(SecondResult_Clicked)));
+            }
+        }
+
+        public Command ThirdResult_Clicked
+        {
+            get => _defaultCommand03;
+            set
+            {
+                _defaultCommand03 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(ThirdResult_Clicked)));
             }
         }
 
@@ -120,9 +147,29 @@ namespace RememberGamees.PageModel
             Result2_Text = _result - _randDoubleToFind;
             Result3_Text = _result + _randDoubleToFind2;
 
+            _button1 = _multiple - _defaultResult;
+            _button2 = _multiple - _defaultResult2;
+            _button3 = _multiple - _defaultResult3;
+
             FirstResult_Clicked = new Command( () =>
             {
-                if (_multiple - _defaultResult < _multiple - _defaultResult2 && _multiple - _defaultResult < _multiple - _defaultResult3)
+                if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2))
+                {
+                    Score_Text = _defaultScore + 50;
+                };
+            });
+
+            SecondResult_Clicked = new Command(() =>
+            {
+                if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1))
+                {
+                    Score_Text = _defaultScore + 50;
+                };
+            });
+
+            ThirdResult_Clicked = new Command(() =>
+            {
+                if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                 };
