@@ -8,7 +8,7 @@ namespace RememberGamees.PageModel
 {
     public class MathGamePageModel : INotifyPropertyChanged
     {
-        private double _multiple;
+        private double _multiple { get; set; }
         private string _writeNumber;
         private double _numberA { get; set; }
         private double _numberB { get; set; }
@@ -26,16 +26,7 @@ namespace RememberGamees.PageModel
         private double _button2;
         private double _button3;
 
-        public double Multiple_Text
-        {
-            get => _multiple;
-            set
-            {
-                _multiple = value;
-                PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(Multiple_Text)));
-            }
-        }
+        
         
         public string WriteNumber_Text
         {
@@ -134,33 +125,29 @@ namespace RememberGamees.PageModel
 
             FirstResult_Clicked = new Command( () =>
             {
-                if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2))
+                if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2) || Math.Abs(_button1) == Math.Abs(_button3) && Math.Abs(_button1) == Math.Abs(_button2))
                 {
                     Score_Text = _defaultScore + 50;
-
                     GenerateRandomNum();
                 };
             });
 
             SecondResult_Clicked = new Command(() =>
             {
-                if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1))
+                if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1) || Math.Abs(_button2) == Math.Abs(_button3) && Math.Abs(_button2) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
-
                     GenerateRandomNum();
                 };
             });
 
             ThirdResult_Clicked = new Command(() =>
             {
-                if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1))
+                if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1) || Math.Abs(_button3) == Math.Abs(_button2) && Math.Abs(_button3) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
-
-
-                };
+                }
             });
             void GenerateRandomNum()
             {
@@ -175,7 +162,7 @@ namespace RememberGamees.PageModel
 
                 WriteNumber_Text = _numberB.ToString() + " * " + _numberA.ToString() + " =";
 
-                Multiple_Text = _result = _numberB * _numberA;
+                _multiple = _result = _numberB * _numberA;
 
                 Result_Text = _result + _randDoubleToFind;
                 Result2_Text = _result - _randDoubleToFind;

@@ -8,7 +8,7 @@
             <!--<Label Text="A + B ="
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />-->
-            <Label Text="{Binding Multiple_Text}"/>
+
             <!--<Label Text="A - B ="
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />-->
