@@ -15,13 +15,12 @@
                     <RowDefinition Height="70"/>
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition Height="70"/>
                     <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
-            
-                
-                
+
+
                 <!-- Reaction Game Button -->
                 <Button 
                     Grid.Row="0"
@@ -71,7 +70,7 @@
                     Image="gears.png"
                     />
 
-                <!-- Another Game Button -->
+                <!-- Math Game Button -->
                 <Button 
                     Grid.Row="3"
                     WidthRequest="500"
@@ -82,6 +81,8 @@
                     CornerRadius="20"
                     BorderColor="DarkOrange"
                     BorderWidth="2"
+                    ContentLayout="Left"
+                    Image="math.png"
                     Command="{Binding MathGame_Clicked}"
                     />
 
@@ -97,24 +98,58 @@
                     HeightRequest="100"
                     BackgroundColor="White"
                     CornerRadius="20"
-                    Margin="0,0,0,10"
+                    Margin="0,0,0,5"
                     BorderColor="Black"
                     BorderWidth="1"
                     />
                 
-            </Grid>
-            <Button
-                    Text="Chart of MemoryGame"
+                
+                <Button
+                    Grid.Row="8"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="100"
+                    HeightRequest="70"
+                    Text="Memory chart"
+                    Margin="-250,0,0,10"
+                    CornerRadius="15"
+                    BackgroundColor="White"
+                    BorderColor="#2E86C1"
+                    BorderWidth="1"
                     Command="{Binding MemoryChart_Clicked}"
                     />
-            <Button
-                    Text="Chart of ReactionGame"
+                
+                <Button
+                    Grid.Row="8"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="100"
+                    HeightRequest="70"
+                    Margin="0,0,0,10"
+                    Text="Reaction Chart"
+                    CornerRadius="15"
+                    BackgroundColor="White"
+                    BorderColor="#2E86C1"
+                    BorderWidth="1"
                     Command="{Binding ReactionChart_Clicked}"
                     />
-            <Button
-                    Text="Chart of ReactionGame"
+
+                <Button
+                    Grid.Row="8"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="100"
+                    HeightRequest="70"
+                    Margin="250,0,0,10"
+                    Text="Math Chart"
+                    CornerRadius="20"
+                    BackgroundColor="White"
+                    BorderColor="#2E86C1"
+                    BorderWidth="1"
                     Command="{Binding MathChart_Clicked}"
                     />
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
