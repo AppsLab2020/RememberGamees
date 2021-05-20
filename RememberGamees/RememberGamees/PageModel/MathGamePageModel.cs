@@ -324,36 +324,7 @@ namespace RememberGamees.PageModel
                 _button2 = _multiple - _defaultResult2;
                 _button3 = _multiple - _defaultResult3;
             }
-        }
-        private async System.Threading.Tasks.Task _brainCountDownAsync(INavigation navigation)
-        {
-            if (_brainsDeletes == 0)
-            { }
-            else if (_brainsDeletes == 1)
-            {
-                FirstBrainImage_Source = "Null";
-            }
-            else if (_brainsDeletes == 2)
-            {
-                SecondBrainImage_Source = "Null";
-            }
-            else if (_brainsDeletes == 3)
-            {
-                ThirdBrainImage_Source = "Null";
-            }
-            else if (_brainsDeletes == 4)
-            {
-                FourthBrainImage_Source = "Null";
-            }
-            else
-            {
-                _defaultScore = 0;
-
-                _brainsDeletes = 0;
-
-                _nextPage = true;
-                await navigation.PushAsync(new ScoreMathPage());
-            }
+        
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }

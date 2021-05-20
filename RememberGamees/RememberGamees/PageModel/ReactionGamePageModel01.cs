@@ -350,9 +350,6 @@ namespace RememberGamees.PageModel
 
                     Task.Factory.StartNew(async () =>
                     {
-                        await Navigation.PushAsync(new ScoreReactionPage(Experiences_Text));
-
-
                         if (!string.IsNullOrWhiteSpace(Experiences_Text))
                         {
                             await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
@@ -360,14 +357,17 @@ namespace RememberGamees.PageModel
                                 ReactionScore = int.Parse(Experiences_Text)
                             });
                         }
+
                     });
-
-
                     _fifty = 0;
                     _additionExperience = _fifty;
 
                     _brainsDeletes = 0;
                     _countOfBrainDeletes = _brainsDeletes;
+                    Task.Factory.StartNew(async () =>
+                    {
+                        await Navigation.PushAsync(new ScoreReactionPage(Experiences_Text));
+                    });
                 }
                 return false;
             });
