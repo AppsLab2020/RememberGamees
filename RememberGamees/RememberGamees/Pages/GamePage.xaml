@@ -4,7 +4,7 @@
              x:Class="RememberGamees.Pages.GamePage"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#D4FFF9">
+             BackgroundColor="#FFFFFF">
     <ContentPage.Content>
         <StackLayout>
             <Grid Margin="0,15,0,0">
@@ -24,6 +24,7 @@
                 <!-- Reaction Game Button -->
                 <Button 
                     Grid.Row="0"
+                    Margin="5,0,5,0"
                     WidthRequest="500"
                     Text="Reaction Game"
                     FontSize="30"
@@ -31,8 +32,6 @@
                     BackgroundColor="#8DD5F8"
                     Command="{Binding GameBtnCommand}"
                     CornerRadius="20"
-                    BorderColor="DarkOrange"
-                    BorderWidth="2"
                     ContentLayout="Left"
                     Image="bolt.png"
                     
@@ -42,20 +41,20 @@
                 <Button 
                     Command="{Binding MemoryGame_Clicked}"
                     Grid.Row="1"
+                    Margin="5,0,5,0"
                     WidthRequest="500"
                     Text="Memory Game"
                     FontSize="30"
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
-                    BorderColor="DarkOrange"
-                    BorderWidth="2"
                     ContentLayout="Left"
                     Image="Memory.png"
                     />
 
                 <!-- Math Game Button -->
                 <Button 
+                    Margin="5,0,5,0"
                     Grid.Row="2"
                     WidthRequest="500"
                     Text="Math Game"
@@ -63,8 +62,6 @@
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
-                    BorderColor="DarkOrange"
-                    BorderWidth="2"
                     ContentLayout="Left"
                     Image="math.png"
                     Command="{Binding MathGame_Clicked}"
@@ -73,6 +70,7 @@
 
                 <!-- Logical Game Button -->
                 <Button 
+                    Margin="5,0,5,0"
                     Grid.Row="3"
                     WidthRequest="500"
                     Text="Logical Game"
@@ -80,8 +78,6 @@
                     FontAttributes="Bold"
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
-                    BorderColor="DarkOrange"
-                    BorderWidth="2"
                     Command="{Binding LogicalGame_Clicked}"
                     ContentLayout="Left"
                     Image="gears.png"
@@ -95,7 +91,7 @@
                     HorizontalOptions="CenterAndExpand" 
                     VerticalOptions="CenterAndExpand"
                     Grid.Row="9"
-                    WidthRequest="200"
+                    WidthRequest="500"
                     HeightRequest="100"
                     BackgroundColor="White"
                     CornerRadius="20"
