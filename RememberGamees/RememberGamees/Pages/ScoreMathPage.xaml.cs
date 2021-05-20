@@ -1,5 +1,4 @@
-﻿using RememberGamees.PageModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace RememberGamees.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MathGamePage : ContentPage
+    public partial class ScoreMathPage : ContentPage
     {
-        public MathGamePage()
+        public ScoreMathPage()
         {
             InitializeComponent();
-            BindingContext = new MathGamePageModel(Navigation);
         }
     }
 }

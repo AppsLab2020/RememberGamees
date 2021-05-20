@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RememberGamees.Data;
+using RememberGamees.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -8,8 +10,10 @@ namespace RememberGamees.PageModel
 {
     public class MathGamePageModel : INotifyPropertyChanged
     {
+        private bool _nextPage = false;
         private double _multiple { get; set; }
         private string _writeNumber;
+        private int _brainsDeletes;
         private double _numberA { get; set; }
         private double _numberB { get; set; }
         private double _result { get; set; }
@@ -25,9 +29,61 @@ namespace RememberGamees.PageModel
         private double _button1;
         private double _button2;
         private double _button3;
+        private ImageSource _defaultBrainImage = "FirstBrainImage";
+        private ImageSource _secondDefaultBrainImage = "SecondBrainImage";
+        private ImageSource _thirdDefaultBrainImage = "ThirdBrainImage";
+        private ImageSource _fourthDefaultBrainImage = "FourthBrainImage";
+        private ImageSource _fifthDefaultBrainImage = "FifthBrainImage";
 
-        
-        
+        public ImageSource FifthBrainImage_Source
+        {
+            get => _fifthDefaultBrainImage;
+        }
+
+        public ImageSource FourthBrainImage_Source
+        {
+            get => _fourthDefaultBrainImage;
+            set
+            {
+                _fourthDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FourthBrainImage_Source)));
+            }
+        }
+
+        public ImageSource ThirdBrainImage_Source
+        {
+            get => _thirdDefaultBrainImage;
+            set
+            {
+                _thirdDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(ThirdBrainImage_Source)));
+            }
+        }
+
+        public ImageSource SecondBrainImage_Source
+        {
+            get => _secondDefaultBrainImage;
+            set
+            {
+                _secondDefaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(SecondBrainImage_Source)));
+            }
+        }
+
+        public ImageSource FirstBrainImage_Source
+        {
+            get => _defaultBrainImage;
+            set
+            {
+                _defaultBrainImage = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(FirstBrainImage_Source)));
+            }
+        }
+
         public string WriteNumber_Text
         {
             get => _writeNumber;
@@ -116,37 +172,133 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public MathGamePageModel()
+        public MathGamePageModel(INavigation navigation)
         {
 
             Random rnd = new Random();
             //double _numberA = rnd.Next(1, 3);
             GenerateRandomNum();
 
-            FirstResult_Clicked = new Command( () =>
+            FirstResult_Clicked = new Command(async () =>
             {
                 if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2) || Math.Abs(_button1) == Math.Abs(_button3) && Math.Abs(_button1) == Math.Abs(_button2))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
-                };
+                }
+                else
+                {
+                    _brainsDeletes = _brainsDeletes + 1;
+                }
+
+                if (_brainsDeletes == 0)
+                { }
+                else if (_brainsDeletes == 1)
+                {
+                    FirstBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 2)
+                {
+                    SecondBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 3)
+                {
+                    ThirdBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 4)
+                {
+                    FourthBrainImage_Source = "Null";
+                }
+                else
+                {
+                    _defaultScore = 0;
+
+                    _brainsDeletes = 0;
+
+                    _nextPage = true;
+                    await navigation.PushAsync(new ScoreMathPage());
+                }
             });
 
-            SecondResult_Clicked = new Command(() =>
+            SecondResult_Clicked = new Command(async () =>
             {
                 if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1) || Math.Abs(_button2) == Math.Abs(_button3) && Math.Abs(_button2) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
-                };
+                }
+                else
+                {
+                    _brainsDeletes = _brainsDeletes + 1;
+                }
+
+                if (_brainsDeletes == 0)
+                { }
+                else if (_brainsDeletes == 1)
+                {
+                    FirstBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 2)
+                {
+                    SecondBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 3)
+                {
+                    ThirdBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 4)
+                {
+                    FourthBrainImage_Source = "Null";
+                }
+                else
+                {
+                    _defaultScore = 0;
+
+                    _brainsDeletes = 0;
+
+                    _nextPage = true;
+                    await navigation.PushAsync(new ScoreMathPage());
+                }
             });
 
-            ThirdResult_Clicked = new Command(() =>
+            ThirdResult_Clicked = new Command(async () =>
             {
                 if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1) || Math.Abs(_button3) == Math.Abs(_button2) && Math.Abs(_button3) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
+                }
+                else
+                {
+                    _brainsDeletes = _brainsDeletes + 1;
+                }
+
+                if (_brainsDeletes == 0)
+                { }
+                else if (_brainsDeletes == 1)
+                {
+                    FirstBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 2)
+                {
+                    SecondBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 3)
+                {
+                    ThirdBrainImage_Source = "Null";
+                }
+                else if (_brainsDeletes == 4)
+                {
+                    FourthBrainImage_Source = "Null";
+                }
+                else
+                {
+                    _defaultScore = 0;
+
+                    _brainsDeletes = 0;
+
+                    _nextPage = true;
+                    await navigation.PushAsync(new ScoreMathPage());
                 }
             });
             void GenerateRandomNum()
@@ -171,6 +323,36 @@ namespace RememberGamees.PageModel
                 _button1 = _multiple - _defaultResult;
                 _button2 = _multiple - _defaultResult2;
                 _button3 = _multiple - _defaultResult3;
+            }
+        }
+        private async System.Threading.Tasks.Task _brainCountDownAsync(INavigation navigation)
+        {
+            if (_brainsDeletes == 0)
+            { }
+            else if (_brainsDeletes == 1)
+            {
+                FirstBrainImage_Source = "Null";
+            }
+            else if (_brainsDeletes == 2)
+            {
+                SecondBrainImage_Source = "Null";
+            }
+            else if (_brainsDeletes == 3)
+            {
+                ThirdBrainImage_Source = "Null";
+            }
+            else if (_brainsDeletes == 4)
+            {
+                FourthBrainImage_Source = "Null";
+            }
+            else
+            {
+                _defaultScore = 0;
+
+                _brainsDeletes = 0;
+
+                _nextPage = true;
+                await navigation.PushAsync(new ScoreMathPage());
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;

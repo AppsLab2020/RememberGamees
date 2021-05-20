@@ -4,6 +4,13 @@
              x:Class="RememberGamees.Pages.MathGamePage">
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
+                <Image Source="{Binding FirstBrainImage_Source}"  Grid.Column="0"  Grid.Row="0" />
+                <Image Source="{Binding SecondBrainImage_Source}" Grid.Column="1"  Grid.Row="0"/>
+                <Image Source="{Binding ThirdBrainImage_Source}" Grid.Column="2"  Grid.Row="0"/>
+                <Image Source="{Binding FourthBrainImage_Source}" Grid.Column="3" Grid.Row="0"/>
+                <Image Source="{Binding FifthBrainImage_Source}" Grid.Column="4" Grid.Row="0"/>
+            </Grid>
             <Label Text="{Binding WriteNumber_Text}"/>
             <!--<Label Text="A + B ="
                 VerticalOptions="CenterAndExpand" 
