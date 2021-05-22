@@ -49,7 +49,7 @@
                     BackgroundColor="#8DD5F8"
                     CornerRadius="20"
                     ContentLayout="Left"
-                    Image="Memory.png"
+                    Image="memory.png"
                     />
 
                 <!-- Math Game Button -->
@@ -80,7 +80,7 @@
                     CornerRadius="20"
                     Command="{Binding LogicalGame_Clicked}"
                     ContentLayout="Left"
-                    Image="gears.png"
+                    Image="logic.png"
                     />
 
 
