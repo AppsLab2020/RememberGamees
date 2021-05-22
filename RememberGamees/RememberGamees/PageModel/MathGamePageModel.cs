@@ -218,9 +218,9 @@ namespace RememberGamees.PageModel
                     {
                         MathScore = Score_Text
                     });
+                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
                     _defaultScore = 0;
                     _nextPage = true;
-                    await navigation.PushAsync(new ScoreMathPage());
                 }
             });
 
@@ -261,10 +261,10 @@ namespace RememberGamees.PageModel
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
                     {
                         MathScore = Score_Text
-                    });
+                    });                    
+                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
                     _defaultScore = 0;
                     _nextPage = true;
-                    await navigation.PushAsync(new ScoreMathPage());
                 }
             });
 
@@ -306,9 +306,9 @@ namespace RememberGamees.PageModel
                     {
                         MathScore = Score_Text
                     });
+                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
                     _defaultScore = 0;
                     _nextPage = true;
-                    await navigation.PushAsync(new ScoreMathPage());
                 }
             });
             void GenerateRandomNum()
