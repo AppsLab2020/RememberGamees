@@ -22,6 +22,8 @@ namespace RememberGamees.Data
             await _database.CreateTableAsync<ScoreOfReaction>();
             //TABLE FOR MEMORY GAME
             await _database.CreateTableAsync<ScoreOfMemory>();
+            //TABLE FOR MATH GAME
+            await _database.CreateTableAsync<ScoreOfMath>();
         }
         //SAVE AND RETRIVE EXPERIENCE FOR REACTION GAME
         public Task<List<ScoreOfReaction>> GetScoreOfReactionAsync()
@@ -43,6 +45,16 @@ namespace RememberGamees.Data
         public Task<int> SaveScoreOfMemoryAsync(ScoreOfMemory scoreOfMemory)
         {
             return _database.InsertAsync(scoreOfMemory);
+        }
+        //SAVE AND RETRIVE EXPERIENCE FOR MATH GAME
+        public Task<List<ScoreOfMath>> GetScoreOfMathAsync()
+        {
+            return _database.Table<ScoreOfMath>().ToListAsync();
+        }
+
+        public Task<int> SaveScoreOfMathAsync(ScoreOfMath scoreOfMath)
+        {
+            return _database.InsertAsync(scoreOfMath);
         }
     }
 }
