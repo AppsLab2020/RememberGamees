@@ -22,7 +22,7 @@ namespace RememberGamees.PageModel
         private double _defaultResult3 { get; set; }
         private double _randDoubleToFind { get; set; }
         private double _randDoubleToFind2;
-        private double _defaultScore;
+        private int _defaultScore;
         private Command _defaultCommand01;
         private Command _defaultCommand02;
         private Command _defaultCommand03;
@@ -128,7 +128,7 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public double Score_Text
+        public int Score_Text
         {
             get => _defaultScore;
             set
@@ -212,9 +212,12 @@ namespace RememberGamees.PageModel
                 else
                 {
                     _defaultScore = 0;
-
                     _brainsDeletes = 0;
 
+                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    {
+                        MathScore = Score_Text
+                    });
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
@@ -253,9 +256,12 @@ namespace RememberGamees.PageModel
                 else
                 {
                     _defaultScore = 0;
-
                     _brainsDeletes = 0;
 
+                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    {
+                        MathScore = Score_Text
+                    });
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
@@ -294,9 +300,12 @@ namespace RememberGamees.PageModel
                 else
                 {
                     _defaultScore = 0;
-
                     _brainsDeletes = 0;
 
+                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    {
+                        MathScore = Score_Text
+                    });
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
