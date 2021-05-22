@@ -4,6 +4,8 @@
              x:Class="RememberGamees.Pages.ScoreMathPage">
     <ContentPage.Content>
         <StackLayout>
+            <Button Command="{Binding RootButton}"
+                    Text="Go to homepage"/>
             <Label x:Name="userExperience"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
