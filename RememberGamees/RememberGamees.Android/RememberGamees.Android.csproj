@@ -98,7 +98,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\bolt.png" />
     <AndroidResource Include="Resources\drawable\FifthBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\FirstBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\FourthBrainImage.jpg" />
@@ -137,30 +136,6 @@
       <Project>{9822A192-CA00-4B18-AEB5-9ED062A71234}</Project>
       <Name>RememberGamees</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\GamePageImage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Train_Your.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Brain_Text.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\gears.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Memory.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\chart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\math.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
