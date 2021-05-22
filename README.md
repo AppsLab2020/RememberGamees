@@ -19,8 +19,7 @@ Po spustení aplikácie vás privíta úvodná obrazovka pre dobrovoľné prihl�
 ## Predbežné grafické návrhy:
 
 
-<img src="https://user-images.githubusercontent.com/72004230/112747852-489dfd00-8fb8-11eb-95e4-661a9a43746f.png" width="220" height="400">                                       <img src="https://user-images.githubusercontent.com/72004230/113445075-6a9ee180-93f5-11eb-9f62-7ba2ad737f4d.png" width="220" height="400"> 
-<img src="https://user-images.githubusercontent.com/72004230/114347400-2d5cf100-9b65-11eb-9aff-e98ac7780531.png" width="250" height="250">
+<img src="https://user-images.githubusercontent.com/72004230/119233388-1c6eaa80-bb29-11eb-8fdb-aed769b8093a.png" width="220" height="400">                                       
 
 
 
