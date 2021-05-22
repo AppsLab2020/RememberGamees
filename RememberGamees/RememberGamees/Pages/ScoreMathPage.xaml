@@ -4,9 +4,17 @@
              x:Class="RememberGamees.Pages.ScoreMathPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <CollectionView x:Name="collectionView" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding MathScore}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

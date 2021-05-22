@@ -211,13 +211,14 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    _defaultScore = 0;
+                    
                     _brainsDeletes = 0;
 
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
                     {
                         MathScore = Score_Text
                     });
+                    _defaultScore = 0;
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
@@ -255,13 +256,13 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    _defaultScore = 0;
                     _brainsDeletes = 0;
 
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
                     {
                         MathScore = Score_Text
                     });
+                    _defaultScore = 0;
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
@@ -299,13 +300,13 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    _defaultScore = 0;
                     _brainsDeletes = 0;
 
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
                     {
                         MathScore = Score_Text
                     });
+                    _defaultScore = 0;
                     _nextPage = true;
                     await navigation.PushAsync(new ScoreMathPage());
                 }
