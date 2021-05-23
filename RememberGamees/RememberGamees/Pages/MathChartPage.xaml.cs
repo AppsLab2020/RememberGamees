@@ -11,17 +11,17 @@ using Xamarin.Forms.Xaml;
 namespace RememberGamees.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MemoryChartPage : ContentPage
+    public partial class MathChartPage : ContentPage
     {
-        public MemoryChartPage()
+        public MathChartPage()
         {
             InitializeComponent();
-            BindingContext = new MemoryChartPageModel();
+            BindingContext = new MathChartPageModel();
         }
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await (BindingContext as MemoryChartPageModel).GetScoreOfMemoryAsync();
+            await (BindingContext as MathChartPageModel).GetScoreOfMathAsync();
         }
     }
 }

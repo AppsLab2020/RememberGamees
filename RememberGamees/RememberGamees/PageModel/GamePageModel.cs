@@ -30,7 +30,7 @@ namespace RememberGamees.PageModel
             MathGame_Clicked = new Command(async () => await Navigation.PushAsync(new ReadyToMathPage()));
             MemoryChart_Clicked = new Command(async () => await Navigation.PushAsync(new MemoryChartPage()));
             ReactionChart_Clicked = new Command(async () => await Navigation.PushAsync(new ReactionChartPage()));
-            MathChart_Clicked = new Command(async () => await Navigation.PushAsync(new ReactionChartPage()));
+            MathChart_Clicked = new Command(async () => await Navigation.PushAsync(new MathChartPage()));
         }
         public INavigation Navigation { get; set; }
         public Command GameBtnCommand { get; set; }
