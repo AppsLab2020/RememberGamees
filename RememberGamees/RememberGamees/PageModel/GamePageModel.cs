@@ -15,13 +15,16 @@ namespace RememberGamees.PageModel
 {
     class GamePageModel
     {
+        IAuth auth;
 
         public GamePageModel(INavigation navigation)
         {
+            auth = DependencyService.Get<IAuth>();
             Navigation = navigation;
             GameBtnCommand = new Command(async () => await Navigation.PushAsync(new ReadyToReactionPage()));
             SignOutButton_Clicked = new Command(async () =>
             {
+                auth.SignOut();
                 await Navigation.PushAsync(new MainPage());
                 Application.Current.Properties["IsLoggedIn"] = Boolean.FalseString;
             });

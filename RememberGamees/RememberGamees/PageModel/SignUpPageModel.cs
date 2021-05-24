@@ -6,6 +6,7 @@ namespace RememberGamees.PageModel
 {
     public class SignUpPageModel : INotifyPropertyChanged
     {
+        IAuth Auth;
         private string _emailString;
         private string _passwordString;
         public event PropertyChangedEventHandler PropertyChanged;
