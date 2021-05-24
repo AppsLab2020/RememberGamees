@@ -127,24 +127,7 @@ namespace RememberGamees.PageModel
                 _brainsDeletes = _countOfBrainDeletes + 1;
                 _countOfBrainDeletes = _brainsDeletes;
             }
-            else
-            {
-                _fifty = 0;
-                _additionExperience = _fifty;
 
-                _brainsDeletes = 0;
-                _countOfBrainDeletes = _brainsDeletes;
-                _nextPage = true;
-                await Navigation.PushAsync(new ScoreReactionPage(Experiences_Text));
-
-                if (!string.IsNullOrWhiteSpace(Experiences_Text))
-                {
-                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
-                    {
-                        ReactionScore = int.Parse(Experiences_Text)
-                    });
-                }
-            }
 
             if(_brainsDeletes == 0)
             {}
@@ -219,6 +202,25 @@ namespace RememberGamees.PageModel
             else if (_brainsDeletes == 4)
             {
                 FourthBrainImage_Source = "Null";
+            }
+
+            else
+            {
+                _fifty = 0;
+                _additionExperience = _fifty;
+
+                _brainsDeletes = 0;
+                _countOfBrainDeletes = _brainsDeletes;
+                _nextPage = true;
+                await Navigation.PushAsync(new ScoreReactionPage(Experiences_Text));
+
+                if (!string.IsNullOrWhiteSpace(Experiences_Text))
+                {
+                    await App.Database.SaveScoreOfReactionAsync(new ScoreOfReaction
+                    {
+                        ReactionScore = int.Parse(Experiences_Text)
+                    });
+                }
             }
             
             CreateRandomImage();
