@@ -20,7 +20,8 @@
 
             <Entry Placeholder="Password"
                    Keyboard="Default"
-                   Text="{Binding PasswordInput}"/>
+                   Text="{Binding PasswordInput}"
+                   IsPassword="True"/>
 
             <Button
                 Text="Enter"
