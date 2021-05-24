@@ -8,7 +8,7 @@
             <!-- Rules Label -->
             <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
                 <Label 
-                    Text="Your job is to decide, if image is repeating or not"
+                    Text="Decide, if image is repeating"
                     HorizontalTextAlignment="Center"
                     FontSize="25"
                     TextColor="Black"

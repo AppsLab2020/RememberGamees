@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.ReadyToReactionPage"
+             NavigationPage.HasNavigationBar="True"
              BackgroundColor="White">
     <ContentPage.Content>
         <Grid>
@@ -10,7 +11,7 @@
             
             <Frame Margin="0,20,0,0" Padding="0,0,0,0" CornerRadius="15" HasShadow="True" >
                 <Label 
-                    Text="Your job is to take fully diferent image or the same image(background and item)" 
+                    Text="Your role is to choose fully diferent image or same image (background and item)" 
                     HorizontalTextAlignment="Center"
                     FontSize="25"
                     TextColor="Black"
