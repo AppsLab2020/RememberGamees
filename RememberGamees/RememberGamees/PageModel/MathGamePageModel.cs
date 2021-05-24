@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace RememberGamees.PageModel
 {
     public class MathGamePageModel : INotifyPropertyChanged
     {
+        private int _countSeconds = 75;
         private bool _nextPage = false;
         private double _multiple { get; set; }
         private string _writeNumber;
@@ -174,6 +176,17 @@ namespace RememberGamees.PageModel
 
         public MathGamePageModel(INavigation navigation)
         {
+            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
+            {
+                if (!_nextPage)
+                {
+                    Navigate(navigation);
+
+                    Score_Text = 0;
+                    _brainsDeletes = 0;
+                    _defaultScore = 0;                }
+                return false;
+            });
 
             Random rnd = new Random();
             //double _numberA = rnd.Next(1, 3);
@@ -181,7 +194,7 @@ namespace RememberGamees.PageModel
 
             FirstResult_Clicked = new Command(async () =>
             {
-                if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2)  && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2) || Math.Abs(_button1) == Math.Abs(_button3) && Math.Abs(_button1) == Math.Abs(_button2))
+                if (Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) < Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button2) && Math.Abs(_button1) <= Math.Abs(_button3) || Math.Abs(_button1) < Math.Abs(_button3) && Math.Abs(_button1) <= Math.Abs(_button2) || Math.Abs(_button1) == Math.Abs(_button3) && Math.Abs(_button1) == Math.Abs(_button2))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
@@ -211,7 +224,7 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    
+
                     _brainsDeletes = 0;
 
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
@@ -224,9 +237,13 @@ namespace RememberGamees.PageModel
                 }
             });
 
+
+
+
+
             SecondResult_Clicked = new Command(async () =>
             {
-                if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) ||  Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1) || Math.Abs(_button2) == Math.Abs(_button3) && Math.Abs(_button2) == Math.Abs(_button1))
+                if (Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) < Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button1) && Math.Abs(_button2) <= Math.Abs(_button3) || Math.Abs(_button2) < Math.Abs(_button3) && Math.Abs(_button2) <= Math.Abs(_button1) || Math.Abs(_button2) == Math.Abs(_button3) && Math.Abs(_button2) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
@@ -261,7 +278,7 @@ namespace RememberGamees.PageModel
                     await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
                     {
                         MathScore = Score_Text
-                    });                    
+                    });
                     await navigation.PushAsync(new ScoreMathPage(Score_Text));
                     _defaultScore = 0;
                     _nextPage = true;
@@ -270,7 +287,7 @@ namespace RememberGamees.PageModel
 
             ThirdResult_Clicked = new Command(async () =>
             {
-                if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) &&  Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1) || Math.Abs(_button3) == Math.Abs(_button2) && Math.Abs(_button3) == Math.Abs(_button1))
+                if (Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) < Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button1) && Math.Abs(_button3) <= Math.Abs(_button2) || Math.Abs(_button3) < Math.Abs(_button2) && Math.Abs(_button3) <= Math.Abs(_button1) || Math.Abs(_button3) == Math.Abs(_button2) && Math.Abs(_button3) == Math.Abs(_button1))
                 {
                     Score_Text = _defaultScore + 50;
                     GenerateRandomNum();
@@ -334,7 +351,17 @@ namespace RememberGamees.PageModel
                 _button2 = _multiple - _defaultResult2;
                 _button3 = _multiple - _defaultResult3;
             }
-        
+        }
+        private async void Navigate (INavigation navigation)
+        {
+            if (!string.IsNullOrWhiteSpace(Score_Text.ToString()))
+            {
+                await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                {
+                    MathScore = Score_Text
+                });
+            }
+            await navigation.PushAsync(new ScoreMathPage(Score_Text));
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
