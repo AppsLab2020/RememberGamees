@@ -119,7 +119,7 @@ namespace RememberGamees.PageModel
                 Time_Text--;
                 return Convert.ToBoolean(_countSeconds);
             });
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
             {
                 if (!_nextPage)
                 {
@@ -169,16 +169,18 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        _brainsDeletes = 0;
-                        _countOfBrainDeletes = _brainsDeletes;
-
-                        await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
+                        if(!_nextPage)
                         {
-                            MemoryScore = Experiences2_Text
-                        });
+                            _brainsDeletes = 0;
+                            _countOfBrainDeletes = _brainsDeletes;
 
-                        await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
-
+                            await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
+                            {
+                                MemoryScore = Experiences2_Text
+                            });
+                            _nextPage = true;
+                            await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
+                        }
                     }
                 }
 
@@ -218,17 +220,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        
-                        _brainsDeletes = 0;
-                        _countOfBrainDeletes = _brainsDeletes;
-
-                        await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
+                    if (!_nextPage)
                         {
-                            MemoryScore = Experiences2_Text
-                        });
+                            _brainsDeletes = 0;
+                            _countOfBrainDeletes = _brainsDeletes;
 
-                        await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
-                        _nextPage = true;
+                            await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
+                            {
+                                MemoryScore = Experiences2_Text
+                            });
+
+                            await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
+                            _nextPage = true;
+                        }
                     }
                 }
 

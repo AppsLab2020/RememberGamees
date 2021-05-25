@@ -239,16 +239,18 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-
-                    _brainsDeletes = 0;
-
-                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    if(!_nextPage)
                     {
-                        MathScore = Score_Text
-                    });
-                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
-                    _defaultScore = 0;
-                    _nextPage = true;
+                        _brainsDeletes = 0;
+
+                        await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                        {
+                            MathScore = Score_Text
+                        });
+                        await navigation.PushAsync(new ScoreMathPage(Score_Text));
+                        _defaultScore = 0;
+                        _nextPage = true;
+                    }
                 }
             });
 
@@ -288,15 +290,18 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    _brainsDeletes = 0;
-
-                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    if (!_nextPage)
                     {
-                        MathScore = Score_Text
-                    });
-                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
-                    _defaultScore = 0;
-                    _nextPage = true;
+                        _brainsDeletes = 0;
+
+                        await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                        {
+                            MathScore = Score_Text
+                        });
+                        await navigation.PushAsync(new ScoreMathPage(Score_Text));
+                        _defaultScore = 0;
+                        _nextPage = true;
+                    }                    
                 }
             });
 
@@ -332,15 +337,18 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    _brainsDeletes = 0;
-
-                    await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                    if(!_nextPage)
                     {
-                        MathScore = Score_Text
-                    });
-                    await navigation.PushAsync(new ScoreMathPage(Score_Text));
-                    _defaultScore = 0;
-                    _nextPage = true;
+                        _brainsDeletes = 0;
+
+                        await App.Database.SaveScoreOfMathAsync(new ScoreOfMath
+                        {
+                            MathScore = Score_Text
+                        });
+                        await navigation.PushAsync(new ScoreMathPage(Score_Text));
+                        _defaultScore = 0;
+                        _nextPage = true;
+                    }
                 }
             });
             void GenerateRandomNum()
@@ -376,6 +384,7 @@ namespace RememberGamees.PageModel
                     MathScore = Score_Text
                 });
             }
+            _nextPage = true;
             await navigation.PushAsync(new ScoreMathPage(Score_Text));
         }
         public event PropertyChangedEventHandler PropertyChanged;
