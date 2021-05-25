@@ -13,7 +13,7 @@
                 <chart:NumericalAxis/>
             </chart:SfChart.SecondaryAxis>
 
-            <chart:ColumnSeries ItemsSource="{Binding ChartData}"
+            <chart:SplineSeries ItemsSource="{Binding ChartData}"
                             XBindingPath="ID"
                             YBindingPath="MemoryScore"/>
 

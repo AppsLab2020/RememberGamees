@@ -9,14 +9,14 @@
                     <chart:CategoryAxis/>
                 </chart:SfChart.PrimaryAxis>
 
-                <chart:SfChart.SecondaryAxis>
-                    <chart:NumericalAxis/>
-                </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis/>
+            </chart:SfChart.SecondaryAxis>
 
-                <chart:ColumnSeries ItemsSource="{Binding ChartData}"
+            <chart:SplineAreaSeries ItemsSource="{Binding ChartData}"
                             XBindingPath="ID"
                             YBindingPath="ReactionScore"/>
-
+            <chart:SfChart.BackgroundColor> #6DC0ED </chart:SfChart.BackgroundColor>
             </chart:SfChart>
     </ContentPage.Content>
 </ContentPage>
