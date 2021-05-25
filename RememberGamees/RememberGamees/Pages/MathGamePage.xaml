@@ -30,6 +30,7 @@
             <Button Text="{Binding Result3_Text}"
                     Command="{Binding ThirdResult_Clicked}"/>
             <Label Text="{Binding Score_Text}"/>
+            <Label Text="{Binding Time_Text}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

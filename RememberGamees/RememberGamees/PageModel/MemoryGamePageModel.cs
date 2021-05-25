@@ -10,10 +10,11 @@ namespace RememberGamees.PageModel
     class MemoryGamePageModel : INotifyPropertyChanged
     {
         List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4"};
+        private bool _nextPage = false;
         private readonly List<DateTime> tapTimes;
         private string _stringNewRandomImage;
         private string _stringOldRandomImage;
-        private string _setExperience = "0";
+        private int _setExperience;
 
         private ImageSource _firstImage = "Image1";
         private ImageSource _defaultBrainImage = "FirstBrainImage";
@@ -26,6 +27,7 @@ namespace RememberGamees.PageModel
         private int _fifty;
         private int _countOfBrainDeletes;
         private int _brainsDeletes = 0;
+        private int _countSeconds = 75;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -86,7 +88,7 @@ namespace RememberGamees.PageModel
             }
         }
 
-        public string Experiences2_Text
+        public int Experiences2_Text
         {
             get => _setExperience;
             set
@@ -96,11 +98,40 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Experiences2_Text)));
             }
         }
+
+        public int Time_Text
+        {
+            get => _countSeconds;
+            set
+            {
+                _countSeconds = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Time_Text)));
+            }
+        }
         public Command Yes_Clicked { get; set; }
         public Command No_Clicked { get; set; }
 
         public MemoryGamePageModel(INavigation navigation)
         {
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                Time_Text--;
+                return Convert.ToBoolean(_countSeconds);
+            });
+            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            {
+                if (!_nextPage)
+                {
+                    Navigate(navigation);
+
+                    Experiences2_Text = 0;
+                    _brainsDeletes = 0;
+                    _setExperience = 0;
+                }
+                return false;
+            });
+
             tapTimes = new List<DateTime>();
 
             DisplayRandomImage();
@@ -112,7 +143,7 @@ namespace RememberGamees.PageModel
                 {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
-                    Experiences2_Text = _additionExperience.ToString();
+                    Experiences2_Text = _additionExperience;
                 }
                 else
                 {
@@ -143,10 +174,11 @@ namespace RememberGamees.PageModel
 
                         await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
                         {
-                            MemoryScore = int.Parse(Experiences2_Text)
+                            MemoryScore = Experiences2_Text
                         });
 
                         await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
+
                     }
                 }
 
@@ -160,7 +192,7 @@ namespace RememberGamees.PageModel
             {
                     _fifty = _additionExperience + 50;
                     _additionExperience = _fifty;
-                    Experiences2_Text = _additionExperience.ToString();
+                    Experiences2_Text = _additionExperience;
             }
             else
             {
@@ -186,15 +218,17 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
+                        
                         _brainsDeletes = 0;
                         _countOfBrainDeletes = _brainsDeletes;
 
                         await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
                         {
-                            MemoryScore = int.Parse(Experiences2_Text)
+                            MemoryScore = Experiences2_Text
                         });
 
                         await navigation.PushAsync(new ScoreOfMemoryGamePage(Experiences2_Text));
+                        _nextPage = true;
                     }
                 }
 
@@ -218,6 +252,18 @@ namespace RememberGamees.PageModel
             var next = rand.Next(4);
             _stringNewRandomImage = images[next];
             RandomImage_Source = ImageSource.FromFile(_stringNewRandomImage);
+        }
+        private async void Navigate(INavigation navigation)
+        {
+            if (!string.IsNullOrWhiteSpace(Experiences2_Text.ToString()))
+            {
+                await App.Database.SaveScoreOfMemoryAsync(new ScoreOfMemory
+                {
+                    MemoryScore = Experiences2_Text
+                });
+            }
+            await navigation.PushAsync(new ScoreMathPage(Experiences2_Text));
+            _nextPage = true;
         }
     }
 }

@@ -174,9 +174,24 @@ namespace RememberGamees.PageModel
             }
         }
 
+        public int Time_Text
+        {
+            get => _countSeconds;
+            set
+            {
+                _countSeconds = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Time_Text)));
+            }
+        }
         public MathGamePageModel(INavigation navigation)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(75), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                Time_Text--;
+                return Convert.ToBoolean(_countSeconds);
+            });
+                Device.StartTimer(TimeSpan.FromSeconds(75), () =>
             {
                 if (!_nextPage)
                 {

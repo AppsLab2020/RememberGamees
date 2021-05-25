@@ -13,7 +13,7 @@ namespace RememberGamees.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScoreOfMemoryGamePage : ContentPage
     {
-        public ScoreOfMemoryGamePage(string exParameter)
+        public ScoreOfMemoryGamePage(int exParameter)
         {
             InitializeComponent();
             BindingContext = new ScoreOfMemoryPageModel(Navigation);

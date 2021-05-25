@@ -58,6 +58,7 @@
                 <Image Source="{Binding ThirdBrainImage_Source}" Grid.Column="2"  Grid.Row="5"/>
                 <Image Source="{Binding FourthBrainImage_Source}" Grid.Column="3" Grid.Row="5"/>
                 <Image Source="{Binding FifthBrainImage_Source}" Grid.Column="4" Grid.Row="5"/>
+                <Label Text="{Binding Time_Text}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
