@@ -1,17 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RememberGamees.Pages.MathGamePage">
+             x:Class="RememberGamees.Pages.MathGamePage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
+        <Grid  Margin="0,0,0,0" Padding="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            
+            
                 <Image Source="{Binding FirstBrainImage_Source}"  Grid.Column="0"  Grid.Row="0" />
                 <Image Source="{Binding SecondBrainImage_Source}" Grid.Column="1"  Grid.Row="0"/>
                 <Image Source="{Binding ThirdBrainImage_Source}" Grid.Column="2"  Grid.Row="0"/>
                 <Image Source="{Binding FourthBrainImage_Source}" Grid.Column="3" Grid.Row="0"/>
                 <Image Source="{Binding FifthBrainImage_Source}" Grid.Column="4" Grid.Row="0"/>
-            </Grid>
-            <Label Text="{Binding WriteNumber_Text}"/>
+
             <!--<Label Text="A + B ="
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />-->
@@ -23,14 +34,89 @@
             <!--<Label Text="A/B =?"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />-->
-            <Button Text="{Binding Result_Text}"
-                    Command="{Binding FirstResult_Clicked}"/>
-            <Button Text="{Binding Result2_Text}"
-                    Command="{Binding SecondResult_Clicked}"/>
-            <Button Text="{Binding Result3_Text}"
-                    Command="{Binding ThirdResult_Clicked}"/>
-            <Label Text="{Binding Score_Text}"/>
-            <Label Text="{Binding Time_Text}"/>
-        </StackLayout>
+
+
+            <Label 
+                Text="{Binding WriteNumber_Text}"
+                TextColor="Black"
+                Grid.Row="2"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                FontSize="30"
+                />
+
+            <Label
+                Text="Time:"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="50,50,0,0"
+                FontSize="25"
+                />
+
+            <Label
+                Text="{Binding Time_Text}"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="40,50,0,0"
+                FontSize="25"
+                />
+
+            <Label
+                Text="Score:"
+                
+                />
+
+            <Label 
+                Text="{Binding Score_Text}"
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="25,50,0,0"
+                FontSize="25"
+                />
+
+            <Button
+                Text="{Binding Result_Text}"
+                Command="{Binding FirstResult_Clicked}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="200"
+                CornerRadius="10"
+                />
+            
+            <Button
+                Text="{Binding Result2_Text}"
+                Command="{Binding SecondResult_Clicked}"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="200"
+                CornerRadius="10"
+                />
+            
+            <Button 
+                Text="{Binding Result3_Text}"
+                Command="{Binding ThirdResult_Clicked}"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="200"
+                CornerRadius="10"
+                />
+            
+
+            
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
