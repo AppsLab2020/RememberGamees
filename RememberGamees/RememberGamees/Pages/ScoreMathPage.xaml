@@ -4,22 +4,50 @@
              x:Class="RememberGamees.Pages.ScoreMathPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Command="{Binding RootButton}"
-                    Text="Go to homepage"/>
-            <Label x:Name="userExperience"
+
+            <Label 
+                x:Name="userExperience"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                FontSize="30"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,20,0,0"
+                />
+
+
+            <Label
+                Text="History:"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,20,0,0"
+                TextDecorations="Underline"
+                FontSize="30"
+                />
+            
+            
             <CollectionView x:Name="collectionView" >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding MathScore}"
-                               TextColor="Silver"
-                               FontSize="Small" />
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding MathScore}" 
+                                   TextColor="Black"
+                                   FontSize="20"
+                                   Margin="10,0,0,0"
+                                   />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+                
+            <Button 
+                Command="{Binding RootButton}"
+                Text="Go home"
+                CornerRadius="15"
+                Margin="0,0,0,10"
+                />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

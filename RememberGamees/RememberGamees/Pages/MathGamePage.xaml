@@ -122,7 +122,7 @@
                 BorderWidth="1"
                 BackgroundColor="White"
                 />
-            
+
             <Button 
                 Text="{Binding Result3_Text}"
                 Command="{Binding ThirdResult_Clicked}"
@@ -137,9 +137,6 @@
                 BorderWidth="1"
                 BackgroundColor="White"
                 />
-            
-
-            
 
         </Grid>
     </ContentPage.Content>
