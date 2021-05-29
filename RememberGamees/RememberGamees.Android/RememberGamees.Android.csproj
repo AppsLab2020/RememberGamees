@@ -98,9 +98,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FifthBrainImage.jpg" />
-    <AndroidResource Include="Resources\drawable\FirstBrainImage.jpg" />
-    <AndroidResource Include="Resources\drawable\FourthBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\Image1.PNG" />
     <AndroidResource Include="Resources\drawable\Image2.PNG" />
     <AndroidResource Include="Resources\drawable\Image3.PNG" />
@@ -111,9 +108,7 @@
     <AndroidResource Include="Resources\drawable\Image8.png" />
     <AndroidResource Include="Resources\drawable\Image9.PNG" />
     <AndroidResource Include="Resources\drawable\logo.png" />
-    <AndroidResource Include="Resources\drawable\SecondBrainImage.jpg" />
     <AndroidResource Include="Resources\drawable\splash_screen.xml" />
-    <AndroidResource Include="Resources\drawable\ThirdBrainImage.jpg" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -148,6 +143,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SecondBrainImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ThirdBrainImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FifthBrainImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FirstBrainImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FourthBrainImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
