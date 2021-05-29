@@ -2,6 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.ScoreMathPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout Margin="105,0,0,0">
+            <Label Text="Score"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <StackLayout>
 
@@ -9,13 +19,17 @@
                 x:Name="userExperience"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                FontSize="30"
-                TextColor="Black"
+                FontSize="40"
+                TextColor="#2B6EF3"
                 FontAttributes="Bold"
-                Margin="0,20,0,0"
-                />
+                Margin="0,20,0,0"/>
 
-
+            <BoxView HeightRequest="3"
+                     WidthRequest="5"
+                     VerticalOptions="Center"
+                     Opacity="0.5"
+                     Color="Black"/>
+                
             <Label
                 Text="History:"
                 TextColor="Black"
@@ -23,20 +37,22 @@
                 Margin="0,20,0,0"
                 TextDecorations="Underline"
                 FontSize="30"
+                HorizontalTextAlignment="Center"
                 />
             
             
             <CollectionView x:Name="collectionView" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout>
-                                <Label Text="{Binding MathScore}" 
+                        <StackLayout>
+                            <Label Text="{Binding MathScore}" 
                                    TextColor="Black"
                                    FontSize="20"
-                                   Margin="10,0,0,0"
+                                   HorizontalTextAlignment="Center"
+                                   TextDecorations="Underline"
                                    />
-                            </StackLayout>
-                        </DataTemplate>
+                        </StackLayout>
+                    </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 
@@ -44,8 +60,12 @@
             <Button 
                 Command="{Binding RootButton}"
                 Text="Go home"
-                CornerRadius="15"
+                CornerRadius="10"
                 Margin="0,0,0,10"
+                BackgroundColor="#2B6EF3"
+                TextColor="White"
+                FontSize="20"
+                FontAttributes="Bold"
                 />
 
         </StackLayout>
