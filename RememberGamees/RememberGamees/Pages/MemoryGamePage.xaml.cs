@@ -28,9 +28,33 @@ namespace RememberGamees.Pages
             AbsoluteLayout.SetLayoutBounds(Rand, new Rectangle(_RandWidthNumber, _number, 100, 50));
             AbsoluteLayout.SetLayoutFlags(Rand, AbsoluteLayoutFlags.PositionProportional);
 
+            Image Brain1 = new Image { WidthRequest = 50, HeightRequest = 50 };
+            Brain1.SetBinding(Image.SourceProperty, "FirstBrainImage_Source");
+            AbsoluteLayout.SetLayoutBounds(Brain1, new Rectangle(0.1, 0, 100, 50));
+            AbsoluteLayout.SetLayoutFlags(Brain1, AbsoluteLayoutFlags.PositionProportional);
+
+            Image Brain2 = new Image { WidthRequest = 50, HeightRequest = 50 };
+            Brain2.SetBinding(Image.SourceProperty, "SecondBrainImage_Source");
+            AbsoluteLayout.SetLayoutBounds(Brain2, new Rectangle(0.3, 0, 100, 50));
+            AbsoluteLayout.SetLayoutFlags(Brain2, AbsoluteLayoutFlags.PositionProportional);
+
+            Image Brain3 = new Image { WidthRequest = 50, HeightRequest = 50 };
+            Brain3.SetBinding(Image.SourceProperty, "ThirdBrainImage_Source");
+            AbsoluteLayout.SetLayoutBounds(Brain3, new Rectangle(0.5, 0, 100, 50));
+            AbsoluteLayout.SetLayoutFlags(Brain3, AbsoluteLayoutFlags.PositionProportional);
+
+            Image Brain4 = new Image { WidthRequest = 50, HeightRequest = 50 };
+            Brain4.SetBinding(Image.SourceProperty, "FourthBrainImage_Source");
+            AbsoluteLayout.SetLayoutBounds(Brain4, new Rectangle(0.7, 0, 100, 50));
+            AbsoluteLayout.SetLayoutFlags(Brain4, AbsoluteLayoutFlags.PositionProportional);
+
+            Image Brain5 = new Image { WidthRequest = 50, HeightRequest = 50 };
+            Brain5.SetBinding(Image.SourceProperty, "FifthBrainImage_Source");
+            AbsoluteLayout.SetLayoutBounds(Brain5, new Rectangle(0.9, 0, 100, 50));
+            AbsoluteLayout.SetLayoutFlags(Brain5, AbsoluteLayoutFlags.PositionProportional);
             Content = new AbsoluteLayout
             {
-                Children = { Rand, }
+                Children = { Rand, Brain1, Brain2, Brain3, Brain4, Brain5, }
             };
         }
         Random rnd = new Random();
