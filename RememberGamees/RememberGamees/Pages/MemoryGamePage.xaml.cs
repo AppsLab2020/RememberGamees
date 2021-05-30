@@ -52,9 +52,36 @@ namespace RememberGamees.Pages
             Brain5.SetBinding(Image.SourceProperty, "FifthBrainImage_Source");
             AbsoluteLayout.SetLayoutBounds(Brain5, new Rectangle(0.9, 0, 100, 50));
             AbsoluteLayout.SetLayoutFlags(Brain5, AbsoluteLayoutFlags.PositionProportional);
+
+            Label Description = new Label { Text = "Is the picture matches with previous?", FontSize = 17 };
+            AbsoluteLayout.SetLayoutBounds(Description, new Rectangle(0.5, 0.4, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(Description, AbsoluteLayoutFlags.PositionProportional);
+
+            Button Yes_Button = new Button { Text = "Yes", BorderColor = Color.Black, BorderWidth = 2, BackgroundColor = Color.White };
+            Yes_Button.Clicked += (sender, args) =>
+            {
+                _number = rnd.NextDouble() * (0.4 - 0.8) + 1;
+                _RandWidthNumber = rnd.NextDouble() * (0.9 - 0.1) + 0.1;
+                AbsoluteLayout.SetLayoutBounds(Rand, new Rectangle(_RandWidthNumber, _number, 100, 50));
+            };
+            Yes_Button.SetBinding(Button.CommandProperty, "Yes_Clicked");
+            AbsoluteLayout.SetLayoutBounds(Yes_Button, new Rectangle(0.7, 0.5, 110, 50));
+            AbsoluteLayout.SetLayoutFlags(Yes_Button, AbsoluteLayoutFlags.PositionProportional);
+
+            Button No_Button = new Button { Text = "No", BorderColor = Color.Black, BorderWidth = 2, BackgroundColor = Color.White };
+            No_Button.Clicked += (sender, args) =>
+            {
+                _number = rnd.NextDouble() * (0.4 - 0.8) + 1;
+                _RandWidthNumber = rnd.NextDouble() * (0.9 - 0.1) + 0.1;
+                AbsoluteLayout.SetLayoutBounds(Rand, new Rectangle(_RandWidthNumber, _number, 100, 50));
+            };
+            No_Button.SetBinding(Button.CommandProperty, "No_Clicked");
+            AbsoluteLayout.SetLayoutBounds(No_Button, new Rectangle(0.3, 0.5, 110, 50));
+            AbsoluteLayout.SetLayoutFlags(No_Button, AbsoluteLayoutFlags.PositionProportional);
+
             Content = new AbsoluteLayout
             {
-                Children = { Rand, Brain1, Brain2, Brain3, Brain4, Brain5, }
+                Children = { Rand, Brain1, Brain2, Brain3, Brain4, Brain5, Description, Yes_Button, No_Button, }
             };
         }
         Random rnd = new Random();
