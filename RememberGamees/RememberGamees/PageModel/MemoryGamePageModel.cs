@@ -250,7 +250,7 @@ namespace RememberGamees.PageModel
                 return false;
             });
         }
-        private void CreateRandomImage()
+        public void CreateRandomImage()
         {
             var rand = new Random();
             var next = rand.Next(4);
