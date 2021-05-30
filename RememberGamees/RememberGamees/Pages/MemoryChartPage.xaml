@@ -13,9 +13,11 @@
                 <chart:NumericalAxis/>
             </chart:SfChart.SecondaryAxis>
 
-            <chart:SplineSeries ItemsSource="{Binding ChartData}"
+            <chart:SplineAreaSeries ItemsSource="{Binding ChartData}"
                             XBindingPath="ID"
-                            YBindingPath="MemoryScore"/>
+                            YBindingPath="MemoryScore"
+                                Color="#b8d5ff"
+                                    StrokeColor="#2b7ef3"/>
 
         </chart:SfChart>
     </ContentPage.Content>

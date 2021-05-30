@@ -18,10 +18,10 @@ namespace RememberGamees.Pages
             InitializeComponent();
             BindingContext = new ReactionChartPageModel();
         }
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            await (BindingContext as ReactionChartPageModel).GetScoreOfReactionAsync();
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    //await (BindingContext as ReactionChartPageModel).GetScoreOfReactionAsync();
+        //}
     }
 }

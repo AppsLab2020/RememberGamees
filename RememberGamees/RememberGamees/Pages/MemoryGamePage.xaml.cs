@@ -13,8 +13,6 @@ namespace RememberGamees.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MemoryGamePage : ContentPage
     {
-        private readonly List<DateTime> tapTimes;
-        List<string> images = new List<string> { "Image1", "Image2", "Image3", "Image4" };
         private double _number { get; set; }
         private double _RandWidthNumber { get; set; }
         public MemoryGamePage()

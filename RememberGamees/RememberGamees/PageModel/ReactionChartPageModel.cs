@@ -8,23 +8,41 @@ namespace RememberGamees.PageModel
 {
     public class ReactionChartPageModel : INotifyPropertyChanged
     {
-        private List<ScoreOfReaction> _setExperience;
+        public List<ScoreOfReaction> ChartData1 { get; set; }
 
-        public List<ScoreOfReaction> ChartData
+        public ReactionChartPageModel()
         {
-            get => _setExperience;
-            set
-            {
-                _setExperience = value;
-                PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(ChartData)));
-            }
+            ChartData1 = new List<ScoreOfReaction>();
+
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 50});
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 100 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 150 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 100 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 200 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 250 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 300 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 300 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 350 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 450 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 400 });
+            ChartData1.Add(new ScoreOfReaction { ReactionScore = 450 });
         }
 
-        internal async System.Threading.Tasks.Task GetScoreOfReactionAsync()
-        {
-            ChartData = await App.Database.GetScoreOfReactionAsync();
-        }
+        //public List<ScoreOfReaction> ChartData
+        //{
+        //    get => _setExperience;
+        //    set
+        //    {
+        //        _setExperience = value;
+        //        PropertyChanged?
+        //        .Invoke(this, new PropertyChangedEventArgs(nameof(ChartData)));
+        //    }
+        //}
+
+        //internal async System.Threading.Tasks.Task GetScoreOfReactionAsync()
+        //{
+        //    ChartData = await App.Database.GetScoreOfReactionAsync();
+        //}
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
