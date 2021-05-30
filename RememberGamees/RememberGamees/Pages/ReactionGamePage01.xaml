@@ -9,6 +9,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding Instructions}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="22"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -35,6 +36,8 @@
                     <Frame  CornerRadius="15" IsClippedToBounds="True" Padding="0" Grid.Row="2" Grid.Column="2" >
                         <Image Source="{Binding RandomImage_Source}"   WidthRequest="100" />
                     </Frame>
+
+                
 
                 <ImageButton Command="{Binding firstBtn_Clicked}" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image1.png"  Grid.Column="1" Grid.Row="4" WidthRequest="75" HeightRequest="75" CommandParameter="{Binding FirstBtn}"/>
                 <ImageButton Command="{Binding secondBtn_Clicked}" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Image5.png" Grid.Column="2" Grid.Row="4" WidthRequest="75" HeightRequest="75"/>

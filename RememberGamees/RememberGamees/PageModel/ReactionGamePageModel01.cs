@@ -14,6 +14,7 @@ namespace RememberGamees.PageModel
         private string _defaultTime = "";
         private string _randomImage;
         private string _setExperience;
+        private string _instructions;
         private bool _nextPage = false;
 
         private int _countSeconds = 75;
@@ -111,6 +112,16 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Timer_Text)));
             }
         }
+        public string Instructions
+        {
+            get => _instructions;
+            set
+            {
+                _instructions = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Instructions)));
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -168,6 +179,14 @@ namespace RememberGamees.PageModel
             }
 
             CreateRandomImage();
+            if (_randomImage == "Image1" || _randomImage == "Image5" || _randomImage == "Image9")
+            {
+                Instructions = "Choose same image";
+            }
+            else
+            {
+                Instructions = "Choose fully different image";
+            }
         });
 
         public Command secondBtn_Clicked => new Command(async () =>
@@ -224,6 +243,14 @@ namespace RememberGamees.PageModel
             }
             
             CreateRandomImage();
+            if (_randomImage == "Image1" || _randomImage == "Image5" || _randomImage == "Image9")
+            {
+                Instructions = "Choose the same image";
+            }
+            else
+            {
+                Instructions = "Choose the fully diferent image";
+            }
         });
 
         public Command thirdBtn_Clicked => new Command(async () =>
@@ -280,10 +307,27 @@ namespace RememberGamees.PageModel
                 }
             }
             CreateRandomImage();
+            if (_randomImage == "Image1" || _randomImage == "Image5" || _randomImage == "Image9")
+            {
+                Instructions = "Choose the same image";
+            }
+            else
+            {
+                Instructions = "Choose the fully diferent image";
+            }
         });
 
         public ReactionGamePageModel01(INavigation navigation)
         {
+            if (_randomImage == "Image1" || _randomImage == "Image5" || _randomImage == "Image9")
+            {
+                Instructions = "Choose the same image";
+            }
+            else
+            {
+                Instructions = "Choose the fully diferent image";
+            }
+
             Navigation = navigation;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
