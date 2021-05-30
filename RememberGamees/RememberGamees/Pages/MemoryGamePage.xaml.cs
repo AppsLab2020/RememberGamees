@@ -79,9 +79,30 @@ namespace RememberGamees.Pages
             AbsoluteLayout.SetLayoutBounds(No_Button, new Rectangle(0.3, 0.5, 110, 50));
             AbsoluteLayout.SetLayoutFlags(No_Button, AbsoluteLayoutFlags.PositionProportional);
 
+            //Label to write "score:"
+            Label label = new Label { FontSize = 23, Text = "Score:", TextColor = Color.FromHex("#2BB0F3"), FontAttributes = FontAttributes.Bold };
+            AbsoluteLayout.SetLayoutBounds(label, new Rectangle(0.7, 0.3, 100, 100));
+            AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.PositionProportional);
+
+            //Score Label
+            Label score = new Label { FontSize = 23 };
+            score.SetBinding(Label.TextProperty, "Experiences2_Text");
+            AbsoluteLayout.SetLayoutBounds(score, new Rectangle(0.95, 0.3, 100, 100));
+            AbsoluteLayout.SetLayoutFlags(score, AbsoluteLayoutFlags.PositionProportional);
+
+            Label timeInfo = new Label { TextColor = Color.FromHex("#2BB0F3"), FontSize = 23, Text = "Time:", FontAttributes = FontAttributes.Bold };
+            AbsoluteLayout.SetLayoutBounds(timeInfo, new Rectangle(0.1, 0.3, 100, 100));
+            AbsoluteLayout.SetLayoutFlags(timeInfo, AbsoluteLayoutFlags.PositionProportional);
+
+            //Time label 
+            Label time = new Label { FontSize = 23, };
+            time.SetBinding(Label.TextProperty, "Time_Text");
+            AbsoluteLayout.SetLayoutBounds(time, new Rectangle(0.3, 0.3, 100, 100));
+            AbsoluteLayout.SetLayoutFlags(time, AbsoluteLayoutFlags.PositionProportional);
+
             Content = new AbsoluteLayout
             {
-                Children = { Rand, Brain1, Brain2, Brain3, Brain4, Brain5, Description, Yes_Button, No_Button, }
+                Children = { Rand, Brain1, Brain2, Brain3, Brain4, Brain5, Description, Yes_Button, No_Button, label, score, timeInfo, time }
             };
         }
         Random rnd = new Random();
