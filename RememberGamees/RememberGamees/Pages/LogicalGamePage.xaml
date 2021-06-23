@@ -5,58 +5,28 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="White">
     <ContentPage.Content>
-        <Grid>
+        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Frame HasShadow="True"
-                   BackgroundColor="White"
-                   Grid.Row="1"
-                   Grid.RowSpan="3"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
-                   WidthRequest="350"
-                   HeightRequest="500"
-                   CornerRadius="20">
-                <BoxView/>
-            </Frame>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-
-            <BoxView
-                Grid.Row="5"
-                BackgroundColor="#44DAEE"
-                CornerRadius="10"/>
-            <Button
-                Text="Randomize"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Grid.Row="5"
-                Margin="0,0,200,0"
-                HeightRequest="70"
-                WidthRequest="150"
-                CornerRadius="20"
-                BorderColor="Black"
-                BorderWidth="1"
-                BackgroundColor="White"/>
-
-            <Button
-                Text="New Image"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Grid.Row="5"
-                Margin="200,0,0,0"
-                HeightRequest="70"
-                WidthRequest="150"
-                CornerRadius="20"
-                BorderColor="Black"
-                BorderWidth="1"
-                BackgroundColor="White"/>
+            <Button Text="{Binding First_Text}" Command="{Binding First_Button}" Grid.Column="0" Grid.Row="0" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Second_Text}" Command="{Binding Second_Button}" Grid.Column="1" Grid.Row="0" WidthRequest="130" HeightRequest="350"/>
+            <Button Text="{Binding Third_Text}" Command="{Binding Third_Button}" Grid.Column="2" Grid.Row="0" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Fourth_Text}" Command="{Binding Fourth_Button}" Grid.Column="0" Grid.Row="1" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Fiveth_Text}" Command="{Binding Fiveth_Button}" Grid.Column="1" Grid.Row="1" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Sixth_Text}" Command="{Binding Sixth_Button}" Grid.Column="2" Grid.Row="1" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Seventh_Text}" Command="{Binding Seventh_Button}" Grid.Column="0" Grid.Row="2" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Eighth_Text}" Command="{Binding Eigth_Button}" Grid.Column="1" Grid.Row="2" WidthRequest="130" HeightRequest="130"/>
+            <Button Text="{Binding Nineth_Text}" Command="{Binding Nineth_Button}" Grid.Column="2" Grid.Row="2" WidthRequest="130" HeightRequest="130"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -8,7 +8,7 @@
              Shell.NavBarIsVisible="False">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout  >
             <Label Text="{Binding Instructions}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="22"/>
             <Grid>
                 <Grid.RowDefinitions>
