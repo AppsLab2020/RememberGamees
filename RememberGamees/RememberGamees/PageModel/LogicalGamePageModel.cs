@@ -8,6 +8,8 @@ namespace RememberGamees.PageModel
 {
     public class LogicalGamePageModel : INotifyPropertyChanged
     {
+        private readonly List<DateTime> tapTimes;
+
         private string _firstText;
         private string _secondText;
         private string _thirdText;
@@ -27,6 +29,17 @@ namespace RememberGamees.PageModel
         private Command _seventhButton;
         private Command _eighthButton;
         private Command _ninethButton;
+
+        public int OneHigher_Num
+        {
+            get => _oneHigher;
+            set
+            {
+                _oneHigher = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(OneHigher_Num)));
+            }
+        }
 
         public string First_Text
         {
@@ -213,8 +226,215 @@ namespace RememberGamees.PageModel
         public LogicalGamePageModel()
         {
 
-        }
+            First_Button = new Command( () =>
+            {
+                if (_tapped1 == true)
+                {
 
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        First_Text = "X";
+                    }
+                    else
+                    {
+                        First_Text = "0";
+                    }
+                }
+                _tapped1 = true;
+            });
+
+            Second_Button = new Command(() =>
+            {
+                if (_tapped2 == true)
+                {
+                    
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Second_Text = "X";
+                    }
+                    else
+                    {
+                        Second_Text = "0";
+                    }
+                }
+                _tapped2 = true;
+            });
+
+            Third_Button = new Command(() =>
+            {
+                if (_tapped3 == true)
+                {
+                    
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Third_Text = "X";
+                    }
+                    else
+                    {
+                        Third_Text = "0";
+                    }
+                }
+                
+                _tapped3 = true;
+            });
+
+            Fourth_Button = new Command(() =>
+            {
+                if (_tapped4 == true)
+                {
+
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Fourth_Text = "X";
+                    }
+                    else
+                    {
+                        Fourth_Text = "0";
+                    }
+                }
+
+                _tapped4 = true;
+            });
+
+            Fiveth_Button = new Command(() =>
+            {
+                if (_tapped5 == true)
+                {
+
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Fiveth_Text = "X";
+                    }
+                    else
+                    {
+                        Fiveth_Text = "0";
+                    }
+                }
+
+                _tapped5 = true;
+            });
+
+            Sixth_Button = new Command(() =>
+            {
+                if (_tapped6 == true)
+                {
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Sixth_Text = "X";
+                    }
+                    else
+                    {
+                        Sixth_Text = "0";
+                    }
+                }
+    
+                _tapped6 = true;
+            });
+
+            Seventh_Button = new Command(() =>
+            {
+                if (_tapped7 == true)
+                {
+
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Seventh_Text = "X";
+                    }
+                    else
+                    {
+                        Seventh_Text = "0";
+                    }
+                }
+                _tapped7 = true;
+            });
+
+            Eighth_Button = new Command(() =>
+            {
+                if (_tapped8 == true)
+                {
+
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Eighth_Text = "X";
+                    }
+                    else
+                    {
+                        Eighth_Text = "0";
+                    }
+                }
+
+                _tapped8 = true;
+            });
+
+            Nineth_Button = new Command(() =>
+            {
+                if (_tapped9 == true)
+                {
+
+                }
+                else
+                {
+                    GenerateHigherNum();
+                    if (OneHigher_Num % 2 == 0)
+                    {
+                        Nineth_Text = "X";
+                    }
+                    else
+                    {
+                        Nineth_Text = "0";
+                    }
+                }
+
+                _tapped9 = true;
+            });
+        }
+        void GenerateHigherNum()
+        {
+            OneHigher_Num++;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private int _oneHigher;
+        private bool _tapped1;
+        private bool _tapped2;
+        private bool _tapped3;
+        private bool _tapped4;
+        private bool _tapped5;
+        private bool _tapped6;
+        private bool _tapped7;
+        private bool _tapped8;
+        private bool _tapped9;
     }
 }
