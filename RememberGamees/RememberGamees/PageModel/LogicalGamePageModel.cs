@@ -336,24 +336,25 @@ namespace RememberGamees.PageModel
 
             First_Button = new Command( async() =>
             {
-                if (_findCircle9 == true && _findCircle8 == true && _findCircle7 == true)
-                {
-                    await navigation.PushAsync(new GamePage());
-                }
                     if (_tapped1)
                     {
                         First_Text = "X";
                     }
                     else
                     {
-                        First_Text = "0";
+                        First_Text = "O";
                     }
-                
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
+
                 _tapped1 = !_tapped1;
                 EnabledClick1 = false;
             });
 
-            Second_Button = new Command(() =>
+            Second_Button = new Command( async() =>
             {
                     if (_tapped1)
                     {
@@ -361,14 +362,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        Second_Text = "0";
+                        Second_Text = "O";
                     }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
 
                 _tapped1 = !_tapped1;
                 EnabledClick2 = false;
             });
 
-            Third_Button = new Command(() =>
+            Third_Button = new Command( async() =>
             {
                     if (_tapped1)
                     {
@@ -376,14 +382,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        Third_Text = "0";
+                        Third_Text = "O";
                     }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
 
                 _tapped1 = !_tapped1;
                 EnabledClick3 = false;
             });
 
-            Fourth_Button = new Command(() =>
+            Fourth_Button = new Command( async() =>
             {
                     if (_tapped1)
                     {
@@ -391,14 +402,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        Fourth_Text = "0";
+                        Fourth_Text = "O";
                     }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
 
                 _tapped1 = !_tapped1;
                 EnabledClick4 = false;
             });
 
-            Fiveth_Button = new Command(() =>
+            Fiveth_Button = new Command( async() =>
             {
                     if (_tapped1)
                     {
@@ -406,14 +422,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        Fiveth_Text = "0";
+                        Fiveth_Text = "O";
                     }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
 
                 _tapped1 = !_tapped1;
                 EnabledClick5 = false;
             });
 
-            Sixth_Button = new Command(() =>
+            Sixth_Button = new Command( async() =>
             {
                     if (_tapped1)
                     {
@@ -421,14 +442,19 @@ namespace RememberGamees.PageModel
                     }
                     else
                     {
-                        Sixth_Text = "0";
+                        Sixth_Text = "O";
                     }
-                
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
+
                 _tapped1 = !_tapped1;
                 EnabledClick6 = false;
             });
 
-            Seventh_Button = new Command(() =>
+            Seventh_Button = new Command( async() =>
             {
                 if (_tapped1)
                 {
@@ -436,30 +462,43 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    Seventh_Text = "0";
+                    Seventh_Text = "O";
                 }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
+
                 _tapped1 = !_tapped1;
                 EnabledClick7 = false;
             });
 
-            Eighth_Button = new Command(() =>
+            Eighth_Button = new Command( async() =>
             {
+                
+
                 if (_tapped1)
                 {
                     Eighth_Text = "X";
                 }
                 else
                 {
-                    Eighth_Text = "0";
+                    Eighth_Text = "O";
+                }
+
+                if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
                 }
 
                 _tapped1 = !_tapped1;
                 EnabledClick8 = false;
             });
 
-            Nineth_Button = new Command(() =>
+            Nineth_Button = new Command( async() =>
             {
-                
+               
                 
                 if (_tapped1)
                 {
@@ -467,7 +506,7 @@ namespace RememberGamees.PageModel
                 }
                 else
                 {
-                    Nineth_Text = "0";
+                    Nineth_Text = "O";
                     GenerateHigherNum();
                     //if (OneHigher_Num % 2 == 0)             //alternate X and 0
                     //{
@@ -480,6 +519,13 @@ namespace RememberGamees.PageModel
                     //    _findCircle9 = true;
                     //}
                 }
+
+                
+                if ( !EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                {
+                    await navigation.PushAsync(new GamePage());
+                }
+
                 _tapped1 = !_tapped1;                        //find if button was clicked, if true X or 0 doesnt change
                 EnabledClick9 = false;
             });
