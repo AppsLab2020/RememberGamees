@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RememberGamees.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -9,6 +10,15 @@ namespace RememberGamees.PageModel
     public class LogicalGamePageModel : INotifyPropertyChanged
     {
         private readonly List<DateTime> tapTimes;
+        private bool _enabledClick9 = true;
+        private bool _enabledClick8 = true;
+        private bool _enabledClick7 = true;
+        private bool _enabledClick6 = true;
+        private bool _enabledClick5 = true;
+        private bool _enabledClick4 = true;
+        private bool _enabledClick3 = true;
+        private bool _enabledClick2 = true;
+        private bool _enabledClick1 = true;
 
         private string _firstText;
         private string _secondText;
@@ -38,6 +48,104 @@ namespace RememberGamees.PageModel
                 _oneHigher = value;
                 PropertyChanged?
                 .Invoke(this, new PropertyChangedEventArgs(nameof(OneHigher_Num)));
+            }
+        }
+        public bool EnabledClick9
+        {
+            get => _enabledClick9;
+            set
+            {
+                _enabledClick9 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick9)));
+            }
+        }
+
+        public bool EnabledClick8
+        {
+            get => _enabledClick8;
+            set
+            {
+                _enabledClick8 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick8)));
+            }
+        }
+
+        public bool EnabledClick7
+        {
+            get => _enabledClick7;
+            set
+            {
+                _enabledClick7 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick7)));
+            }
+        }
+
+        public bool EnabledClick6
+        {
+            get => _enabledClick6;
+            set
+            {
+                _enabledClick6 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick6)));
+            }
+        }
+
+        public bool EnabledClick5
+        {
+            get => _enabledClick5;
+            set
+            {
+                _enabledClick5 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick5)));
+            }
+        }
+
+        public bool EnabledClick4
+        {
+            get => _enabledClick4;
+            set
+            {
+                _enabledClick4 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick4)));
+            }
+        }
+
+        public bool EnabledClick3
+        {
+            get => _enabledClick3;
+            set
+            {
+                _enabledClick3 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick3)));
+            }
+        }
+
+        public bool EnabledClick2
+        {
+            get => _enabledClick2;
+            set
+            {
+                _enabledClick2 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick2)));
+            }
+        }
+
+        public bool EnabledClick1
+        {
+            get => _enabledClick1;
+            set
+            {
+                _enabledClick1 = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick1)));
             }
         }
 
@@ -223,19 +331,16 @@ namespace RememberGamees.PageModel
                 .Invoke(this, new PropertyChangedEventArgs(nameof(Nineth_Button)));
             }
         }
-        public LogicalGamePageModel()
+        public LogicalGamePageModel(INavigation navigation)
         {
 
-            First_Button = new Command( () =>
+            First_Button = new Command( async() =>
             {
-                if (_tapped1 == true)
+                if (_findCircle9 == true && _findCircle8 == true && _findCircle7 == true)
                 {
-
+                    await navigation.PushAsync(new GamePage());
                 }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         First_Text = "X";
                     }
@@ -243,20 +348,14 @@ namespace RememberGamees.PageModel
                     {
                         First_Text = "0";
                     }
-                }
-                _tapped1 = true;
+                
+                _tapped1 = !_tapped1;
+                EnabledClick1 = false;
             });
 
             Second_Button = new Command(() =>
             {
-                if (_tapped2 == true)
-                {
-                    
-                }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         Second_Text = "X";
                     }
@@ -264,20 +363,14 @@ namespace RememberGamees.PageModel
                     {
                         Second_Text = "0";
                     }
-                }
-                _tapped2 = true;
+
+                _tapped1 = !_tapped1;
+                EnabledClick2 = false;
             });
 
             Third_Button = new Command(() =>
             {
-                if (_tapped3 == true)
-                {
-                    
-                }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         Third_Text = "X";
                     }
@@ -285,21 +378,14 @@ namespace RememberGamees.PageModel
                     {
                         Third_Text = "0";
                     }
-                }
-                
-                _tapped3 = true;
+
+                _tapped1 = !_tapped1;
+                EnabledClick3 = false;
             });
 
             Fourth_Button = new Command(() =>
             {
-                if (_tapped4 == true)
-                {
-
-                }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         Fourth_Text = "X";
                     }
@@ -307,21 +393,14 @@ namespace RememberGamees.PageModel
                     {
                         Fourth_Text = "0";
                     }
-                }
 
-                _tapped4 = true;
+                _tapped1 = !_tapped1;
+                EnabledClick4 = false;
             });
 
             Fiveth_Button = new Command(() =>
             {
-                if (_tapped5 == true)
-                {
-
-                }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         Fiveth_Text = "X";
                     }
@@ -329,20 +408,14 @@ namespace RememberGamees.PageModel
                     {
                         Fiveth_Text = "0";
                     }
-                }
 
-                _tapped5 = true;
+                _tapped1 = !_tapped1;
+                EnabledClick5 = false;
             });
 
             Sixth_Button = new Command(() =>
             {
-                if (_tapped6 == true)
-                {
-                }
-                else
-                {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
+                    if (_tapped1)
                     {
                         Sixth_Text = "X";
                     }
@@ -350,74 +423,65 @@ namespace RememberGamees.PageModel
                     {
                         Sixth_Text = "0";
                     }
-                }
-    
-                _tapped6 = true;
+                
+                _tapped1 = !_tapped1;
+                EnabledClick6 = false;
             });
 
             Seventh_Button = new Command(() =>
             {
-                if (_tapped7 == true)
+                if (_tapped1)
                 {
-
+                    Seventh_Text = "X";
                 }
                 else
                 {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
-                    {
-                        Seventh_Text = "X";
-                    }
-                    else
-                    {
-                        Seventh_Text = "0";
-                    }
+                    Seventh_Text = "0";
                 }
-                _tapped7 = true;
+                _tapped1 = !_tapped1;
+                EnabledClick7 = false;
             });
 
             Eighth_Button = new Command(() =>
             {
-                if (_tapped8 == true)
+                if (_tapped1)
                 {
-
+                    Eighth_Text = "X";
                 }
                 else
                 {
-                    GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
-                    {
-                        Eighth_Text = "X";
-                    }
-                    else
-                    {
-                        Eighth_Text = "0";
-                    }
+                    Eighth_Text = "0";
                 }
 
-                _tapped8 = true;
+                _tapped1 = !_tapped1;
+                EnabledClick8 = false;
             });
 
             Nineth_Button = new Command(() =>
             {
-                if (_tapped9 == true)
+                
+                
+                if (_tapped1)
                 {
-
+                    Nineth_Text = "X";
                 }
                 else
                 {
+                    Nineth_Text = "0";
                     GenerateHigherNum();
-                    if (OneHigher_Num % 2 == 0)
-                    {
-                        Nineth_Text = "X";
-                    }
-                    else
-                    {
-                        Nineth_Text = "0";
-                    }
+                    //if (OneHigher_Num % 2 == 0)             //alternate X and 0
+                    //{
+                    //    Nineth_Text = "X";
+                    //    _findCircle9 = false;
+                    //}
+                    //else
+                    //{
+                    //    Nineth_Text = "0";
+                    //    _findCircle9 = true;
+                    //}
                 }
-
-                _tapped9 = true;
+                _tapped1 = !_tapped1;                        //find if button was clicked, if true X or 0 doesnt change
+                EnabledClick9 = false;
             });
         }
         void GenerateHigherNum()
@@ -428,13 +492,15 @@ namespace RememberGamees.PageModel
 
         private int _oneHigher;
         private bool _tapped1;
-        private bool _tapped2;
-        private bool _tapped3;
-        private bool _tapped4;
-        private bool _tapped5;
-        private bool _tapped6;
-        private bool _tapped7;
-        private bool _tapped8;
-        private bool _tapped9;
+
+        private bool _findCircle1;
+        private bool _findCircle2;
+        private bool _findCircle3;
+        private bool _findCircle4;
+        private bool _findCircle5;
+        private bool _findCircle6;
+        private bool _findCircle7;
+        private bool _findCircle8;
+        private bool _findCircle9;
     }
 }

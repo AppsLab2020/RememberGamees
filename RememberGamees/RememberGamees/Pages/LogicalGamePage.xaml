@@ -19,15 +19,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Text="{Binding OneHigher_Num}"></Label>
-            <Button Text="{Binding First_Text}" Command="{Binding First_Button}" Grid.Column="0" Grid.Row="0" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Second_Text}" Command="{Binding Second_Button}" Grid.Column="1" Grid.Row="0" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Third_Text}" Command="{Binding Third_Button}" Grid.Column="2" Grid.Row="0" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Fourth_Text}" Command="{Binding Fourth_Button}" Grid.Column="0" Grid.Row="1" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Fiveth_Text}" Command="{Binding Fiveth_Button}" Grid.Column="1" Grid.Row="1" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Sixth_Text}" Command="{Binding Sixth_Button}" Grid.Column="2" Grid.Row="1" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Seventh_Text}" Command="{Binding Seventh_Button}" Grid.Column="0" Grid.Row="2" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Eighth_Text}" Command="{Binding Eighth_Button}" Grid.Column="1" Grid.Row="2" WidthRequest="100" HeightRequest="100"/>
-            <Button Text="{Binding Nineth_Text}" Command="{Binding Nineth_Button}" Grid.Column="2" Grid.Row="2" WidthRequest="100" HeightRequest="100"/>
+            <Button Text="{Binding First_Text}" Command="{Binding First_Button}" Grid.Column="0" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick1}"/>
+            <Button Text="{Binding Second_Text}" Command="{Binding Second_Button}" Grid.Column="1" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick2}"/>
+            <Button Text="{Binding Third_Text}" Command="{Binding Third_Button}" Grid.Column="2" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick3}"/>
+            <Button Text="{Binding Fourth_Text}" Command="{Binding Fourth_Button}" Grid.Column="0" Grid.Row="1" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick4}"/>
+            <Button Text="{Binding Fiveth_Text}" Command="{Binding Fiveth_Button}" Grid.Column="1" Grid.Row="1" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick5}"/>
+            <Button Text="{Binding Sixth_Text}" Command="{Binding Sixth_Button}" Grid.Column="2" Grid.Row="1" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick6}"/>
+            <Button Text="{Binding Seventh_Text}" Command="{Binding Seventh_Button}" Grid.Column="0" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick7}"/>
+            <Button Text="{Binding Eighth_Text}" Command="{Binding Eighth_Button}" Grid.Column="1" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick8}"/>
+            <Button Text="{Binding Nineth_Text}" Command="{Binding Nineth_Button}" Grid.Column="2" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick9}"/>
+
+            
 
         </Grid>
     </ContentPage.Content>
