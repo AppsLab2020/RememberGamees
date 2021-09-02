@@ -5,8 +5,9 @@
              NavigationPage.HasNavigationBar="True"
              BackgroundColor="White">
     <ContentPage.Content>
-
-        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <StackLayout>
+            <Button Text="Go back to menu" Command="{Binding Mennu_Button}"></Button>
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -18,7 +19,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Text="{Binding OneHigher_Num}"></Label>
             <Button Text="{Binding First_Text}" Command="{Binding First_Button}" Grid.Column="0" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick1}"/>
             <Button Text="{Binding Second_Text}" Command="{Binding Second_Button}" Grid.Column="1" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick2}"/>
             <Button Text="{Binding Third_Text}" Command="{Binding Third_Button}" Grid.Column="2" Grid.Row="0" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick3}"/>
@@ -28,9 +28,7 @@
             <Button Text="{Binding Seventh_Text}" Command="{Binding Seventh_Button}" Grid.Column="0" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick7}"/>
             <Button Text="{Binding Eighth_Text}" Command="{Binding Eighth_Button}" Grid.Column="1" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick8}"/>
             <Button Text="{Binding Nineth_Text}" Command="{Binding Nineth_Button}" Grid.Column="2" Grid.Row="2" WidthRequest="100" HeightRequest="100" IsEnabled="{Binding EnabledClick9}"/>
-
-            
-
         </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

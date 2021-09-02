@@ -30,6 +30,7 @@ namespace RememberGamees.PageModel
         private string _eighthText;
         private string _ninethText;
 
+        private Command _mennuButton;
         private Command _firstButton;
         private Command _secondButton;
         private Command _thirdButton;
@@ -40,16 +41,6 @@ namespace RememberGamees.PageModel
         private Command _eighthButton;
         private Command _ninethButton;
 
-        public int OneHigher_Num
-        {
-            get => _oneHigher;
-            set
-            {
-                _oneHigher = value;
-                PropertyChanged?
-                .Invoke(this, new PropertyChangedEventArgs(nameof(OneHigher_Num)));
-            }
-        }
         public bool EnabledClick9
         {
             get => _enabledClick9;
@@ -240,6 +231,17 @@ namespace RememberGamees.PageModel
             }
         }
 
+        public Command Mennu_Button
+        {
+            get => _mennuButton;
+            set
+            {
+                _mennuButton = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Mennu_Button)));
+            }
+        }
+
         public Command First_Button
         {
             get => _firstButton;
@@ -339,16 +341,29 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         First_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         First_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
-                }
+                    await Application.Current.MainPage.DisplayAlert("Winner is-> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
+
+                   
+                    }
 
                 _tapped1 = !_tapped1;
                 EnabledClick1 = false;
@@ -359,15 +374,26 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         Second_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         Second_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -379,15 +405,26 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         Third_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         Third_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -399,15 +436,26 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         Fourth_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         Fourth_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -419,15 +467,26 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         Fiveth_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         Fiveth_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -439,15 +498,26 @@ namespace RememberGamees.PageModel
                     if (_tapped1)
                     {
                         Sixth_Text = "X";
+                        _tenthText = "X";
                     }
                     else
                     {
                         Sixth_Text = "O";
+                        _tenthText = "O";
                     }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -459,15 +529,26 @@ namespace RememberGamees.PageModel
                 if (_tapped1)
                 {
                     Seventh_Text = "X";
+                    _tenthText = "X";
                 }
                 else
                 {
                     Seventh_Text = "O";
+                    _tenthText = "O";
                 }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -481,15 +562,26 @@ namespace RememberGamees.PageModel
                 if (_tapped1)
                 {
                     Eighth_Text = "X";
+                    _tenthText = "X";
                 }
                 else
                 {
                     Eighth_Text = "O";
+                    _tenthText = "O";
                 }
 
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;
@@ -503,50 +595,36 @@ namespace RememberGamees.PageModel
                 if (_tapped1)
                 {
                     Nineth_Text = "X";
+                    _tenthText = "X";
                 }
                 else
                 {
                     Nineth_Text = "O";
-                    GenerateHigherNum();
-                    //if (OneHigher_Num % 2 == 0)             //alternate X and 0
-                    //{
-                    //    Nineth_Text = "X";
-                    //    _findCircle9 = false;
-                    //}
-                    //else
-                    //{
-                    //    Nineth_Text = "0";
-                    //    _findCircle9 = true;
-                    //}
+                    _tenthText = "O";
                 }
 
                 
                 if ( !EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
-                    await navigation.PushAsync(new GamePage());
+                    await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
+                    EnabledClick1 = false;
+                    EnabledClick2 = false;
+                    EnabledClick3 = false;
+                    EnabledClick4 = false;
+                    EnabledClick5 = false;
+                    EnabledClick6 = false;
+                    EnabledClick7 = false;
+                    EnabledClick8 = false;
+                    EnabledClick9 = false;
                 }
 
                 _tapped1 = !_tapped1;                        //find if button was clicked, if true X or 0 doesnt change
                 EnabledClick9 = false;
             });
         }
-        void GenerateHigherNum()
-        {
-            OneHigher_Num++;
-        }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int _oneHigher;
         private bool _tapped1;
-
-        private bool _findCircle1;
-        private bool _findCircle2;
-        private bool _findCircle3;
-        private bool _findCircle4;
-        private bool _findCircle5;
-        private bool _findCircle6;
-        private bool _findCircle7;
-        private bool _findCircle8;
-        private bool _findCircle9;
+        private string _tenthText;
     }
 }
