@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RememberGamees.Pages.LogicalGamePage"
-             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasNavigationBar="False"
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Go back to menu" Command="{Binding Mennu_Button}"></Button>
+            <Button Text="{Binding Mennu_Text}" Command="{Binding Mennu_Button}"></Button>
             <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition/>

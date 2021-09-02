@@ -20,6 +20,7 @@ namespace RememberGamees.PageModel
         private bool _enabledClick2 = true;
         private bool _enabledClick1 = true;
 
+        private string _mennuText;
         private string _firstText;
         private string _secondText;
         private string _thirdText;
@@ -137,6 +138,17 @@ namespace RememberGamees.PageModel
                 _enabledClick1 = value;
                 PropertyChanged?
                 .Invoke(this, new PropertyChangedEventArgs(nameof(EnabledClick1)));
+            }
+        }
+
+        public string Mennu_Text
+        {
+            get => _mennuText;
+            set
+            {
+                _mennuText = value;
+                PropertyChanged?
+                .Invoke(this, new PropertyChangedEventArgs(nameof(Mennu_Text)));
             }
         }
 
@@ -349,6 +361,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick1 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is-> " + _tenthText, "Well done", "Cancel");
@@ -362,11 +377,13 @@ namespace RememberGamees.PageModel
                     EnabledClick8 = false;
                     EnabledClick9 = false;
 
-                   
-                    }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick1 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Second_Button = new Command( async() =>
@@ -382,6 +399,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick2 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -394,10 +414,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick2 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Third_Button = new Command( async() =>
@@ -413,6 +436,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick3 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -425,10 +451,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick3 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Fourth_Button = new Command( async() =>
@@ -444,6 +473,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick4 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -456,10 +488,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick4 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Fiveth_Button = new Command( async() =>
@@ -475,6 +510,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick5 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -487,10 +525,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick5 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Sixth_Button = new Command( async() =>
@@ -506,6 +547,9 @@ namespace RememberGamees.PageModel
                         _tenthText = "O";
                     }
 
+                    _tapped1 = !_tapped1;
+                    EnabledClick6 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -518,10 +562,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick6 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Seventh_Button = new Command( async() =>
@@ -537,6 +584,9 @@ namespace RememberGamees.PageModel
                     _tenthText = "O";
                 }
 
+                _tapped1 = !_tapped1;
+                EnabledClick7 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -549,10 +599,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick7 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Eighth_Button = new Command( async() =>
@@ -570,6 +623,9 @@ namespace RememberGamees.PageModel
                     _tenthText = "O";
                 }
 
+                _tapped1 = !_tapped1;
+                EnabledClick8 = false;
+
                 if (!EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
@@ -582,10 +638,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;
-                EnabledClick8 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Nineth_Button = new Command( async() =>
@@ -603,8 +662,10 @@ namespace RememberGamees.PageModel
                     _tenthText = "O";
                 }
 
-                
-                if ( !EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && Fourth_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
+                _tapped1 = !_tapped1;                        //find if button was clicked, if true X or 0 doesnt change
+                EnabledClick9 = false;
+
+                if ( !EnabledClick2 && Second_Text == Third_Text && First_Text == Second_Text || !EnabledClick4 && Fourth_Text == Fiveth_Text && Fiveth_Text == Sixth_Text || !EnabledClick7 && Seventh_Text == Eighth_Text && Eighth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fourth_Text && First_Text == Seventh_Text || !EnabledClick2 && Second_Text == Fiveth_Text && Fiveth_Text == Eighth_Text || !EnabledClick3 && Third_Text == Sixth_Text && Sixth_Text == Nineth_Text || !EnabledClick1 && First_Text == Fiveth_Text && Fiveth_Text == Nineth_Text || !EnabledClick3 && Third_Text == Fiveth_Text && Fiveth_Text == Seventh_Text)
                 {
                     await Application.Current.MainPage.DisplayAlert("Winner is -> " + _tenthText, "Well done", "Cancel");
                     EnabledClick1 = false;
@@ -616,10 +677,13 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
-                }
+                    Mennu_Text = "Go back to mennu";
 
-                _tapped1 = !_tapped1;                        //find if button was clicked, if true X or 0 doesnt change
-                EnabledClick9 = false;
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
         }
         public event PropertyChangedEventHandler PropertyChanged;
