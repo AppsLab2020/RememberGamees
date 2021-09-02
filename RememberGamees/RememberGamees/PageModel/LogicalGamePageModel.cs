@@ -384,6 +384,17 @@ namespace RememberGamees.PageModel
                         await navigation.PushAsync(new GamePage());
                     });
                 }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Second_Button = new Command( async() =>
@@ -414,6 +425,17 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
                     Mennu_Text = "Go back to mennu";
 
                     Mennu_Button = new Command(async () =>
@@ -458,6 +480,17 @@ namespace RememberGamees.PageModel
                         await navigation.PushAsync(new GamePage());
                     });
                 }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Fourth_Button = new Command( async() =>
@@ -488,6 +521,17 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
                     Mennu_Text = "Go back to mennu";
 
                     Mennu_Button = new Command(async () =>
@@ -532,6 +576,17 @@ namespace RememberGamees.PageModel
                         await navigation.PushAsync(new GamePage());
                     });
                 }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Sixth_Button = new Command( async() =>
@@ -569,6 +624,17 @@ namespace RememberGamees.PageModel
                         await navigation.PushAsync(new GamePage());
                     });
                 }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Seventh_Button = new Command( async() =>
@@ -599,6 +665,17 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
                     Mennu_Text = "Go back to mennu";
 
                     Mennu_Button = new Command(async () =>
@@ -645,6 +722,17 @@ namespace RememberGamees.PageModel
                         await navigation.PushAsync(new GamePage());
                     });
                 }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
             });
 
             Nineth_Button = new Command( async() =>
@@ -677,6 +765,17 @@ namespace RememberGamees.PageModel
                     EnabledClick7 = false;
                     EnabledClick8 = false;
                     EnabledClick9 = false;
+                    Mennu_Text = "Go back to mennu";
+
+                    Mennu_Button = new Command(async () =>
+                    {
+                        await navigation.PushAsync(new GamePage());
+                    });
+                }
+                else if (!EnabledClick1 && !EnabledClick2 && !EnabledClick3 && !EnabledClick4 && !EnabledClick5 && !EnabledClick6 && !EnabledClick7 && !EnabledClick8 && !EnabledClick9)
+                {
+                    await Application.Current.MainPage.DisplayAlert("There is not the winner", "", "Cancel");
+
                     Mennu_Text = "Go back to mennu";
 
                     Mennu_Button = new Command(async () =>
