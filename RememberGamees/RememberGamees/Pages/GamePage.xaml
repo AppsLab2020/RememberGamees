@@ -13,6 +13,7 @@
                     <RowDefinition Height="70"/>
                     <RowDefinition Height="70"/>
                     <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition Height="70"/>
@@ -82,7 +83,21 @@
                     Image="logic.png"
                     />
 
-
+                <!-- Tic Tac Toe singleplayer -->
+                <Button 
+                    Margin="5,0,5,0"
+                    Grid.Row="4"
+                    WidthRequest="500"
+                    Text="Tic Tac Toe"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="#8DD5F8"
+                    CornerRadius="20"
+                    Command="{Binding LogicalGame1_Clicked}"
+                    ContentLayout="Left"
+                    Image="logic.png"
+                    />
+                
                 <!-- Sign out Button -->
                 <Button
                     Text="SignOut"

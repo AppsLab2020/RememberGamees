@@ -34,12 +34,14 @@ namespace RememberGamees.PageModel
             MemoryChart_Clicked = new Command(async () => await Navigation.PushAsync(new MemoryChartPage()));
             ReactionChart_Clicked = new Command(async () => await Navigation.PushAsync(new ReactionChartPage()));
             MathChart_Clicked = new Command(async () => await Navigation.PushAsync(new MathChartPage()));
+            LogicalGame1_Clicked = new Command(async () => await Navigation.PushAsync(new TicTacToeSinglePlayerPage()));
         }
         public INavigation Navigation { get; set; }
         public Command GameBtnCommand { get; set; }
         public Command SignOutButton_Clicked { get; set; }
         public Command MemoryGame_Clicked { get; set; }
         public Command LogicalGame_Clicked { get; set; }
+        public Command LogicalGame1_Clicked { get; set; }
         public Command MathGame_Clicked { get; set; }
         public Command MemoryChart_Clicked { get; set; }
         public Command ReactionChart_Clicked { get; set; }
